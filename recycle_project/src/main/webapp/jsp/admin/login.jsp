@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>aisjdfADMIN LOGIN merge merge</title>
+<title>ADMIN LOGIN merge</title>
 </head>
 <body>
 	<div> r </div>
