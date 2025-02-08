@@ -28,6 +28,7 @@ a{
 	font-size: 30px !important;
 	color: #253f39 !important;
 }
+.dropdown-menu a{ color: black !important; }
 
 /* ========== sidebar ========== */
 .sidebar{ 
