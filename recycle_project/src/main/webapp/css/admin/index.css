@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* 폰트 */
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{ 
+	font-family: 'GowunDodum-Regular' !important; 
+}
+a{
+	color: black !important; text-decoration: none !important;
+}
+
+/* ========== logoBox ========== */
+.logoBox{ 
+	background-color: #658a69 !important; 
+	font-weight: bold !important;
+	height: 70px !important;
+	color: white !important;
+}
+.side_logo{ width: 60px; margin: 5px 0px 0px 5px; }
+.logoBox a{ color: white !important; }
+.side_title{ 
+	width: 165px !important; 
+	font-size: 30px !important;
+	color: #253f39 !important;
+}
+.dropdown-menu a{ color: black !important; }
+
+/* ========== sidebar ========== */
+.sidebar{ 
+	background-color: #658a69 !important; 
+	font-size: 20px !important;
+	color: #c0c0c0!important;
+}
+.sidebar a{ color: white !important; }
+.sidebar .dropmenu{ 
+	margin-left: -25px !important;
+	border-bottom: 1px solid #d3d3d3!important;
+	background-color: white !important;
+	color: black !important;
+	font-size: 15px !important; 
+}
+
+/* ========== 본문 ========== */
+#layoutSidenav{ 
+	background-color: #f1f5f1 !important; 
+	width: 100% !important;
+	margin: 0 auto !important;
+}
+#layoutSidenav .side_content{
+	margin: 50px 50px 20px 50px; padding: 30px; height: 700px;
+ 	background-color: white;
+ 	border-radius: 25px;
+}
+#layoutSidenav .content_box{
+	width: 100%; text-align: center;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+#layoutSidenav .content_table{
+	border-bottom: 1px solid #c0c0c0;
+	width: 100%;
+}
+
+
+
+
+
+
+
