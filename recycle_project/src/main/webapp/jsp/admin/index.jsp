@@ -71,7 +71,7 @@
 	<script	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
-	<script src="tj2024b_web1/js/admin/login.js"></script>
+	<script src="/recycle_project/js/admin/login.js"></script>
 
 </body>
 </html>
