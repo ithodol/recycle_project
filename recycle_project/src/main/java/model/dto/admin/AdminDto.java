@@ -12,6 +12,8 @@ import lombok.ToString;
 @ToString
 public class AdminDto {
 	
+	
+	private String ano;
 	private String aid;
 	private String apwd;
 	private String aname;
