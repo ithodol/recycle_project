@@ -1,6 +1,5 @@
 package model.dao.admin;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,60 +11,104 @@ import model.dao.Dao;
 import model.dto.admin.AdminDto;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
-public class AdminDao extends Dao{
+public class AdminDao extends Dao {
 	@Getter
 	private static AdminDao instance = new AdminDao();
+
 	public boolean signup(AdminDto adminDto) {
 		try {
-			String sql ="insert into member(aid,apwd,aname,aphone,aemail) values(?,?,?,?,?)";
-			PreparedStatement ps = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-			ps.setString(1, adminDto.getAid());
-			ps.setString(2,adminDto.getApwd());
-			ps.setString(3,adminDto.getAname());
-			ps.setString(4, adminDto.getAphone());
-			ps.setString(5,adminDto.getAemail());
-			
+			String sql = "insert into admin(adid,adpwd,adname,adphone,ademail,adnickname) values(?,?,?,?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			ps.setString(1, adminDto.getAdid());
+			ps.setString(2, adminDto.getAdpwd());
+			ps.setString(3, adminDto.getAdname());
+			ps.setString(4, adminDto.getAdphone());
+			ps.setString(5, adminDto.getAdemail());
+			ps.setString(6, adminDto.getAdnickname());
 			int count = ps.executeUpdate();
-			
+
 			if (count == 1)
 				return true;
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return false;
 	}
+
 	public int login(AdminDto adminDto) {
 		try {
-			String sql = "select ano from admin where aid =? and apwd = ?";
+			String sql = "select adno from admin where adid =? and adpwd = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, adminDto.getAid());
-			ps.setString(2, adminDto.getApwd());
-			
+			ps.setString(1, adminDto.getAdid());
+			ps.setString(2, adminDto.getAdpwd());
+
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				int ano = rs.getInt("ano");
+				int ano = rs.getInt("adno");
 				return ano;
 			}
-		}catch(SQLException e) {
-			
+		} catch (SQLException e) {
+
 			System.out.println(e);
 		}
 		return 0;
 	}
+
 	public boolean update(AdminDto adminDto) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "update admin set adpwd = ? , adname = ?, adphone = ? , ademail = ?, adnickname = ? where adno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, adminDto.getAdpwd());
+			ps.setString(2, adminDto.getAdname());
+			ps.setString(3, adminDto.getAdphone());
+			ps.setString(4, adminDto.getAdemail());
+			ps.setString(5, adminDto.getAdnickname());
+			ps.setInt(6, adminDto.getAdno());
+
+			int count = ps.executeUpdate();
+			if (count == 1) {
+				return true;
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
 		return false;
 	}
-	public AdminDto myAdminInfo(int loginAno) {
-		// TODO Auto-generated method stub
+
+	public AdminDto myAdminInfo(int loginAdno) {
+		try {
+			String sql = "select * from admin where adno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, loginAdno);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				AdminDto adminDto = new AdminDto();
+				adminDto.setAdno(rs.getInt("adno"));
+				adminDto.setAdid(rs.getString("adid"));
+				adminDto.setAdname(rs.getString("adname"));
+				adminDto.setAdphone(rs.getString("adphone"));
+				adminDto.setAdemail(rs.getString("ademail"));
+				adminDto.setAdnickname(rs.getString("adnickname"));
+				return adminDto;
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
 		return null;
 	}
-	
-	
-	
-	
-	
 
+	public boolean delete(int loginAdno) {
+		try {
+			String sql = "delete from admin where adno = ? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, loginAdno);
+			int count = ps.executeUpdate();
+			if (count == 1)
+				return true;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
+	}
 
-	
 }

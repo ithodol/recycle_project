@@ -13,12 +13,13 @@ import lombok.ToString;
 public class AdminDto {
 	
 	
-	private String ano;
-	private String aid;
-	private String apwd;
-	private String aname;
-	private String anickname;
-	private String aphone;
-	private String aemail;
+	private int adno;
+	private String adid;
+	private String adpwd;
+	private String adname;
+	private String adnickname;
+	private String adphone;
+	private String ademail;
+	
 
 }
