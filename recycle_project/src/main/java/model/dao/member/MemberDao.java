@@ -55,6 +55,65 @@ public class MemberDao extends Dao {
 	}
 	
 	
+	// 내 정보 조회
+	public MemberDto myInfo(int loginMno) {
+		try {
+			String sql = "select * from member where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, loginMno);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				MemberDto memberDto = new MemberDto();
+				memberDto.setMno(rs.getInt("mno"));
+                memberDto.setMid( rs.getString("mid") );
+                memberDto.setMname(rs.getString("mname"));
+                memberDto.setMnickname(rs.getString("mnickname"));
+                memberDto.setMphone( rs.getString("mphone") );
+                memberDto.setMemail(rs.getString("memail"));
+                memberDto.setMprofile(rs.getString("mprofile"));
+                return memberDto;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return null;
+	}
+	
+	
+	// 내 정보 수정
+	public boolean update(MemberDto memberDto) {
+		try {
+			String sql = "update member set mpwd = ?, mnickname = ?, mphone = ?, memail = ?, mprofile = ? where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, memberDto.getMpwd());
+			ps.setString(2, memberDto.getMnickname());
+			ps.setString(3, memberDto.getMphone());
+			ps.setString(4, memberDto.getMemail());
+			ps.setString(5, memberDto.getMprofile());
+			ps.setInt(6, memberDto.getMno());
+			
+			int c = ps.executeUpdate();
+			if(c == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return false;
+	}
+
+	
+	// 회원 탈퇴
+	public boolean delete(int loginMno) {
+		try {
+			String sql = "delete from member where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, loginMno);
+			int c = ps.executeUpdate();
+			if(c == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		
+		return false;	
+	}
+	
 }
 
 
