@@ -30,7 +30,6 @@
 	
 		<!-- 본문 -->
 		<div id="layoutSidenav_content">
-			<main>
 				<div class="side_content">
 	             	<div class="content_title">
 	        	        <h1>회원 관리</h1>
@@ -52,10 +51,6 @@
 						</table>
 	                </div>    
 				</div>
-			</main>
-         	
-         	<!-- div 안에 넣어야함 -->
-			<jsp:include page="footer.jsp"></jsp:include>
 			
 		</div>
 	</div>
