@@ -17,6 +17,11 @@
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 	<!-- css -->
 	<link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
+	
+	<!-- 폰트 -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+	</style>
 </head>
 <body class="sb-nav-fixed">
 
@@ -30,6 +35,7 @@
 	
 		<!-- 본문 -->
 		<div id="layoutSidenav_content">
+			<main>
 				<div class="side_content">
 	             	<div class="content_title">
 	        	        <h1>회원 관리</h1>
@@ -51,7 +57,8 @@
 						</table>
 	                </div>    
 				</div>
-			
+			</main>
+
 		</div>
 	</div>
 	
