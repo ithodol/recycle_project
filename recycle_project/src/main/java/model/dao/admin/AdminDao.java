@@ -1,5 +1,9 @@
 package model.dao.admin;
 
-public class AdminDao {
+import model.dao.Dao;
 
+public class AdminDao extends Dao{
+
+
+	
 }
