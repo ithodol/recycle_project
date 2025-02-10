@@ -44,8 +44,8 @@ public class AdminDao extends Dao {
 
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				int ano = rs.getInt("adno");
-				return ano;
+				int adno = rs.getInt("adno");
+				return adno;
 			}
 		} catch (SQLException e) {
 
@@ -56,7 +56,7 @@ public class AdminDao extends Dao {
 
 	public boolean update(AdminDto adminDto) {
 		try {
-			String sql = "update admin set adpwd = ? , adname = ?, adphone = ? , ademail = ?, adnickname = ? where adno = ?";
+			String sql = "update admin set adpwd = ? , adname = ? , adphone = ? , ademail = ? , adnickname = ? where adno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, adminDto.getAdpwd());
 			ps.setString(2, adminDto.getAdname());
