@@ -19,7 +19,7 @@ public class SignUpController extends HttpServlet{
 		System.out.println("post ok");
 		ObjectMapper mapper = new ObjectMapper();
 		AdminDto adminDto = mapper.readValue(req.getReader(), AdminDto.class);
-		boolean result = AdminDao.getInstance().write(adminDto);
+		boolean result = AdminDao.getInstance().signup(adminDto);
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
 	}
