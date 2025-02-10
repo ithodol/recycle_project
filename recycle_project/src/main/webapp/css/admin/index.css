@@ -74,6 +74,10 @@ a{
 #layoutSidenav .content_table{
 	border-bottom: 1px solid #c0c0c0;
 	width: 100%;
+	display: block;
+}
+#layoutSidenav .scroll_box{
+	overflow: scroll;
 }
 
 

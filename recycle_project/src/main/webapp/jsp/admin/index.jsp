@@ -44,15 +44,22 @@
 	                    </ol>
 	                </div>
 	                <div class="content_box">
-						<table class="content_table">
-							<thead>
+	                	<table class="content_table">
+	                		<thead>
 								<tr>
 									<th> 챌린지 제목 </th>
 									<th> 포인트 </th>
 									<th> 비고 </th>
 								</tr>
 							</thead>
+	                	</table>
+						<table class="content_table scroll_box">
 							<tbody>
+								<tr>
+									<td> 1 </td>
+									<td> 2 </td>
+									<td> 3 </td>
+								</tr>
 							</tbody>
 						</table>
 	                </div>    
