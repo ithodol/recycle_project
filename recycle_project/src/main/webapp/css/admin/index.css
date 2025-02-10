@@ -78,6 +78,7 @@ a{
 }
 #layoutSidenav .scroll_box{
 	overflow: scroll;
+	height: 500px;
 }
 
 

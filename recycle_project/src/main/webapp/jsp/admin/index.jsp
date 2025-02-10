@@ -53,7 +53,7 @@
 								</tr>
 							</thead>
 	                	</table>
-						<table class="content_table scroll_box">
+						<table class="scroll_box">
 							<tbody>
 								<tr>
 									<td> 1 </td>
