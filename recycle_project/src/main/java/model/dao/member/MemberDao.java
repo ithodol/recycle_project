@@ -1,6 +1,7 @@
 package model.dao.member;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import lombok.Getter;
@@ -35,4 +36,55 @@ public class MemberDao extends Dao {
 		return false;
 	}
 	
+	
+	// 로그인
+	public int login(MemberDto memberDto) {
+		try {
+			String sql = "select mno from member where mid = ? and mpwd = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, memberDto.getMid());
+			ps.setString(2, memberDto.getMpwd());
+			
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				int mno = rs.getInt("mno");
+				return mno;
+			}			
+		}catch(SQLException e) {System.out.println(e);}
+		return 0;
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

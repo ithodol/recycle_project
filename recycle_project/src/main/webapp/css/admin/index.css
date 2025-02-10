@@ -5,6 +5,13 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 *{ 
@@ -50,9 +57,11 @@ a{
 	background-color: #f1f5f1 !important; 
 	width: 100% !important;
 	margin: 0 auto !important;
+	display: block !important;
+	height: 918px;
 }
 #layoutSidenav .side_content{
-	margin: 50px 50px 20px 50px; padding: 30px; height: 700px;
+	margin: 60px 50px 0px 50px; padding: 30px; height: 760px;
  	background-color: white;
  	border-radius: 25px;
 }

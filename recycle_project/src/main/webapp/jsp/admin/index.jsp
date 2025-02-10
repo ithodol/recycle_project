@@ -17,6 +17,11 @@
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 	<!-- css -->
 	<link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
+	
+	<!-- 폰트 -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+	</style>
 </head>
 <body class="sb-nav-fixed">
 
@@ -53,10 +58,7 @@
 	                </div>    
 				</div>
 			</main>
-         	
-         	<!-- div 안에 넣어야함 -->
-			<jsp:include page="footer.jsp"></jsp:include>
-			
+
 		</div>
 	</div>
 	
@@ -69,7 +71,7 @@
 	<script	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
-	<script src="tj2024b_web1/js/admin/login.js"></script>
+	<script src="/recycle_project/js/admin/login.js"></script>
 
 </body>
 </html>
