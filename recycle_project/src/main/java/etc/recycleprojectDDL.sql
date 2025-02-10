@@ -12,7 +12,6 @@ create table member(
     mphone varchar(13) not null unique ,
     memail varchar(100) not null,
     mdate datetime default now() ,
-    mpoint int default 100,
     mprofile varchar(255) default 'default.jpg',
     constraint primary key( mno )
 ); 
