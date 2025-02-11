@@ -3,11 +3,13 @@ package model.dao.member;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import model.dao.Dao;
 import model.dto.member.MemberDto;
+import model.dto.member.PointDto;
 
 @NoArgsConstructor( access = lombok.AccessLevel.PRIVATE )
 public class MemberDao extends Dao {
@@ -113,6 +115,27 @@ public class MemberDao extends Dao {
 		
 		return false;	
 	}
+	
+	
+	// 내 포인트 전체 조회	
+	public ArrayList<PointDto> getPointLog(int loginMno){
+		ArrayList<PointDto> list = new ArrayList<PointDto>();
+		try {
+			String sql = "select * from where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, loginMno);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				PointDto pointDto = new PointDto();
+				pointDto.setPono(rs.getInt("pono"));
+			}
+			
+		}catch(SQLException e) {System.out.println(e);}
+		
+		return list;
+	}
+	
+	
 	
 }
 
