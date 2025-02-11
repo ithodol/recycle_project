@@ -63,6 +63,7 @@ a{
 	margin: 60px 50px 0px 50px; padding: 30px; height: 760px;
  	background-color: white;
  	border-radius: 25px;
+ 	box-shadow: #c0c0c0 3px 3px 3px;
 }
 #layoutSidenav .content_box{
 	width: 100%; text-align: center;
