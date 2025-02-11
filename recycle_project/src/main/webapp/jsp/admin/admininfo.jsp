@@ -38,9 +38,9 @@
 			<main>
 				<div class="side_content">
 	             	<div class="content_title">
-	        	        <h1>회원 관리</h1>
+	        	        <h1>마이 페이지</h1>
 	     	            <ol class="breadcrumb mb-4">
-	  	                    <li class="breadcrumb-item active">회원정보 조회</li>
+	  	                    <li class="breadcrumb-item active">내 정보 조회</li>
 	                    </ol>
 	                </div>
 	                <div class="content_box">
@@ -71,7 +71,7 @@
 	<script	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
-
+	<script src="/recycle_project/js/admin/login.js"></script>
 
 </body>
 </html>

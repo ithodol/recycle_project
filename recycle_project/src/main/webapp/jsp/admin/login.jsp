@@ -27,12 +27,12 @@
 						</div>
 						<!-- 아이디 -->
 						<div class="form-floating mb-3"> <!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
-							<input type="text" id="mid" class="form-control midinput" id="floatingInput" placeholder="계정아이디"> 
+							<input type="text" id="adid" class="form-control adidinput" id="floatingInput" placeholder="계정아이디"> 
 							<label for="floatingInput">계정아이디</label>
 						</div>
 						
 						<div class="form-floating mb-3">
-							<input type="password" id="mpwd" class="form-control mpwdinput" id="floatingPassword" placeholder="계정비밀번호"> 
+							<input type="password" id="adpwd" class="form-control adpwdinput" id="floatingPassword" placeholder="계정비밀번호"> 
 							<label for="floatingPassword">계정비밀번호</label>
 						</div>
 						
@@ -53,6 +53,6 @@
 	<!-- 부트스트랩 js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<!-- 사용자 js -->
-	<script src="/recycle_project/js/member/login.js"></script>
+	<script src="/recycle_project/js/admin/login.js"></script>
 </body>
 </html>

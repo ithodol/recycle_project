@@ -28,31 +28,33 @@
 				</button>
 			</div>
 		</form>
-		
+		<span class="loginmenu d-flex ">
 		<!-- 로그인 상태 -->
-		<div class="sb-sidenav-footer">
-			<div class="small">아이디</div>
-		</div>
+			<div class="sb-sidenav-footer mt-2">
+				<div class="small">아이디</div>
+			</div>
 		
 		<!-- Navbar-->
-		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" id="navbarDropdown" 
-				href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fas fa-user fa-fw"></i>
-				</a>
+			<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" 
+					href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fas fa-user fa-fw"></i>
+					</a>
 				
-				<ul class="dropdown-menu dropdown-menu-end"	aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">회원정보</a></li>
-					<li><a class="dropdown-item" href="#!">포인트 내역</a></li>
-					<li><hr class="dropdown-divider" /></li>
-					<li><a class="dropdown-item" href="#!">로그아웃</a></li>
-				</ul>
-			</li>
-		</ul>
+					<ul class="dropdown-menu dropdown-menu-end"	aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="#!">회원정보</a></li>
+						<li><hr class="dropdown-divider" /></li>
+						<li><a class="dropdown-item" href="#!">로그아웃</a></li>
+					</ul>
+				</li>
+			</ul>
+		</span>
 	</nav>
 
 	<!-- js -->
-	<script src="tj2024b_web1/js/admin/login.js"></script>
+	<script src="/recycle_project/js/admin/header.js"></script>
+	
+	
 </body>
 </html>
