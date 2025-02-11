@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*{ 
+	margin: 0px; padding: 0px;
+	box-sizing: border-box;
+	font-family: 'GowunDodum-Regular' !important; 
+}
+a{
+	color: black !important; text-decoration: none !important;
+	/* background-color: #f1f5f1; */
+}
+/* header * */
+#header{ background-color: #658a69 !important; }
+#header .header_logo{ width: 80px; }
+#header .header_menu{ 
+	font-size: 25px; font-weight: bold; 
+	color: white !important;
+	border-bottom: none;
+}
+
+/* menu_effect */
+.header_menubox, .header_menubox:after, .header_menubox:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header_menubox a:hover,.header_menubox a:focus {
+  outline: none;
+  color: #253f39;
+}
+
+.menu a {
+	position: relative;
+  	display: block;
+  	text-decoration: none;
+  	text-transform: uppercase;
+}
+
+.header_menubox a:after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: white;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.header_menubox a:hover:after, .header_menubox a:focus:after {
+	opacity: 0.8;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+
+#header .header_name{ 
+	font-size: 30px; font-weight: bold;
+	color: #253f39 !important;
+	margin: 0px -10px;
+	background-color: #658a69 !important;
+}
+#header .login_drop{ 
+	height: 30px !important; 
+	color: black !important;
+}
+
+/* header member profile */
+#header .header_profile{
+	width: 50px; height: 50px;
+	border-radius: 40px;
+	margin-right: 5px; 
+	/* 사진의 사이즈 비율 맞춤 */
+	object-fit: contain;	
+	object-fit: cover;		
+}
+
+#header .LogInMenu a{ 
+	display: flex;
+	align-items: center;
+	height: 70px; 
+	font-size: 20px;
+}
+
+/* 본문 */
+
+
+/* 캐러셀 */
+
+
+
