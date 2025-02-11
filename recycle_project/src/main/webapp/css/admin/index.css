@@ -68,17 +68,11 @@ a{
 #layoutSidenav .content_box{
 	width: 100%; text-align: center;
 	padding: 20px;
-	display: flex;
-	justify-content: center;
 }
 #layoutSidenav .content_table{
 	border-bottom: 1px solid #c0c0c0;
 	width: 100%;
 	display: block;
-}
-#layoutSidenav .scroll_box{
-	overflow: scroll;
-	height: 500px;
 }
 
 
