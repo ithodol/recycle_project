@@ -13,7 +13,7 @@
 			<div class="d-flex align-items-center justify-content-between small">
 				<div class="text-muted">Copyright &copy; Recycle-Project 2025 | developer : 류예나, 박희만, 전은서</div>
 				<div>
-					<a href="#">관리자</a>
+					<a href="/recycle_project/jsp/admin/login.jsp">관리자</a>
 				</div>
 			</div>
 		</div>
