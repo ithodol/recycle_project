@@ -92,7 +92,6 @@ a{
 	width: 50px; height: 50px;
 	border-radius: 40px;
 	margin-right: 5px; 
-	/* 사진의 사이즈 비율 맞춤 */
 	object-fit: contain;	
 	object-fit: cover;		
 }
@@ -101,7 +100,7 @@ a{
 	display: flex;
 	align-items: center;
 	height: 70px; 
-	font-size: 20px;
+	font-size: 16px;
 }
 
 /* 본문 */
