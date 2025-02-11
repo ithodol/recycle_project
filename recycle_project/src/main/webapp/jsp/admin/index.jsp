@@ -17,7 +17,6 @@
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 	<!-- css -->
 	<link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
-	
 	<!-- 폰트 -->
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
@@ -77,6 +76,9 @@
 						</nav>
 						
 						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<!-- 모달 버튼 -->
+							<jsp:include page="../modal.jsp"></jsp:include>
+							
 							<button onclick="location.href='write.jsp'" class="btn btn-primary me-md-2" 
 							style="background-color: #658a69;" type="button">글쓰기
 							</button>

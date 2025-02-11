@@ -1,14 +1,23 @@
 @charset "UTF-8";
-/* 눈누 폰트 */
+
 @font-face {
     font-family: 'GowunDodum-Regular';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
-/* 전체 폰트적용 */
-*{
-	font-family: 'GowunDodum-Regular';
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*{ 
+	margin: 0px; padding: 0px;
+	box-sizing: border-box;
+	font-family: 'GowunDodum-Regular' !important; 
 }
 #wrap{
 	background-color: #f1f5f1;
@@ -20,14 +29,14 @@
 .logo-box{
 	height: 60px;
 	background-color: #658a69;
-	margin: -49px -48px 50px -48px;
+	/* margin: -49px -48px 0px -48px; */
 	border-radius: 8px 8px 0px 0px;
 	overflow: hidden; /* 넘치는 부분 숨기기 */
 	display: flex; align-items: center;
 }
 .logo-box img{ width: 60px; }
 .logo-box .logo-name{  
-	font-size: 20px; font-weight: bold; color: #253f39;
+	font-size: 25px; font-weight: bold; color: #253f39;
 	margin: 5px;
 }
 
