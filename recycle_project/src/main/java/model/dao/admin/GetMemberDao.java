@@ -78,7 +78,7 @@ public class GetMemberDao extends Dao{
 
 	public PointLogDto findPointLog(int mno) {
 		try {
-			String sql ="select pointlog.mno pointlog.podate, pointlog.pocontent, sum(pointlog.pocount) as point from member inner join pointlog on member.mno =  pointlog.mno where member.mno =1 group by  pointlog.podate, pointlog.pocontent";
+			String sql ="select pointlog.mno, pointlog.podate, pointlog.pocontent, pointlog.pocount as point from member inner join pointlog on member.mno = pointlog.mno where member.mno = ?  group by point ,pointlog.podate, pointlog.pocontent";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1,mno);
 			ResultSet rs = ps.executeQuery();
