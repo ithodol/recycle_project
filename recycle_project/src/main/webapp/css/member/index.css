@@ -25,7 +25,7 @@ a{
 }
 /* header * */
 #header{ background-color: #658a69 !important; }
-#header .header_logo{ width: 80px; }
+#header .header_logo{ width: 60px; }
 #header .header_menu{ 
 	font-size: 25px; font-weight: bold; 
 	color: white !important;
@@ -77,7 +77,7 @@ a{
 
 
 #header .header_name{ 
-	font-size: 30px; font-weight: bold;
+	font-size: 28px; font-weight: bold;
 	color: #253f39 !important;
 	margin: 0px -10px;
 	background-color: #658a69 !important;
@@ -89,10 +89,9 @@ a{
 
 /* header member profile */
 #header .header_profile{
-	width: 50px; height: 50px;
+	width: 40px; height: 40px;
 	border-radius: 40px;
 	margin-right: 5px; 
-	/* 사진의 사이즈 비율 맞춤 */
 	object-fit: contain;	
 	object-fit: cover;		
 }
@@ -101,13 +100,35 @@ a{
 	display: flex;
 	align-items: center;
 	height: 70px; 
-	font-size: 20px;
+	font-size: 16px;
 }
 
 /* 본문 */
+#layoutnav{ 
+	background-color: #f1f5f1 !important; 
+	width: 100% !important;
+	margin: 0 auto !important;
+	display: block !important;
+	height: 790px;
+	padding-top: 5px;
+}
+#layoutnav .content{
+	margin: 10px 120px 0px 120px; padding: 30px 50px; height: 740px;
+ 	background-color: white;
+ 	border-radius: 25px;
+ 	box-shadow: #c0c0c0 3px 3px 3px;
+}
+#layoutnav .content_box{
+	width: 100%; text-align: center;
+	padding: 20px;
+}
+#layoutnav .content_table{
+	border-bottom: 1px solid #c0c0c0;
+	width: 100%;
+	display: block;
+}
 
 
-/* 캐러셀 */
 
 
 
