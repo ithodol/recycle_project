@@ -18,7 +18,7 @@
 <body>
 
 	<nav id="header" class="navbar navbar-expand-lg">
-		<div class="container-fluid mx-5">
+		<div class="container-fluid px-5 mx-5">
 			<a class="header_name navbar-brand me-5" href="index.jsp"> <!-- 로고 -->
 				<img class="header_logo" src="/recycle_project/img/logo.jpg" />
 				Spring
