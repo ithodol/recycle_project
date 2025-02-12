@@ -15,21 +15,20 @@
 <body>
 	<div id="wrap">
 		<!-- 회원가입 폼 -->
-		<div class="container col-xl-10 col-xxl-8 px-4 ">
-			<div class="row align-items-center ">
+		<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+			<div class="row align-items-center g-lg-5 py-5">
 				<!-- 로그인 구역 -->
 				<div class="login-box col-md-10 mx-auto col-lg-5">
-					<form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-						<div class="logo-box">
-							<img src="../../img/logo.jpg">
-							<div class="logo-name" >Spring</div>
-							<div class="login-title">관리자 회원가입</div>
-						</div>
+					<div class="form-floating mb-n2 logo-box">
+						<img src="../../img/logo.jpg">
+						<div class="logo-name" >Spring</div>
+						<div class="login-title">관리자 회원가입</div>
+					</div>
+					<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
 						<!-- 아이디 -->
 						<div class="form-floating mb-2"> <!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
 							<input type="text" id="adid" class="form-control  adidinput" id="floatingInput" placeholder="아이디">
 							<label for="floatingInput">아이디</label>
-							
 						</div>
 						
 						<div class="form-floating mb-2">
