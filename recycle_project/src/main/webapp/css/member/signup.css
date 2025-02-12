@@ -1,8 +1,13 @@
 @charset "UTF-8";
+#wrap{
+	background-color: none !important;
+	padding-top: 0px;
+	height : auto;
+}
+
 .top-box{
 	text-align: center;
-	margin-top: 70px; 
-	
+	margin-top: 130px; 
 }
 .img-box{
 	background-color: #658a69;
@@ -22,4 +27,20 @@
 
 .border-radius{
 	border-radius: 0px 0px 10px 10px !important;
+}
+
+.login-box .login-btn {
+    background-color: #658a69 !important;
+    color: white;
+}
+.margin{
+	margin-top: 20px !important;
+}
+.bottom-box{
+	text-align: center;
+	padding-top: 25px;
+}
+.bottom-box > a{
+	background-color: #658a69;
+	color : #ffffff !important;
 }
