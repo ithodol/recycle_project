@@ -13,6 +13,7 @@ import model.dao.member.MemberDao;
 
 @WebServlet("/point")
 public class PointController extends HttpServlet{
+	// 내 포인트 조회
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("point get test");
