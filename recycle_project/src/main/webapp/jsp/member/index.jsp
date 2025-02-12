@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Recycle Project</title>
+<title>Spring | 지구를 위한 우리의 동행</title>
 </head>
 <body>
 
