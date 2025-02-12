@@ -19,5 +19,5 @@ public class Dao {
 		}catch (Exception e) {
 			System.out.println("[DB 연동 실패]" + e );
 		}
-	} 
-} 
+	}
+}

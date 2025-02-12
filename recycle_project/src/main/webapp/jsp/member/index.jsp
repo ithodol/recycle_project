@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin</title>
+<title>Spring | 지구를 위한 우리의 동행</title>
 	<!-- Title 이미지 -->
 	<link href="../../img/title.png" rel="shortcut icon" type="image/x-icon">
 </head>
