@@ -43,7 +43,7 @@
 				<div class="side_content">
 	             	<div class="content_title">
 	        	        <h1>마이 페이지</h1>
-	     	            
+	     	           
 	                </div>
 	                	<div class="login-box col-md-10 mx-auto col-lg-5">
 					<div class="form-floating mb-n2 logo-box">
@@ -59,29 +59,29 @@
 						</div>
 						
 						<div class="form-floating mb-2">
-							<input type="password" id="adpwd" class="form-control adpwdinput" id="floatingPassword" placeholder="비밀번호" disabled> 
+							<input type="password" id="adpwd" class="form-control adpwdinput" id="floatingPassword" placeholder="비밀번호"> 
 							<label for="floatingPassword">변경할 비밀번호</label>
 						</div>
 						
 						<div class="form-floating mb-2">
-							<input type="text" id="adname" class="form-control adnameinput" id="floatingPassword" placeholder="이름" disabled> 
+							<input type="text" id="adname" class="form-control adnameinput" id="floatingPassword" placeholder="이름"> 
 							<label for="floatingPassword">이름</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="adnickname" class="form-control adnicknameinput" id="floatingPassword" placeholder="닉네임" disabled> 
+							<input type="text" id="adnickname" class="form-control adnicknameinput" id="floatingPassword" placeholder="닉네임"> 
 							<label for="floatingPassword">닉네임</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="adphone" class="form-control adphoneinput" id="floatingPassword" placeholder="연락처" disabled> 
+							<input type="text" id="adphone" class="form-control adphoneinput" id="floatingPassword" placeholder="연락처"> 
 							<label for="floatingPassword">연락처</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="ademail" class="form-control ademailinput" id="floatingPassword" placeholder="이메일" disabled> 
+							<input type="text" id="ademail" class="form-control ademailinput" id="floatingPassword" placeholder="이메일"> 
 							<label for="floatingPassword">이메일</label>
 						</div>
 						
-						<button class="login-btn w-100 btn btn-lg fw-bold mb-1" type="button" onclick="onAdminDelete()">회원 탈퇴</button>
-						<button class="login-btn w-100 btn btn-lg fw-bold" type="button" onclick="AdminUpdatePage()">정보 수정</button>
+						
+						<button class="login-btn w-100 btn btn-lg fw-bold" type="button" onclick="onAdminUpdate()">정보 수정</button>
 					</form>
 				</div>
 	                
@@ -103,6 +103,6 @@
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
 	<script src="/recycle_project/js/admin/login.js"></script>
-	<script src="/recycle_project/js/admin/admininfo.js"></script>
+	<script src="/recycle_project/js/admin/adminupdate.js"></script>
 </body>
 </html>

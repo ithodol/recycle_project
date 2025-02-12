@@ -32,7 +32,7 @@
 		
 		<!-- 로그인 상태 -->
 		<div class="sb-sidenav-footer">
-			<div class="small">아이디</div>
+			<div class="small loginname"></div>
 		</div>
 		
 		<!-- Navbar-->
@@ -44,16 +44,16 @@
 				</a>
 				
 				<ul class="dropdown-menu dropdown-menu-end"	aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">회원정보</a></li>
-					<li><a class="dropdown-item" href="#!">포인트 내역</a></li>
+					<li><a class="dropdown-item" href="/recycle_project/jsp/admin/admininfo.jsp" >마이페이지</a></li>
+					<li><a class="dropdown-item" href="">포인트 내역</a></li>
 					<li><hr class="dropdown-divider" /></li>
-					<li><a class="dropdown-item" href="#!">로그아웃</a></li>
+					<li><a class="dropdown-item" href="" onclick ="onLogOut()">로그아웃</a></li>
 				</ul>
 			</li>
 		</ul>
 	</nav>
 
 	<!-- js -->
-	<script src="recycle_project/js/admin/login.js"></script>
+	<script src="/recycle_project/js/admin/header.js"></script>
 </body>
 </html>
