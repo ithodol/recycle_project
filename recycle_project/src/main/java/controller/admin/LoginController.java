@@ -28,6 +28,7 @@ public class LoginController extends HttpServlet{
 			session.setMaxInactiveInterval(60*60);
 			
 		}
+		
 		resp.setContentType("application/json");
 		resp.getWriter().print(loginAdno);
 	}

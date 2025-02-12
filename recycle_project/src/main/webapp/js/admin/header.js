@@ -47,8 +47,9 @@ const onLogOut = ()=>{
 		.then(data=>{
 			if(data==true){
 				alert('로그아웃합니다.');
-				location.href="/recycle_project/jsp/admin/login.jsp";
+				location.href = "/recycle_project/jsp/admin/login.jsp";
 			}
 		})
 		.catch(e => { console.log(e); })
 } 
+

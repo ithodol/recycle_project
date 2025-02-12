@@ -3,7 +3,7 @@ const onLogIn = () =>{
 		const adpwd = document.querySelector('.adpwdinput').value;
 		
 		// 유효성 검사
-		if(adid ==null && adpwd == null){
+		if(adid ==null || adpwd == null){
 			alert('ID와 PASSWORD를 입력 후 로그인해주세요');
 		}
 		// fetch 
@@ -18,9 +18,10 @@ const onLogIn = () =>{
 			.then(r =>r.json())
 			.then( data => {
 				if( data > 0 ){ 
-					alert('로그인성공');
+					alert(`${adid}님 환영합니다`);
 					location.href="index.jsp"; 
-				}else{ alert('로그인실패'); }
+				}else{ alert('ID와 PASSWORD를 확인해주세요'); }
 			})
 			.catch( error => { console.log(error )})
 }
+
