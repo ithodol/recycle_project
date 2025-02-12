@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Recycle Project - 챌린지</title>
+	<!-- Title 이미지 -->
+	<link href="../../img/title.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 

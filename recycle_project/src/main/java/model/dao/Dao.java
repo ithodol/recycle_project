@@ -20,4 +20,8 @@ public class Dao {
 			System.out.println("[DB 연동 실패]" + e );
 		}
 	} 
+<<<<<<< HEAD
 } 
+=======
+} 
+>>>>>>> branch 'park' of https://github.com/ithodol/recycle_project
