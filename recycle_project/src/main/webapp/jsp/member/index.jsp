@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Recycle Project</title>
+<title>Admin</title>
+	<!-- Title 이미지 -->
+	<link href="../../img/title.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 
