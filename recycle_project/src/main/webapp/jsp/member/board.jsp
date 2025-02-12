@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Recycle Project - 챌린지</title>
 </head>
 <body>
 

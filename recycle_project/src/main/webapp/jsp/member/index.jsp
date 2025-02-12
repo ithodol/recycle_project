@@ -4,28 +4,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Recycle Project</title>
 </head>
 <body>
 
 	<jsp:include page="header.jsp"></jsp:include>
 
 	<!-- 캐러셀 -->
-	<div id="carouselExample" class="carousel slide">
+	<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
 		<!-- 이미지 본문들 -->
 		<div class="carousel-inner">
 			<!-- 각 이미지 항목 -->
-			<div class="carousel-item active">
-				<img src="/recycle_project/img/main1.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-item active" data-bs-interval="10000">
+				<img src="/recycle_project/img/main1.jpg" class="d-block w-100" alt="">
 			</div>
-			<div class="carousel-item">
-				<img src="/recycle_project/img/main2.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-item" data-bs-interval="10000">
+				<img src="/recycle_project/img/main2.jpg" class="d-block w-100" alt="">
 			</div>
-			<div class="carousel-item">
-				<img src="/recycle_project/img/main3.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-item" data-bs-interval="10000">
+				<img src="/recycle_project/img/main3.jpg" class="d-block w-100" alt="">
 			</div>
-			<div class="carousel-item">
-				<img src="/recycle_project/img/main4.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-item" data-bs-interval="10000">
+				<img src="/recycle_project/img/main4.jpg" class="d-block w-100" alt="">
 			</div>
 		</div>
 		<!-- 왼쪽 버튼 -->
