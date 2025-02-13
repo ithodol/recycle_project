@@ -1,13 +1,28 @@
 @charset "UTF-8";
+/* 전체구역 */
+body{
+	background-color: #f1f5f1 !important;
+}
+
 #wrap{
-	background-color: none !important;
+	
 	padding-top: 0px;
 	height : auto;
 }
+.left-txt{
+	padding-bottom: 50px;
+	font-size: 20px;
+}
+.left-txt > h2 {
+	font-weight: bold;
+	color: #658a69;
+}
 
+
+/* 버튼 */
 .top-box{
 	text-align: center;
-	margin-top: 130px; 
+	/*margin-top: 130px;*/ 
 }
 .img-box{
 	background-color: #658a69;
@@ -16,26 +31,21 @@
 }
 .img-box > img{
 	width: 200px;
-	margin: 15px 0px;
-}
-
-.login-title{
-	margin: 100px 0px 50px 0px !important;
-	font-size: 30px;
-	font-weight: bold;
+	margin: 10px 0px;
 }
 
 .border-radius{
 	border-radius: 0px 0px 10px 10px !important;
 }
 
+
+/* 버튼 */
 .login-box .login-btn {
     background-color: #658a69 !important;
     color: white;
 }
-.margin{
-	margin-top: 20px !important;
-}
+
+
 .bottom-box{
 	text-align: center;
 	padding-top: 25px;
@@ -43,4 +53,18 @@
 .bottom-box > a{
 	background-color: #658a69;
 	color : #ffffff !important;
+}
+
+.l-flex{
+	display: flex;
+	justify-content: space-between !important;
+	width: 100% !important;
+	margin-top: 120px 0px 100px 0px !important;
+	align-items: center;
+}
+
+
+.fixed-bottom{
+	/*height: 30px;*/
+	padding: 0px;
 }
