@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.dao.board.BoardDao;
 import model.dto.board.BoardDto;
 
@@ -23,14 +24,14 @@ public class BoardController extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		BoardDto boardDto = mapper.readValue( req.getReader() , BoardDto.class );
 //		세션 정보 가져오기
-//		HttpSession session = req.getSession();
-//		Object object = session.getAttribute("logInMno");
-//		int logInMno = 0;
-//		if( object != null ) {
-//			logInMno = (Integer)object;
-//			System.out.println(logInMno);
-//			boardDto.setMno(logInMno);
-//		} // if end
+		HttpSession session = req.getSession();
+		Object object = session.getAttribute("logInMno");
+		int loginMno = 0;
+		if( object != null ) {
+			loginMno = (Integer)object;
+			System.out.println(loginMno);
+			boardDto.setMno(loginMno);
+		} // if end
 		
 		boolean result = BoardDao.getInstance().write(boardDto);
 		resp.setContentType("application/json");

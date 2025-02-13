@@ -121,13 +121,18 @@ public class MemberDao extends Dao {
 	public ArrayList<PointDto> getPointLog(int loginMno){
 		ArrayList<PointDto> list = new ArrayList<PointDto>();
 		try {
-			String sql = "select * from where mno = ?";
+			String sql = "select * from pointlog where mno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, loginMno);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				PointDto pointDto = new PointDto();
-				pointDto.setPono(rs.getInt("pono"));
+				pointDto.setPono( rs.getInt("pono") );
+				pointDto.setPocontent( rs.getString("pocontent") );
+				pointDto.setPocount( rs.getInt("pocount") );
+				pointDto.setPodate( rs.getString("podate") );
+				pointDto.setMno( rs.getInt("mno") );
+				list.add(pointDto);
 			}
 			
 		}catch(SQLException e) {System.out.println(e);}
