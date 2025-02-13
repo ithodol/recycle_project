@@ -11,11 +11,15 @@ const findAll = () => {
 			let boardlist = document.querySelector('.boardlist > tbody');
 			let html = '';
 			
-			response.forEach( board => {
+			response.data.forEach( board => {
 				bdate = board.bdate.substr(0,10);
 				html += `<tr>
 							<td> ${ board.bno } </td>
-							<td style="text-align: left;> ${ board.btitle } </td>
+							<td style="text-align: left;">
+								<a href="view.jsp?bno=${ board.bno }">
+									${ board.btitle } 
+								</a> 
+							</td>
 							<td> ${ board.mnickname } </td>
 							<td> ${ bdate } </td>
 							<td> ${ board.bpeople } </td>
@@ -25,30 +29,12 @@ const findAll = () => {
 						
 			}) // for end
 			boardlist.innerHTML = html;
+			getPageBtn( response );
 		}) // then end
 		.catch( e => { console.log(e); } )
 	
 } // f end
 findAll();
 
-// [2] 페이지 버튼 생성 함수
-const getPageBtn = ( response ) => {
-	
-	page = parseInt( response.page );
-	const pagebtnbox = document.querySelector('.pagebtnbox');
-	let html = '';
-		// 이전 버튼
-		html += `<li class="page-item">
-					<a class="page-link" href="board.jsp?page=${ page <= 1 ? 1 : page-1 }" aria-label="Previous"> 
-						<span aria-hidden="true">&laquo;</span>
-					</a>
-				</li>`;
-	for( let i = response.startbtn ; i <= response.endbtn ; i++ ){
-		html += `<li class="page-item"><a class="page-link ${ page == i ? 'active' : '' }" href="board.jsp?page=${ i }">${ i }</a></li>`
-		
-	} // for end
-	
-				
-	
-} // f end
+
 
