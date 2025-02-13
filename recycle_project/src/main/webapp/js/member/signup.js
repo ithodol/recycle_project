@@ -18,7 +18,7 @@ const onSignUp = () => {
 			console.log(data);
 			if(data == true){
 				alert('회원가입 성공');
-				location.href="login.jsp";
+				location.href="/recycle_project/jsp/member/index.jsp";
 			}else{
 				alert('회원가입 실패');
 			}

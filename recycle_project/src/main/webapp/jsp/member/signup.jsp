@@ -36,29 +36,29 @@
 		
 								<!-- 아이디 -->
 								<div class="form-floating mb-2"> <!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
-									<input type="text" id="adid" class="form-control  adidinput" id="floatingInput" placeholder="아이디">
+									<input type="text" name="uploadfile" class="form-control  adidinput" id="floatingInput" placeholder="아이디">
 									<label for="floatingInput">아이디</label>
 								</div>
 								
 								<div class="form-floating mb-2">
-									<input type="password" id="adpwd" class="form-control adpwdinput" id="floatingPassword" placeholder="비밀번호"> 
+									<input type="password" name="uploadfile" class="form-control adpwdinput" id="floatingPassword" placeholder="비밀번호"> 
 									<label for="floatingPassword">비밀번호</label>
 								</div>
 								
 								<div class="form-floating mb-2">
-									<input type="text" id="adpwd" class="form-control  adnameinput" id="floatingPassword" placeholder="이름"> 
+									<input type="text" name="uploadfile" class="form-control  adnameinput" id="floatingPassword" placeholder="이름"> 
 									<label for="floatingPassword">이름</label>
 								</div>
 								<div class="form-floating mb-2">
-									<input type="text" id="adpwd" class="form-control  adnicknameinput" id="floatingPassword" placeholder="닉네임"> 
+									<input type="text" name="uploadfile" class="form-control  adnicknameinput" id="floatingPassword" placeholder="닉네임"> 
 									<label for="floatingPassword">닉네임</label>
 								</div>
 								<div class="form-floating mb-2">
-									<input type="text" id="adpwd" class="form-control  adphoneinput" id="floatingPassword" placeholder="연락처"> 
+									<input type="text" name="uploadfile" class="form-control  adphoneinput" id="floatingPassword" placeholder="연락처"> 
 									<label for="floatingPassword">연락처</label>
 								</div>
 								<div class="form-floating mb-2">
-									<input type="text" id="adpwd" class="form-control  ademailinput" id="floatingPassword" placeholder="이메일"> 
+									<input type="text" name="uploadfile" class="form-control  ademailinput" id="floatingPassword" placeholder="이메일"> 
 									<label for="floatingPassword">이메일</label>
 								</div>
 								<div class="form-floating mb-3">
