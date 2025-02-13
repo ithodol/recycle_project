@@ -35,7 +35,7 @@ public class GetMemberDao extends Dao{
 	public ArrayList<MemberDto> findAll() {
 		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
 		try {
-			String sql = "select * from member";
+			String sql = "select member.mno, mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by member.mno";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
