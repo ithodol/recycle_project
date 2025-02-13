@@ -76,26 +76,27 @@ public class GetMemberDao extends Dao{
 	}
 
 
-	public PointLogDto findPointLog(int mno) {
+	public  ArrayList<PointLogDto> findPointLog(int mno) {
+		ArrayList<PointLogDto> list = new ArrayList<PointLogDto>();
 		try {
 			String sql ="select pointlog.mno, pointlog.podate, pointlog.pocontent, pointlog.pocount as point from member inner join pointlog on member.mno = pointlog.mno where member.mno = ?  group by point ,pointlog.podate, pointlog.pocontent";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1,mno);
 			ResultSet rs = ps.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				PointLogDto pointLogDto = new PointLogDto();
 				pointLogDto.setMno(rs.getInt("mno"));
 				pointLogDto.setPodate(rs.getString("podate"));
 				pointLogDto.setPocontent(rs.getString("pocontent"));
 				pointLogDto.setPoint(rs.getInt("point"));
+				list.add(pointLogDto);
 				
-				return pointLogDto;
 			}
 			
 			
 		}catch(Exception e){
 			System.out.println(e);}
-		return null;
+		return list;
 	}
 	
 	
