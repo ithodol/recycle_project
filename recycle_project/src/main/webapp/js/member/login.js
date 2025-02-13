@@ -2,7 +2,7 @@ console.log('login.js open');
 
 const onLogIn = () => {
 	const mid = document.querySelector('.midinput').value
-	const mpwd = document.querySelector('.midinput').value
+	const mpwd = document.querySelector('.mpwdinput').value
 	
 	const obj = {
 		mid : mid,
