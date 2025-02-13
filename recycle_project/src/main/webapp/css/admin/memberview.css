@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+
+
+table>thead>tr>th, table>tbody>tr>td {
+    width: 25%; /* 4개의 컬럼이니까 100% / 4 */
+    text-align: left;
+    padding: 10px;
+ 
+}
+.no {
+    width: 25%; /* 4개의 컬럼이니까 100% / 4 */
+    text-align: left;
+    padding: 10px;
+  
+}
