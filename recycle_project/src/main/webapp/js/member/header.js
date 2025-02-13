@@ -35,12 +35,12 @@ const getLoginInfo = () => {
 						<li class="nav-item dropdown">
 							<a class="login_menu nav-link dropdown-toggle text-light" href="#" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
-								<img class="header_profile" src="/recycle_project/upload/${data.mimg}" /> 
-								 ${data.mnickname} 
+								<img class="header_profile" src="/recycle_project/upload/${data.mprofile}" /> 
+								 ${data.mnickname} 님
 							</a>
 							<ul class="dropdown-menu dropdown-menu-lg-end">
-								<li><a class="login_drop dropdown-item" href="/recycle_project/jsp/member/info.jsp">회원정보</a></li>
-								<li><a class="login_drop dropdown-item" href="#">포인트 내역</a></li>
+								<li><a class="login_drop dropdown-item" href="/recycle_project/jsp/member/info.jsp">마이페이지</a></li>
+								<li><a class="login_drop dropdown-item" href="#">포인트 조회</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="login_drop dropdown-item" href="#" onclick="onLogOut()">로그아웃</a></li>
 							</ul>
@@ -62,5 +62,30 @@ getLoginInfo();
 
 
 const onLogOut = () => {
-	
+	const option = {
+		method : 'DELETE'
+	}
+	fetch('/recycle_project/member/login', option)
+		.then(r => r.json())
+		.then(data => {
+			if(data == true){
+				alert('로그아웃 되었습니다');
+				location.href="/recycle_project/jsp/member/index.jsp";
+			}
+		})
+		.catch(e => {console.log(e);})
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
