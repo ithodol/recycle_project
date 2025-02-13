@@ -36,12 +36,26 @@ public class BoardDao extends Dao{
 		return false;
 	} // f end
 	
+//	2-1. 전체 게시물 개수 조회
+	public int getTotalSize() {
+		try {
+			String sql = "select count(*) form board";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) { return rs.getInt(1); }
+		}catch( SQLException e ) { System.out.println(e); }
+		return 0;
+	} // f end
+	
 //	2. 전체 게시물 조회
-	public ArrayList<BoardDto> findAll() {
+	public ArrayList<BoardDto> findAll( int startRow , int display ) {
 		ArrayList<BoardDto> result = new ArrayList<>();
 		try {
-			String sql = "select * from board";
+			String sql = "select b.*, m.mnickname from board b inner join member m "
+					+ "on b.mno = m.mno order by b.bno desc limit ? , ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setInt(1, startRow);
+				ps.setInt(2, display);
 			ResultSet rs = ps.executeQuery();
 			while( rs.next() ) {
 				BoardDto boardDto = new BoardDto();
@@ -56,7 +70,7 @@ public class BoardDao extends Dao{
 				boardDto.setBview(rs.getInt("bview"));
 				boardDto.setBlike(rs.getInt("blike"));
 				boardDto.setBpoint(rs.getInt("bpoint"));
-				boardDto.setMno(rs.getInt("mno"));
+				boardDto.setMnickname(rs.getString("mnickname"));
 				result.add(boardDto);
 			} // w end
 		}catch( SQLException e ) { System.out.println(e); }	
