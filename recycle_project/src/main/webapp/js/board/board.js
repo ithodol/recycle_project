@@ -34,7 +34,21 @@ findAll();
 // [2] 페이지 버튼 생성 함수
 const getPageBtn = ( response ) => {
 	
-	page = parseInt( response.page )
+	page = parseInt( response.page );
+	const pagebtnbox = document.querySelector('.pagebtnbox');
+	let html = '';
+		// 이전 버튼
+		html += `<li class="page-item">
+					<a class="page-link" href="board.jsp?page=${ page <= 1 ? 1 : page-1 }" aria-label="Previous"> 
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>`;
+	for( let i = response.startbtn ; i <= response.endbtn ; i++ ){
+		html += `<li class="page-item"><a class="page-link ${ page == i ? 'active' : '' }" href="board.jsp?page=${ i }">${ i }</a></li>`
+		
+	} // for end
+	
+				
 	
 } // f end
 
