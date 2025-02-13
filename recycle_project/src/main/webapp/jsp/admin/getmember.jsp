@@ -46,29 +46,19 @@
 	                    </ol>
 	                </div>
 	                <div class="container"> <!-- container -->
-						<table class="table boardlist">
+						<table class="table boardlist" style="width:90%; margin:0px auto;">
 							<thead>
 								<tr>
-									<th>번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>작성일</th>
-									<th>모집인원</th>
-									<th>조회수</th>
-									<th>추천</th>
+									<th >회원번호</th>
+									<th>아이디</th>
+									<th>이름</th>
+									<th>포인트</th>
+									<th>수정</th>
 								</tr>
 							</thead>
 
 							<tbody>
-								<tr>
-									<td> 1 </td>
-									<td> 제목 </td>
-									<td> 작성자 </td>
-									<td> 작성일 </td>
-									<td> 모집인원 </td>
-									<td> 조회수 </td>
-									<td> 추천수 </td>
-								</tr>
+								
 							</tbody>
 						</table>
 
@@ -106,6 +96,7 @@
 	<script	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
+	<script src="/recycle_project/js/admin/getmember.js"></script>
 
 
 </body>

@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Recycle Project Admin - 마이페이지</title>
+<link href="../../img/title.ico" rel="shortcut icon" type="image/x-icon">
 	<meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -42,14 +43,13 @@
 			<main>
 				<div class="side_content">
 	             	<div class="content_title">
-	        	        <h1>마이 페이지</h1>
+	        	       
 	     	            
 	                </div>
 	                	<div class="login-box col-md-10 mx-auto col-lg-5">
-					<div class="form-floating mb-n2 logo-box">
-						<img src="../../img/logo.jpg">
-						<div class="logo-name" >Spring</div>
-						<div class="login-title">관리자 정보 수정</div>
+					<div class="form-floating mb-n2 logo-box" style="justify-content: center !important; ">
+					
+						<div class="login-title" style="margin-left:0px;">관리자 정보 수정</div>
 					</div>
 					<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
 						<!-- 아이디 -->

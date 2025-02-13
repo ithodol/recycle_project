@@ -45,7 +45,6 @@
 				
 				<ul class="dropdown-menu dropdown-menu-end"	aria-labelledby="navbarDropdown">
 					<li><a class="dropdown-item" href="/recycle_project/jsp/admin/admininfo.jsp" >마이페이지</a></li>
-					<li><a class="dropdown-item" href="">포인트 내역</a></li>
 					<li><hr class="dropdown-divider" /></li>
 					<li><a class="dropdown-item" href="" onclick ="onLogOut()">로그아웃</a></li>
 				</ul>

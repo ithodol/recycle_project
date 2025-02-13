@@ -15,7 +15,7 @@
 				<div class="nav">
 					<!-- Dashboard -->
 					<div class="sb-sidenav-menu-heading">주요 기능</div>
-						<a class="nav-link" href="index.html">
+						<a class="nav-link" href="/recycle_project/jsp/admin/index.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 현황
@@ -39,7 +39,7 @@
 						<div class="collapse" id="collapseLayouts"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="dropmenu nav-link" href="layout-static.html">
+								<a class="dropmenu nav-link" href="/recycle_project/jsp/admin/getmember.jsp">
 									회원정보 조회
 								</a> 
 								<a class="dropmenu nav-link" href="layout-sidenav-light.html">
