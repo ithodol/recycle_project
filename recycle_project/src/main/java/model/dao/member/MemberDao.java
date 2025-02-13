@@ -83,14 +83,13 @@ public class MemberDao extends Dao {
 	// 내 정보 수정
 	public boolean update(MemberDto memberDto) {
 		try {
-			String sql = "update member set mpwd = ?, mnickname = ?, mphone = ?, memail = ?, mprofile = ? where mno = ?";
+			String sql = "update member set mpwd = ?, mnickname = ?, mphone = ?, memail = ? where mno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, memberDto.getMpwd());
 			ps.setString(2, memberDto.getMnickname());
 			ps.setString(3, memberDto.getMphone());
 			ps.setString(4, memberDto.getMemail());
-			ps.setString(5, memberDto.getMprofile());
-			ps.setInt(6, memberDto.getMno());
+			ps.setInt(5, memberDto.getMno());
 			
 			int c = ps.executeUpdate();
 			if(c == 1) {
