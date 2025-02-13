@@ -56,23 +56,10 @@
 				
 				<!-- 오른쪽 메뉴 목록 -->
 				<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 LogInMenu">
-					<!-- 비로그인시 나타날 리스트 -->
-					<li class="login_menu nav-item"><a class="nav-link text-light" href="login.jsp">로그인</a></li>
-					<li class="login_menu nav-item"><a class="nav-link text-light" href="signup.jsp">회원가입</a></li>
-					<!-- 로그인시 나타날 리스트 -->
-					<li class="nav-item dropdown">
-						<a class="login_menu nav-link dropdown-toggle text-light" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">
-							<img class="header_profile" src="/recycle_project/upload/default.jpg" /> 
-							 로그인된 아이디 
-						</a>
-						<ul class="dropdown-menu dropdown-menu-lg-end">
-							<li><a class="login_drop dropdown-item" href="#">회원정보</a></li>
-							<li><a class="login_drop dropdown-item" href="#">포인트 내역</a></li>
-							<li><hr class="dropdown-divider"></li>
-							<li><a class="login_drop dropdown-item" href="#">로그아웃</a></li>
-						</ul>
-					</li>
+					<!-- 비로그인시 나타날 리스트 -> js -->
+					
+					<!-- 로그인시 나타날 리스트 -> js -->
+					
 				</ul>
 			</div>
 		</div>
@@ -81,6 +68,7 @@
 	<!-- 부트스트랩 js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<!-- js -->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="/recycle_project/js/member/header.js"></script>
 	
 </body>
