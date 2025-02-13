@@ -17,7 +17,7 @@ public class GetMemberDao extends Dao{
 	@Getter
 	private static GetMemberDao instance = new GetMemberDao();
 
-	
+	 
 	
 //	public int getTotalSize( int mno ) {
 //        try {

@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.dao.admin.GetMemberDao;
 import model.dto.admin.PageDto;
 import model.dto.member.MemberDto;
-
+ 
  
 @WebServlet("/admin/find")
 public class GetMemberController extends HttpServlet{
