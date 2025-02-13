@@ -305,6 +305,3 @@ select * from reply;
 select * from admin;
 select * from announcement;
 
-select member.mno,mid,mname,mphone, podate, pocontent,sum(pointlog.pocount) from member inner join pointlog on member.mno = pointlog.mno  where member.mno =1;
-
-select pointlog.podate, pointlog.pocontent, sum(pointlog.pocount) as point from member inner join pointlog on member.mno =  pointlog.mno where member.mno =1 group by  pointlog.podate, pointlog.pocontent;
