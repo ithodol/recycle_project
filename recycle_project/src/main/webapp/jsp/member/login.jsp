@@ -9,6 +9,7 @@
 	<!-- 부트스트랩 CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<!-- CSS -->
+	<link href="/recycle_project/css/member/signup.css" rel="stylesheet" />
 	<link href="/recycle_project/css/member/login.css" rel="stylesheet" />
 	
 </head>
@@ -21,9 +22,12 @@
 		<div class="container col-xl-10 col-xxl-8 px-4 py-5">
 			<div class="row align-items-center g-lg-5 py-5">
 				<!-- 로그인 구역 -->
+
 				<div class="login-box col-md-10 mx-auto col-lg-5">
-					<div class="form-floating mb-n2 logo-box">
-						<div class="login-title mx-auto">로그인</div>
+					<div class="top-box">
+						<div class="img-box">
+							<img src="../../img/member_logo.jpg"/>
+						</div>
 					</div>
 					<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
 						<!-- 아이디 -->
