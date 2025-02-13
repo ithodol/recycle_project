@@ -22,4 +22,5 @@ public class BoardDto {
 	private int blike;
 	private int bpoint;	
 	private int mno;
+	private String mnickname;
 }

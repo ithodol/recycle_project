@@ -15,14 +15,14 @@
 	<!-- 본문 -->
 	<div id="layoutnav">
 		<div class="content">
-            	<div class="content_title">
+            <div class="content_title">
        	        <h1>회원 관리</h1>
-    	            <ol class="breadcrumb mb-4">
- 	                    <li class="breadcrumb-item active">회원정보 조회</li>
-                   </ol>
-               </div>
+   	            <ol class="breadcrumb mb-4">
+	                <li class="breadcrumb-item active">회원정보 조회</li>
+                </ol>
+            </div>
                <div class="container"> <!-- container -->
-				<table class="table boardlist">
+				<table class="table boardlist" style="text-align: center;">
 					<thead>
 						<tr>
 							<th>번호</th>
@@ -31,101 +31,11 @@
 							<th>작성일</th>
 							<th>모집인원</th>
 							<th>조회수</th>
-							<th>추천</th>
+							<th>추천수</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
-						<tr>
-							<td> 1 </td>
-							<td> 제목 </td>
-							<td> 작성자 </td>
-							<td> 작성일 </td>
-							<td> 모집인원 </td>
-							<td> 조회수 </td>
-							<td> 추천수 </td>
-						</tr>
 						
 					</tbody>
 				</table>
@@ -165,6 +75,8 @@
 	
 	<jsp:include page="footer.jsp"></jsp:include>
 
+	<!-- js -->
+	<script src="/recycle_project/js/board/board.js"></script>
 
 </body>
 </html>
