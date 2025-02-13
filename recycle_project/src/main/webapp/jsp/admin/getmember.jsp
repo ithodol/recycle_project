@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Recycle Project Admin - 회원 조회</title>
 	<!-- Title 이미지 -->
 	<link href="../../img/title.ico" rel="shortcut icon" type="image/x-icon">
 	
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Recycle Project Admin - 회원 조회</title>
      <!-- 부트스트랩 css -->
 	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
 	<link href="../../resources/css/styles.css" rel="stylesheet" />
