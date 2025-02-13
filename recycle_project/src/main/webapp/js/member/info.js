@@ -5,7 +5,7 @@ const getMyInfo = () => {
 	const option = {
 		method : 'GET'
 	}
-	
+	 
 	fetch('/recycle_project/member/info', option)
 		.then(r => r.json())
 		.then(data => {
