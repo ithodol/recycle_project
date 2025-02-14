@@ -20,7 +20,7 @@
 	<!-- 회원가입 폼 -->
 	<div class="container col-xl-10 col-xxl-8 px-4 py-5">
 		<div class="row g-lg-5 py-5">
-			<!-- 왼쪽 메세지 구역 -->
+			<!-- 왼쪽 정보 구역 -->
 			<div class="col-md-10 mx-auto col-lg-5">
 				<div class="form-floating mb-n2 logo-box">
 					<div class="info-title text-light mx-auto">
@@ -28,6 +28,16 @@
 					</div>
 				</div>
 				<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
+					<!-- 프로필 사진 -->
+					<div class="form-floating mb-3 mprofilebox">
+	                  <img src="" class="mprofile" />
+	                </div>
+	                
+	                <!-- 현재 포인트 -->
+	                <div class="mypoint">
+	                	
+	                </div>
+	                
 					<!-- 회원정보 -->
 					<div class="form-floating mb-3"> <!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
 						<input readonly type="text" id="mid" class="form-control midinput" id="floatingInput" placeholder="아이디"> 
@@ -61,24 +71,35 @@
 			</div>
 			
 			<!-- 오른쪽 포인트 구역 -->
-			<div class="col-lg-7 text-center text-lg-start point-table">
-				<div>포인트 적립 내역</div>
-				<table class="table ">
-					<thead>
-						<tr>
-							<th scope="col">내용</th>
-							<th scope="col">포인트</th>
-							<th scope="col">일자</th>
-						</tr>
-					</thead>
-					<tbody class="pointTbody">
-						
-					</tbody>
-				</table>
+			<!--<div class="col-lg-7 text-center text-lg-start point-table">-->
+			<div class="col-md-10 mx-auto col-lg-5 r-width">
+				<div class="form-floating mb-n2 logo-box">
+					<div class="info-title text-light mx-auto">
+						<h3>포인트 적립 내역</h3>
+					</div>
+				</div>
+				 <form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary r-h"> 
+					<div>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">순번</th>
+									<th scope="col">내용</th>
+									<th scope="col">포인트</th>
+									<th scope="col">일자</th>
+								</tr>
+							</thead>
+							<tbody class="pointTbody">
+								
+							</tbody>
+						</table>
+						<button class="bottom-btn btn btn-lg r-bottom-btn" type="button" onclick="">페이지</button>
+					</div>
+				</form>
 			</div>
-			
-		</div>
+		</div> 
 	</div>
+	
 	
 	<jsp:include page="footer.jsp"></jsp:include>
 		
