@@ -40,7 +40,6 @@ const getLoginInfo = () => {
 							</a>
 							<ul class="dropdown-menu dropdown-menu-lg-end">
 								<li><a class="login_drop dropdown-item" href="/recycle_project/jsp/member/info.jsp">마이페이지</a></li>
-								<li><a class="login_drop dropdown-item" href="#">포인트 조회</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="login_drop dropdown-item" href="#" onclick="onLogOut()">로그아웃</a></li>
 							</ul>
