@@ -59,7 +59,6 @@ const onDelete = () => {
 
 
 // 내 포인트 내역 조회
-// info.js 열릴 때마다 실행
 const getPointLog = () => {
 	const option = {
 		method : 'GET'
@@ -70,11 +69,50 @@ const getPointLog = () => {
 			if(data != null){
 				const tbody = document.querySelector('tbody');
 				let html = ``
-				data.forEach()
+				console.log(data);
+				data.forEach((point, index) =>{
+					//const date = new Date(point.podate);
+					//const dateOnly = date.toISOString().split('T')[0];
+					//console.log(dateOnly);
+					html += `<tr>
+                                <th> ${ index+1} </th> 
+                                <th> ${ point.pocontent } </th>
+                                <th> ${ point.pocount } </th> 
+                                <th> ${ point.podate } </th>
+                        	</tr>`
+				})
+				tbody.innerHTML = html;
 			}
 		})
-	
+		.catch(e => {console.log(e);})
 }
+getPointLog();
+
+
+
+// 내 잔여 포인트 조회
+const getMyPoint = () => {
+	const option = {
+		method : 'GET'
+	}
+	fetch('/recycle_project/member/info', option)
+		.then(r => r.json())
+		.then(data => {
+			if(data != null){
+				let mypoint = document.querySelector('.mypoint');
+				let html = ``
+				html += `
+						${data.mpoint} 포인트
+						`
+				console.log(data.mpoint);
+
+				mypoint.innerHTML = html;
+			}
+			
+		})
+		.catch(e => {console.log(e);})
+}
+getMyPoint();
 
 
 
