@@ -20,6 +20,7 @@
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 	<!-- css -->
 	<link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
+	<link href="/recycle_project/css/admin/memberview.css" rel="stylesheet" />
 	<!-- 폰트 -->
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
@@ -40,39 +41,46 @@
 			<main>
 				<div class="side_content">
 	             	<div class="content_title">
-	        	        <h1>회원 관리</h1>
+	        	        <h1>회원정보 상세조회</h1>
 	     	            <ol class="breadcrumb mb-4">
-	  	                    <li class="breadcrumb-item active">회원정보 조회</li>
+	  	                    <li class="breadcrumb-item active"></li>
 	                    </ol>
 	                </div>
 	                <div class="container"> <!-- container -->
 						<table class="table boardlist" style="width:90%; margin:0px auto;">
 							<thead>
 								<tr>
-									<th >회원번호</th>
-									<th>아이디</th>
-									<th>이름</th>
-									<th>포인트</th>
-									<th>수정</th>
+									<th class="no">회원번호</th>
+									<th style="text-align:left;">아이디</th>
+									<th style="text-align:left;">이름</th>
+									<th style="text-align:left;">포인트</th>
+									
 								</tr>
 							</thead>
 
-							<tbody>
+							<tbody class="getmember">
 								
 							</tbody>
 						</table>
+						<br></br>
+						<hr>
+						<br></br>
+						
+						 <h1></h1>
+	     	            <ol class="breadcrumb mb-4">
+	  	                    <li class="breadcrumb-item active">사용자 포인트 로그</li>
+	                    </ol>
 					<table class="table boardlist" style="width:90%; margin:0px auto;">
 						<thead>
 								<tr>
-									<th >회원번호</th>
-									<th>아이디</th>
-									<th>이름</th>
+									<th class="no">번호</th>
 									<th>포인트</th>
-									<th>수정</th>
+									<th >포인트지급내용</th>
+									<th >적립날짜</th>
 								</tr>
 							</thead>
 
-							<tbody>
+							<tbody class="memberbypoint">
 								
 							</tbody>
 						</table>
@@ -82,18 +90,6 @@
 
 							</ul>
 						</nav>
-						
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<!-- 모달 버튼 -->
-							<jsp:include page="../modal.jsp"></jsp:include>
-							
-							<button onclick="location.href='write.jsp'" class="btn btn-secondary me-md-2" 
-							style="background-color: #658a69;" type="button">글쓰기
-							</button>
-							<button class="btn btn-secondary" style="background-color: #658a69;" 
-							type="button">버튼
-							</button>
-						</div>
 												
 					</div>   
 				</div>
