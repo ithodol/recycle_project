@@ -58,6 +58,53 @@ const onDelete = () => {
 
 
 
+// 내 포인트 내역 조회
+// info.js 열릴 때마다 실행
+const getPointLog = () => {
+	const option = {
+		method : 'GET'
+	}
+	fetch('/recycle_project/point', option)
+		.then(r => r.json())
+		.then(data => {
+			if(data != null){
+				const tbody = document.querySelector('tbody');
+				let html = ``
+				data.forEach()
+			}
+		})
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
