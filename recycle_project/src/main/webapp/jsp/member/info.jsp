@@ -28,11 +28,6 @@
 					</div>
 				</div>
 				<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
-					<!-- 프로필 사진 -->
-					<div class="form-floating mb-3 mprofilebox">
-	                  <img src="" class="mprofile" />
-	                </div>
-	                
 					<!-- 회원정보 -->
 					<div class="form-floating mb-3"> <!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
 						<input readonly type="text" id="mid" class="form-control midinput" id="floatingInput" placeholder="아이디"> 
@@ -61,7 +56,7 @@
 
 					
 					<button class="bottom-btn w-100 btn btn-lg" type="button" onclick="loUpdate()">정보수정</button>
-					<button class="bottom-btn w-100 btn btn-lg" type="button" onclick="onDelete()">회원탈퇴</button>
+					<button class="bottom-btn w-100 btn btn-lg" type="button" onclick="onDelete()">회원삭제</button>
 				</form>
 			</div>
 			
