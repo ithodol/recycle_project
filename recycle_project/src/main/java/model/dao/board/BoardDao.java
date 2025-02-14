@@ -36,17 +36,6 @@ public class BoardDao extends Dao{
 		return false;
 	} // f end
 	
-//	2-1. 전체 게시물 개수 조회
-	public int getTotalSize() {
-		try {
-			String sql = "select count(*) form board";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			if( rs.next() ) { return rs.getInt(1); }
-		}catch( SQLException e ) { System.out.println(e); }
-		return 0;
-	} // f end
-	
 //	2. 전체 게시물 조회
 	public ArrayList<BoardDto> findAll( int startRow , int display ) {
 		ArrayList<BoardDto> result = new ArrayList<>();

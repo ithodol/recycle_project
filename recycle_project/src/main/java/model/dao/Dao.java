@@ -2,6 +2,9 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Dao {
 	protected Connection conn;		// DB와 연동 결과를 조작하는 인터페이스 
@@ -20,4 +23,16 @@ public class Dao {
 			System.out.println("[DB 연동 실패]" + e );
 		}
 	}
+	
+//	1. 조회할 테이블의 전체 게시물 개수 조회
+	public int getTotalSize( String str ) {
+		try {
+			String sql = "select count(*) from " + str;
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) { return rs.getInt(1); }
+		}catch( SQLException e ) { System.out.println(e); }
+		return 0;
+	} // f end
+	
 }

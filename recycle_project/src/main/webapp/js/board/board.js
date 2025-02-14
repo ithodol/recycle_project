@@ -11,11 +11,15 @@ const findAll = () => {
 			let boardlist = document.querySelector('.boardlist > tbody');
 			let html = '';
 			
-			response.forEach( board => {
+			response.data.forEach( board => {
 				bdate = board.bdate.substr(0,10);
 				html += `<tr>
 							<td> ${ board.bno } </td>
-							<td style="text-align: left;> ${ board.btitle } </td>
+							<td style="text-align: left;">
+								<a href="view.jsp?bno=${ board.bno }">
+									${ board.btitle } 
+								</a> 
+							</td>
 							<td> ${ board.mnickname } </td>
 							<td> ${ bdate } </td>
 							<td> ${ board.bpeople } </td>
@@ -25,16 +29,12 @@ const findAll = () => {
 						
 			}) // for end
 			boardlist.innerHTML = html;
+			getPageBtn( response );
 		}) // then end
 		.catch( e => { console.log(e); } )
 	
 } // f end
 findAll();
 
-// [2] 페이지 버튼 생성 함수
-const getPageBtn = ( response ) => {
-	
-	page = parseInt( response.page )
-	
-} // f end
+
 
