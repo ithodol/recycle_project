@@ -25,6 +25,9 @@ public class InfoController extends HttpServlet{
 		if(object != null) {
 			int loginMno = (Integer)object;
 			result = MemberDao.getInstance().myInfo(loginMno);
+			
+			int mpoint = MemberDao.getInstance().getPoint(loginMno);
+			result.setMpoint(mpoint);
 		}
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonResult = mapper.writeValueAsString(result);
