@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.dao.member.MemberDao;
 import model.dto.member.MemberDto;
+import model.dto.member.PointDto;
 
 @WebServlet("/member/login")
 public class LoginController extends HttpServlet {
@@ -28,7 +29,14 @@ public class LoginController extends HttpServlet {
 			HttpSession session = req.getSession();
 			session.setAttribute("loginMno", loginMno);
 			session.setMaxInactiveInterval(60*60);
-		} // if end
+			
+			PointDto pointDto = new PointDto();
+			pointDto.setMno(loginMno);
+			pointDto.setPocontent("로그인");
+			pointDto.setPocount(1);
+			pointDto.setPodate("2020-11-11");
+			MemberDao.getInstance().setPoint(pointDto);
+		}
 		resp.setContentType("application/json");
 		resp.getWriter().print(loginMno);
 	} // post end

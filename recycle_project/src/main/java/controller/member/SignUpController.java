@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.dao.member.MemberDao;
 import model.dto.member.MemberDto;
+import model.dto.member.PointDto;
 
 @WebServlet("/member/signup")
 public class SignUpController extends HttpServlet {
@@ -63,7 +64,16 @@ public class SignUpController extends HttpServlet {
 			memberDto.setMemail(fileList.get(5).getString());
 			memberDto.setMprofile(filename);
 			
-			boolean result = MemberDao.getInstance().signup(memberDto);
+			int mno = MemberDao.getInstance().signup(memberDto);
+			boolean result = false;
+			if(mno > 0) {
+				PointDto pointDto = new PointDto();
+				pointDto.setMno(mno);
+				pointDto.setPocontent("회원가입 축하");
+				pointDto.setPocount(100);
+				MemberDao.getInstance().setPoint(pointDto);
+				result = true;
+			}
 			
 			resp.setContentType("application/json");
 			resp.getWriter().print(result);
