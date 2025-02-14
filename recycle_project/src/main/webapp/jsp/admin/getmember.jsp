@@ -53,7 +53,7 @@
 									<th>아이디</th>
 									<th>이름</th>
 									<th>포인트</th>
-									<th>수정</th>
+									<th>상세조회</th>
 								</tr>
 							</thead>
 
