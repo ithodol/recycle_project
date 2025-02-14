@@ -18,7 +18,7 @@ public class MemberDao extends Dao {
 	
 	
 	// 회원가입
-	public boolean signup(MemberDto memberDto) {
+	public int signup(MemberDto memberDto) {
 		try {
 			String sql = "insert into member(mid, mpwd, mname, mnickname, mphone, memail, mprofile) values (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -31,11 +31,15 @@ public class MemberDao extends Dao {
 			ps.setString(7, memberDto.getMprofile());
 			int c = ps.executeUpdate();
 			if(c == 1) {
-				return true;
+				ResultSet rs = ps.getGeneratedKeys();
+				if(rs.next()) {
+					int mno = rs.getInt(1);
+					return mno;
+				}
 			}
 		}catch(SQLException e) {System.out.println(e);}
 		
-		return false;
+		return 0;
 	}
 	
 	
@@ -138,6 +142,80 @@ public class MemberDao extends Dao {
 		
 		return list;
 	}
+	
+	
+	// 남은 포인트 조회
+	public int getPoint(int loginMno) {
+		try {
+			String sql = "select podate, sum(pocount) as mpoint from pointlog where mno = ? GROUP BY podate";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(  1 , loginMno);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				return rs.getInt("mpoint");
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return -1;
+	}
+	
+	
+	
+	
+	// 
+	public boolean setPoint(PointDto pointDto) {
+		try {
+			String sql = "insert into pointlog( pocontent, pocount, podate, mno ) values(?, ?, ?, ?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, pointDto.getPocontent());
+			ps.setInt(2, pointDto.getPocount());
+			ps.setString(3, pointDto.getPodate());
+			ps.setInt(4, pointDto.getMno());
+			int count = ps.executeUpdate();
+			if(count == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
