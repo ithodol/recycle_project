@@ -56,7 +56,7 @@ public class GetMemberDao extends Dao{
 	
 	public MemberDto findbyMno(int mno) {
 		try {
-			String sql ="select member.mno,mid,mname,sum(pointlog.pocount) as mpoint "
+			String sql ="select member.mno,mid,mname,mphone,sum(pointlog.pocount) as mpoint "
 					+ "from member inner join pointlog on member.mno = pointlog.mno  where member.mno =?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1,mno);
@@ -66,6 +66,7 @@ public class GetMemberDao extends Dao{
 				memberDto.setMno(rs.getInt("mno"));
 				memberDto.setMid(rs.getString("mid"));
 				memberDto.setMname(rs.getString("mname"));
+				memberDto.setMphone(rs.getString("mphone"));
 				memberDto.setMpoint(rs.getInt("mpoint"));
 				return memberDto;
 			}
@@ -99,6 +100,38 @@ public class GetMemberDao extends Dao{
 			System.out.println(e);}
 		return list;
 	}
+
+
+	public boolean memberUpdate(MemberDto memberDto) {
+		try {
+			String sql = "update member set mname = ?, mphone = ? where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, memberDto.getMname());
+			ps.setString(2, memberDto.getMphone());
+			ps.setInt(3, memberDto.getMno());
+			int count = ps.executeUpdate();
+			if (count == 1) {
+				return true;
+			}
+		}catch(Exception e) {System.out.println(e);}
+		return false;
 	
+	}
+
+
+	public boolean memberDelete(int mno) {
+		try {
+			String sql = "delete from member where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			int c = ps.executeUpdate();
+			if(c == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		
+		return false;	
+	}	
+	}
 	
-}
+

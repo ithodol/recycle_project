@@ -7,14 +7,12 @@ const findByMno = ()=>{
 	.then(r=>r.json())
 	.then(data=>{
 		if(data != null){
-			const getmember = document.querySelector('.getmember');
-			let html =`<tr>
-			<td class="no"> ${data.mno} </td>
-			<td > ${data.mid} </td>
-			<td > ${data.mname} </td>
-			<td > ${data.mpoint} </td>
-			</tr>`;
-			getmember.innerHTML = html;
+			document.querySelector('.mnoinput').value = data.mno
+			document.querySelector('.midinput').value = data.mid
+			document.querySelector('.mnameinput').value = data.mname
+			document.querySelector('.mphoneinput').value = data.mphone
+			document.querySelector('.mpointinput').value = data.mpoint
+			
 		}
 	})
 }
