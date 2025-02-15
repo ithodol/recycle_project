@@ -128,7 +128,7 @@
 	</div>
 		
 	<!-- js -->
-	<script src="tj2024b_web1/js/admin/footer.js"></script>
+	<script src="/recycle_project/js/member/footer.js"></script>
 		
 </body>
 </html>
