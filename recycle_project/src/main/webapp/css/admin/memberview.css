@@ -10,12 +10,17 @@ table>thead>tr>th, table>tbody>tr>td {
  
 }
 .no {
-    width: 25%; /* 4개의 컬럼이니까 100% / 4 */
+    width: 20%; /* 4개의 컬럼이니까 100% / 4 */
     text-align: left;
     padding: 10px;
   
 }
 .tableflex{
 	display:flex;
+	justify-content: space-between
+}
 
+.contentLeft{
+	width : 100%;
+	margin-left : 50px;
 }

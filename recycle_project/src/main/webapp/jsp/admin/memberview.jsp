@@ -64,52 +64,52 @@
 									조회</div>
 							</div>
 							<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
+								<div class="form-floating mb-2">
+									<input type="text" id="mno"
+										class="form-control mnoinput" id="floatingPassword"
+										placeholder="회원번호" readonly> 
+										<label for="floatingPassword">회원번호</label>
+								</div>
 								<!-- 아이디 -->
 								<div class="form-floating mb-2">
 									<!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
-									<input type="text" id="adid" class="form-control adidinput"
+									<input type="text" id="adid" class="form-control midinput"
 										id="floatingInput" placeholder="아이디" readonly> <label
 										for="floatingInput">아이디</label>
 								</div>
 
 								<div class="form-floating mb-2">
-									<input type="text" id="adname" class="form-control adnameinput"
+									<input type="text" id="adname" class="form-control mnameinput"
 										id="floatingPassword" placeholder="이름" readonly> <label
 										for="floatingPassword">이름</label>
 								</div>
-								<div class="form-floating mb-2">
-									<input type="text" id="adnickname"
-										class="form-control adnicknameinput" id="floatingPassword"
-										placeholder="닉네임" readonly> <label
-										for="floatingPassword">닉네임</label>
-								</div>
+							
 								<div class="form-floating mb-2">
 									<input type="text" id="adphone"
-										class="form-control adphoneinput" id="floatingPassword"
+										class="form-control mphoneinput" id="floatingPassword"
 										placeholder="연락처" readonly> <label
 										for="floatingPassword">연락처</label>
 								</div>
 								<div class="form-floating mb-2">
 									<input type="text" id="ademail"
-										class="form-control ademailinput" id="floatingPassword"
-										placeholder="이메일" readonly> <label
-										for="floatingPassword">이메일</label>
+										class="form-control mpointinput" id="floatingPassword"
+										placeholder="포인트" readonly> <label
+										for="floatingPassword">포인트</label>
 								</div>
 
 								<button class="login-btn w-100 btn btn-lg fw-bold mb-1"
-									type="button" onclick="onAdminDelete()">회원 탈퇴</button>
+									type="button" onclick="onMemberDelete()">회원 탈퇴</button>
 								<button class="login-btn w-100 btn btn-lg fw-bold" type="button"
-									onclick="AdminUpdatePage()">정보 수정</button>
+									onclick="MemberUpdatePage()">회원 수정</button>
 							</form>
 						</div>
 
-						<div class="contentLeft">
+						<div class="contentLeft" >
 							<ol class="breadcrumb mb-4">
 								<li class="breadcrumb-item active">포인트 적립 내역</li>
 							</ol>
 
-							<table class="table boardlist"
-								style="width: 90%; margin: 0px auto;">
+							<table class="table boardlist">
 								<thead>
 									<tr>
 										<th class="no">번호</th>
