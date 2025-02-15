@@ -1,7 +1,6 @@
 package controller.board;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -45,18 +44,13 @@ public class BoardController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(">> 챌린지 GET RUN");
-//		페이지네이션 준비
+//		================== 페이지네이션 준비 ======================
 	    int page = Integer.parseInt(req.getParameter("page"));
-	    int display = 10;
-	    int btnSize = 10;
-	    int startRow = (page-1) * display; 
-//	    조회할 테이블 튜플의 총 개수
-	    int totalSize = BoardDao.getInstance().getTotalSize("board");
-	    ArrayList<BoardDto> result = BoardDao.getInstance().findAll(startRow, display);
 	    
 //	    페이지네이션 인터페이스
 	    Pagination pagination = new PaginationMethod();
-	    PageDto pageDto = pagination.calPagination(page, totalSize, display, btnSize, result);
+	    PageDto pageDto = pagination.calPagination(page);
+//	    =======================================================
 	    
 	    	ObjectMapper mapper = new ObjectMapper();
 	    	String jsonResult = mapper.writeValueAsString(pageDto);

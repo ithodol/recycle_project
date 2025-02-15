@@ -37,14 +37,17 @@ public class BoardDao extends Dao{
 	} // f end
 	
 //	2. 전체 게시물 조회
+//		(1)페이지네이션 적용시 매개변수 ( int startRow , int display ) 추가 
 	public ArrayList<BoardDto> findAll( int startRow , int display ) {
 		ArrayList<BoardDto> result = new ArrayList<>();
 		try {
 			String sql = "select b.*, m.mnickname from board b inner join member m "
 					+ "on b.mno = m.mno order by b.bno desc limit ? , ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+//			(2) ====== 페이지네이션 적용시 추가 =====
 				ps.setInt(1, startRow);
 				ps.setInt(2, display);
+//			===================================
 			ResultSet rs = ps.executeQuery();
 			while( rs.next() ) {
 				BoardDto boardDto = new BoardDto();
