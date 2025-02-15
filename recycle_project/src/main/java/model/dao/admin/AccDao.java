@@ -12,28 +12,95 @@ import model.dto.board.BoardDto;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class AccDao extends Dao {
-	// 승인할 게시물 전체 조회
+	
 	@Getter
 	private static AccDao instance = new AccDao();
 	
-	public ArrayList<BoardDto> findAll(){
-		ArrayList<BoardDto> list = new ArrayList<BoardDto>();
-		
+	// 승인할 게시물 전체 조회
+	//	(1)페이지네이션 적용시 매개변수 ( int startRow , int display ) 추가 
+	public ArrayList<BoardDto> findAll( int startRow , int display ) {
+		ArrayList<BoardDto> result = new ArrayList<>();
 		try {
-			String sql = "select * from board";
+			String sql = "select b.*, m.mnickname from board b inner join member m "
+					+ "on b.mno = m.mno order by b.bno desc limit ? , ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+	//		(2) ====== 페이지네이션 적용시 추가 =====
+				ps.setInt(1, startRow);
+				ps.setInt(2, display);
+	//		===================================
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
+			while( rs.next() ) {
 				BoardDto boardDto = new BoardDto();
 				boardDto.setBno(rs.getInt("bno"));
 				boardDto.setBtitle(rs.getString("btitle"));
 				boardDto.setBcontent(rs.getString("bcontent"));
+				boardDto.setBaddress(rs.getString("baddress"));
 				boardDto.setBdate(rs.getString("bdate"));
+				boardDto.setBpeople(rs.getString("bpeople"));
+				boardDto.setBstartdate(rs.getString("bstartdate"));
+				boardDto.setBenddate(rs.getString("benddate"));
+				boardDto.setBview(rs.getInt("bview"));
+				boardDto.setBlike(rs.getInt("blike"));
+				boardDto.setBpoint(rs.getInt("bpoint"));
+				boardDto.setMnickname(rs.getString("mnickname"));
+				result.add(boardDto);
+			} // w end
+		}catch( SQLException e ) { System.out.println(e); }	
+		return result;
+	} // f end
+	
+	
+	// 게시물 개별 조회
+	public BoardDto findByBno(int bno) {
+		try {
+			String sql = "select * from board b "
+					+ "inner join member m on b.mno = m.mno "
+					+ "where bno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, bno);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				BoardDto boardDto = new BoardDto();
+				boardDto.setBno(rs.getInt("bno"));
+				boardDto.setBtitle(rs.getString("btitle"));
+				boardDto.setBcontent(rs.getString("bcontent"));
+				boardDto.setBview(rs.getInt("bview"));
+				boardDto.setBdate(rs.getString("bdate"));
+				boardDto.setMno(rs.getInt("mno"));
+				boardDto.setMnickname(rs.getString("mnickname")); // 회원테이블과 join 결과 회원 아이디 출력 가능
+				return boardDto;
 			}
-					
 		}catch(SQLException e) {System.out.println(e);}
 		
-		
-		return list;
+		return null;
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
