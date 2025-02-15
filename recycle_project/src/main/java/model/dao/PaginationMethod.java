@@ -1,10 +1,20 @@
 package model.dao;
 
+import java.util.ArrayList;
+
+import model.dao.board.BoardDao;
+import model.dto.board.BoardDto;
 import model.dto.board.PageDto;
 
 public class PaginationMethod implements Pagination {
     @Override
-    public PageDto calPagination(int page, int totalSize, int display, int btnSize, Object result) {
+    public PageDto calPagination( int page ) {
+	    int display = 10;
+	    int btnSize = 10;
+	    int startRow = (page-1) * display; 
+//	    조회할 테이블 튜플의 총 개수
+	    int totalSize = BoardDao.getInstance().getTotalSize("board");
+	    ArrayList<BoardDto> result = BoardDao.getInstance().findAll(startRow, display);
     	
         int totalPage = (totalSize % display == 0) ? (totalSize / display) : (totalSize / display + 1);
         int startBtn = ((page - 1) / btnSize) * btnSize + 1;
