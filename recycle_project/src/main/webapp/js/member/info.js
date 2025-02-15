@@ -69,7 +69,6 @@ const getPointLog = () => {
 			if(data != null){
 				const tbody = document.querySelector('tbody');
 				let html = ``
-				console.log(data);
 				data.forEach((point, index) =>{
 					//const date = new Date(point.podate);
 					//const dateOnly = date.toISOString().split('T')[0];

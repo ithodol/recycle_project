@@ -3,6 +3,7 @@ package model.dao.member;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import lombok.Getter;
@@ -21,7 +22,7 @@ public class MemberDao extends Dao {
 	public int signup(MemberDto memberDto) {
 		try {
 			String sql = "insert into member(mid, mpwd, mname, mnickname, mphone, memail, mprofile) values (?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, memberDto.getMid());
 			ps.setString(2, memberDto.getMpwd());
 			ps.setString(3, memberDto.getMname());
@@ -147,7 +148,7 @@ public class MemberDao extends Dao {
 	// 남은 포인트 조회
 	public int getPoint(int loginMno) {
 		try {
-			String sql = "select podate, sum(pocount) as mpoint from pointlog where mno = ? GROUP BY podate";
+			String sql = "select sum(pocount) as mpoint from pointlog where mno = ? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(  1 , loginMno);
 			ResultSet rs = ps.executeQuery();

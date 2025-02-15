@@ -14,4 +14,5 @@ public class PointDto {
 	private int pocount;
 	private String podate;
 	private int mno;
+	private int mpoint;
 }
