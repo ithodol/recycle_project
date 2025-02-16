@@ -45,8 +45,8 @@
 	                    </ol>
 	                </div>
 	                <div class="container"> <!-- container -->
-						<table class="table boardlist">
-							<thead>
+						<table class="table boardlist" style="text-align: center;">
+							<thead >
 								<tr>
 									<th>번호</th>
 									<th>제목</th>

@@ -19,7 +19,7 @@ const findAll = () => {
 				html += `
 						<tr>
 							<td> ${board.bno} </td>
-							<td> ${board.btitle} </td>
+							<td style="text-align: start;"> ${board.btitle} </td>
 							<td> ${board.mnickname} </td>
 							<td> ${board.bdate} </td>
 							<td> ${board.bpeople} </td>
