@@ -65,15 +65,17 @@
 							 &nbsp;&nbsp; 작성일 : <span class="datebox"> </span>
 							 <br/>
 							 모집인원 : <span class="bpeoplebox"> </span>
+							 &nbsp;&nbsp; 장소 : <span class="baddressbox"> </span>
 							 &nbsp;&nbsp; 시작일자 : <span class="bstartdatebox"> </span>
 							 &nbsp;&nbsp; 종료일자 : <span class="benddatebox"> </span>
 						</div>
 						<hr/>
 						<div style="margin:30px 0px; font-size:30px; font-weight:bold;" class="titlebox">제목 구역</div>
-						<div class="contentbox" style="height:150px;">본문 구역</div>
-						<div style="display:flex; margin-top:50px;">
-							<input type="text" class="form-control" id="floatingInput" placeholder="포인트" style="width:160px; margin-right:20px;">
-							<button type="button" class="btn" style="background-color:#658a69; color:#ffffff;"onclick=""> 지급하기 </button>
+						<div class="contentbox" style="height:280px;">본문 구역</div>
+						<hr/>
+						<div style="display:flex; margin-top:20px;">
+							<input type="text" class="form-control pointbox" id="floatingInput" placeholder="포인트" style="width:160px; margin-right:20px;">
+							<button type="button" class="btn" style="background-color:#658a69; color:#ffffff;"onclick="putPoint()"> 지급하기 </button>
 						</div>
 
 					</div>

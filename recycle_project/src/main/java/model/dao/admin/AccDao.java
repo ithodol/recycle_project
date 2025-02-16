@@ -69,6 +69,8 @@ public class AccDao extends Dao {
 				boardDto.setBpeople(rs.getString("bpeople"));
 				boardDto.setBstartdate(rs.getString("bstartdate"));
 				boardDto.setBenddate(rs.getString("benddate"));
+				boardDto.setBaddress(rs.getString("baddress"));
+				//boardDto.setBpoint(rs.getInt("bpoint"));
 				boardDto.setMno(rs.getInt("mno"));
 				boardDto.setMnickname(rs.getString("mnickname")); // 회원테이블과 join 결과 회원 아이디 출력 가능
 				return boardDto;
@@ -87,6 +89,7 @@ public class AccDao extends Dao {
 			ps.setInt(1, boardDto.getBpoint());
 			ps.setInt(2, boardDto.getBno());
 			int c = ps.executeUpdate();
+			System.out.println(c); // 왜 0?
 			if(c == 1) {
 				return true;
 			}
