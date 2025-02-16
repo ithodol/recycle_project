@@ -1,6 +1,9 @@
 const getMember = () =>{
+	let page = new URL( location.href ).searchParams.get('page');
+		if( page == null){ page = 1; }
+		
 	const option ={method : 'GET'}
-	fetch('/recycle_project/admin/find',option)
+	fetch(`/recycle_project/admin/find?page=${page}`,option)
 		.then(r=>r.json())
 		.then(data=>{
 			if(data !=null){

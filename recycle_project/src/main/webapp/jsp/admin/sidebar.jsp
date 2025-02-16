@@ -39,7 +39,7 @@
 						<div class="collapse" id="collapseLayouts"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="dropmenu nav-link" href="/recycle_project/jsp/admin/getmember.jsp">
+								<a class="dropmenu nav-link" href="/recycle_project/jsp/admin/getmember.jsp?page=1">
 									회원정보 조회
 								</a> 
 								<a class="dropmenu nav-link" href="layout-sidenav-light.html">
