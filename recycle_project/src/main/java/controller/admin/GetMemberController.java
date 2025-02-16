@@ -39,4 +39,4 @@ public class GetMemberController extends HttpServlet{
 		resp.setContentType("application/json");
 		resp.getWriter().print(jsonResult);
 	}
-}
+} 
