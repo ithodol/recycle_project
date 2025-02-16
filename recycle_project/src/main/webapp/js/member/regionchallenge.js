@@ -6,7 +6,7 @@
 
 	// (1) 카카오지도 중심좌표( 지도 시작 좌표 ) 와 확대레벨 설정 
    var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
-       center : new kakao.maps.LatLng( 36.2683, 127.6358 ), // 지도의 중심좌표 // 활용 : Geolocation API = 접속된 유저의 좌표
+       center : new kakao.maps.LatLng( 37.4164, 127.2522 ), // 지도의 중심좌표 // 활용 : Geolocation API = 접속된 유저의 좌표
        level : 10 // 지도의 확대 레벨 
    });
   const option={method:'GET'}
@@ -33,21 +33,25 @@
 		.then( response => response.json() )
 		.then( data => { 	console.log( data ); // 통신된 response 값 
 			// for vs .forEach( ( 반복변수명 ) => { } )  vs  .map( (반복변수명)=>{ return } )
-			let markers = data.data.map( ( position ) => {
-				// 1개 마커 생성 후 변수에 저장 
-				let marker = new kakao.maps.Marker({position : new kakao.maps.LatLng(position.위도, position.경도)});
-				
+			let markers = data.map(position => {
+			            let marker = new kakao.maps.Marker({
+			                position: new kakao.maps.LatLng(position.latitude, position.longitude)
+			           
+						});
+						console.log(position);
 				// 위 변수의 생성된 마커의 클릭 이벤트 등록  
 				kakao.maps.event.addListener(marker, 'click', function() {
 					  // alert( `${ position.약국명 } 클릭 했군요.` );
 						
 					  // 클릭한 마커 약국의 정보를 특정한(사이드바) html 에 대입하기.
-					  document.querySelector('.약국명').innerHTML = position.약국명;
-					  document.querySelector('.전화번호').innerHTML = position.전화번호;
-					  document.querySelector('.주소').innerHTML = position.소재지도로명주소;
+					  document.querySelector('.title').innerHTML = position.btitle;
+					  document.querySelector('.nickname').innerHTML = position.mnickname;
+					  document.querySelector('.address').innerHTML = position.baddress;
+					  document.querySelector('.benddate').innerHTML = position.benddate.split(' ')[0];
 					  
+					  document.querySelector('.page').setAttribute("onclick", `onpageLink(${position.bno})`);
 					  // 사이드바 버튼를 (JS 클릭이벤트) 강제 클릭 
-					  document.querySelector('.사이드바').click();
+					  document.querySelector('.sidebar').click();
 					  	// .click(); : DOM 객체의 클릭 이벤트 실행 
 				});
 				
@@ -59,31 +63,10 @@
 			clusterer.addMarkers(markers);	
 			
 	   }) // then end 
-	   .catch( e => { console.log(e) }) // fetch end 
-   
-   
-   
-	   /*
-	   let markers = []
-	   for( let index = 0 ; index <= data.data.length-1 ; index++ ){
-	   	let position = data.data[index];
-	   	// 마커 1개씩 생성 
-	   	let marker = new kakao.maps.Marker({position : new kakao.maps.LatLng(position.위도, position.경도)});
-	   	// 마커배열에 생성한 마커 추가.
-	   	markers.push(  marker )
-	   }
-	   */
-
-	   /*
-	   let markers = []
-	   data.data.forEach( (position) => {
-	   	let marker = new kakao.maps.Marker({position : new kakao.maps.LatLng(position.위도, position.경도)});
-	   	markers.push(  marker )
-	   })
-	   */
-
-	   /*
-	   let markers = data.data.map( ( position ) => {
-	   	return new kakao.maps.Marker({position : new kakao.maps.LatLng(position.위도, position.경도)});
-	   })
-	   */		
+	   .catch( e => { console.log(e) }) // fetch end 	
+	   
+	   
+	   
+const onpageLink = (bno) =>{
+	location.href=`/recycle_project/jsp/member/view.jsp?bno=${bno}`
+}
