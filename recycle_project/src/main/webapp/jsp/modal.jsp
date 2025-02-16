@@ -9,7 +9,7 @@
 <body>
 	
 	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary me-md-2" data-bs-toggle="modal"
+	<button type="button" class="btn btn-primary me-md-2 align-self-end" data-bs-toggle="modal"
 		data-bs-target="#exampleModal" style="background-color: #658a69;">
 		모달 버튼</button>
 
