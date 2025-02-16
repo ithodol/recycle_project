@@ -27,7 +27,7 @@ public class GetMemberController extends HttpServlet{
 	    
 //	    페이지네이션 인터페이스
 	    Pagination pagination = new PaginationMethod();
-	    PageDto pageDto = pagination.calPagination(page);
+	    PageDto pageDto = pagination.calPagination(page, "member");
 //	    =======================================================
 	    int startRow=0;
 	    int display=9;
