@@ -66,6 +66,9 @@ public class AccDao extends Dao {
 				boardDto.setBcontent(rs.getString("bcontent"));
 				boardDto.setBview(rs.getInt("bview"));
 				boardDto.setBdate(rs.getString("bdate"));
+				boardDto.setBpeople(rs.getString("bpeople"));
+				boardDto.setBstartdate(rs.getString("bstartdate"));
+				boardDto.setBenddate(rs.getString("benddate"));
 				boardDto.setMno(rs.getInt("mno"));
 				boardDto.setMnickname(rs.getString("mnickname")); // 회원테이블과 join 결과 회원 아이디 출력 가능
 				return boardDto;
