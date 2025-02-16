@@ -19,17 +19,19 @@ public class BoardDao extends Dao{
 //	1. 게시물 쓰기
 	public boolean write( BoardDto boardDto ) {
 		try {
-			String sql = "insert into board(btitle, bcontent, baddress,"
-					+ " bpeople, bstartdate, benddate, mno) "
-					+ "value( ?,?,?,?,?,?,? )";
+			String sql = "insert into board(lno, btitle, bcontent, lat, lng, "
+					+ "bpeople, bstartdate, benddate, mno) "
+					+ "value( ?,?,?,?,?,?,?,?,? )";
 			PreparedStatement ps = conn.prepareStatement(sql);
-				ps.setString(1, boardDto.getBtitle());
-				ps.setString(2, boardDto.getBcontent());
-				ps.setString(3, boardDto.getBaddress());
-				ps.setString(4, boardDto.getBpeople());
-				ps.setString(5, boardDto.getBstartdate());
-				ps.setString(6, boardDto.getBenddate());
-				ps.setInt(7, boardDto.getMno());
+				ps.setInt(1, boardDto.getLno());
+				ps.setString(2, boardDto.getBtitle());
+				ps.setString(3, boardDto.getBcontent());
+				ps.setDouble(4, boardDto.getLat());
+				ps.setDouble(5, boardDto.getLng());
+				ps.setString(6, boardDto.getBpeople());
+				ps.setString(7, boardDto.getBstartdate());
+				ps.setString(8, boardDto.getBenddate());
+				ps.setInt(9, boardDto.getMno());
 			int count = ps.executeUpdate();
 			if( count == 1 ) { return true; }
 		}catch( SQLException e ) { System.out.println(e); }
@@ -37,7 +39,7 @@ public class BoardDao extends Dao{
 	} // f end
 	
 //	2. 전체 게시물 조회
-//		(1)페이지네이션 적용시 매개변수 ( int startRow , int display ) 추가 
+//		(1)페이지네이션 적용시 매개변수 ( int startRow , int display, String str ) 추가 
 	public ArrayList<BoardDto> findAll( int startRow , int display , String str ) {
 		ArrayList<BoardDto> result = new ArrayList<>();
 		try {

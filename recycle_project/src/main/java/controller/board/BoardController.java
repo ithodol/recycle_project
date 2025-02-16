@@ -27,7 +27,7 @@ public class BoardController extends HttpServlet{
 		BoardDto boardDto = mapper.readValue( req.getReader() , BoardDto.class );
 //		세션 정보 가져오기
 		HttpSession session = req.getSession();
-		Object object = session.getAttribute("logInMno");
+		Object object = session.getAttribute("loginMno");
 		int loginMno = 0;
 		if( object != null ) {
 			loginMno = (Integer)object;

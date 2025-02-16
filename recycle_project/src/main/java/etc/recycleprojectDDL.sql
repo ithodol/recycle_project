@@ -97,22 +97,25 @@ insert into pointlog( pocontent, pocount, podate, mno ) values
 #3. 게시판 테이블
 create table board(
     bno int unsigned auto_increment, 
-    btitle varchar(100) not null ,
-    bcontent longtext  not null ,
-    baddress varchar(50) not null,
-    bdate datetime default now() ,
+    lno int default 1,
+    btitle varchar(100) not null,
+    bcontent longtext not null,
+    baddress varchar(100) default 'address',
+    lat double default 0,
+    lng double default 0,
+    bdate datetime default now(),
     bpeople int not null,
     bstartdate datetime,
     benddate datetime,
-    bview int default 0 ,
+    bview int default 0, 
     blike int default 0,
     bpoint int default 0,
-    mno int unsigned ,
+    mno int unsigned,
     constraint primary key( bno ) ,
     constraint foreign key ( mno ) references member( mno ) on update cascade on delete cascade     -- [회원]pk가 삭제되면 게시물fk는 null 변경
 );
 
--- 게시판 샘플 5개
+-- 게시판 샘플
 insert into board (btitle,bcontent,baddress,bpeople,bstartdate,benddate,bpoint,mno) values 
 ("함께 줍깅 합시다","부산에서 같이 줍깅할 팀원 구합니다~","부산시 수영구",5,"2025-02-05","2025-02-06",0,1),
 ("남한산성 둘레길 1코스","서울을 한눈에 조망할 수 있는 코스로 넉넉하게 90분을 걸으며 쓰레기도 줍고 건강도 챙길 수 있는 코스 입니다.","경기 광주시",3,"2025-02-06","2025-02-11",0,2),
