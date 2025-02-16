@@ -34,27 +34,37 @@
 							<th style="width: 5%">추천수</th>
 						</tr>
 					</thead>
-
+	
 					<tbody>
+						<tr><td>1</td></tr>
+						<tr><td>2</td></tr>
+						<tr><td>3</td></tr>
+						<tr><td>4</td></tr>
+						<tr><td>5</td></tr>
+						<tr><td>6</td></tr>
+						<tr><td>7</td></tr>
+						<tr><td>8</td></tr>
+						<tr><td>9</td></tr>
+						<tr><td>10</td></tr>
 					</tbody>
 				</table>
 
 				<!-- 페이징 버튼 -->
 				<nav aria-label="Page navigation example">
 					<ul class="pagination pagebtnbox justify-content-center">
-						
+						<li>페이징</li>
 					</ul>
 				</nav>
 					
 				<!-- 글쓰기 버튼 -->
-				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
 					<!-- 모달 버튼 -->
 					<jsp:include page="../modal.jsp"></jsp:include>
 					
-					<button onclick="location.href='write.jsp'" class="btn btn-primary me-md-2" 
+					<button onclick="location.href='write.jsp'" class="btn btn-primary me-md-2 align-self-end" 
 					style="background-color: #658a69;" type="button">글쓰기
 					</button>
-					<button class="btn btn-primary" style="background-color: #658a69;" 
+					<button class="btn btn-primary align-self-end" style="background-color: #658a69;" 
 					type="button">버튼
 					</button>
 				</div>

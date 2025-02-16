@@ -47,9 +47,10 @@ public class BoardController extends HttpServlet{
 //		================== 페이지네이션 준비 ======================
 	    int page = Integer.parseInt(req.getParameter("page"));
 	    
-//	    페이지네이션 인터페이스
+//	    페이지네이션 인터페이스 호출
 	    Pagination pagination = new PaginationMethod();
-	    PageDto pageDto = pagination.calPagination(page);
+//	                                             페이지네이션 할 테이블명 " "에 입력
+	    PageDto pageDto = pagination.calPagination(page, "board");
 //	    =======================================================
 	    
 	    	ObjectMapper mapper = new ObjectMapper();
