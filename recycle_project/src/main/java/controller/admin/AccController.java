@@ -35,5 +35,29 @@ public class AccController extends HttpServlet{
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("acc put test");
+		
+		ObjectMapper mapper = new ObjectMapper();
+		BoardDto boardDto = mapper.readValue(req.getReader(), BoardDto.class);
+		
+		boolean result = AccDao.getInstance().putPoint(boardDto);
+		
+		resp.setContentType("application/json");
+		resp.getWriter().print(result);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

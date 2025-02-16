@@ -78,6 +78,25 @@ public class AccDao extends Dao {
 		return null;
 	}
 	
+	
+	// 포인트 지급
+	public boolean putPoint(BoardDto boardDto) {
+		try {
+			String sql = "update board set bpoint = ? where bno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, boardDto.getBpoint());
+			ps.setInt(2, boardDto.getBno());
+			int c = ps.executeUpdate();
+			if(c == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		
+		return false;
+	}
+	
+	
+	
 }
 
 
