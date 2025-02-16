@@ -60,13 +60,17 @@
 						</ol>
 	
 						<div style="text-align:end;">
-							작성자 : <span class="mnicknamebox">킹호돌</span>
-							 &nbsp;&nbsp; 조회수 : <span class="viewbox">2</span>
-							 &nbsp;&nbsp; 작성일 : <span class="datebox">3</span>
+							작성자 : <span class="mnicknamebox"> </span>
+							 &nbsp;&nbsp; 조회수 : <span class="viewbox"> </span>
+							 &nbsp;&nbsp; 작성일 : <span class="datebox"> </span>
+							 <br/>
+							 모집인원 : <span class="bpeoplebox"> </span>
+							 &nbsp;&nbsp; 시작일자 : <span class="bstartdatebox"> </span>
+							 &nbsp;&nbsp; 종료일자 : <span class="benddatebox"> </span>
 						</div>
 						<hr/>
 						<div style="margin:30px 0px; font-size:30px; font-weight:bold;" class="titlebox">제목 구역</div>
-						<div class="contentbox">본문 구역</div>
+						<div class="contentbox" style="height:150px;">본문 구역</div>
 						<div style="display:flex; margin-top:50px;">
 							<input type="text" class="form-control" id="floatingInput" placeholder="포인트" style="width:160px; margin-right:20px;">
 							<button type="button" class="btn" style="background-color:#658a69; color:#ffffff;"onclick=""> 지급하기 </button>
