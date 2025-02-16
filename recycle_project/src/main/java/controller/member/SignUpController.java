@@ -38,9 +38,11 @@ public class SignUpController extends HttpServlet {
 		ServletFileUpload fileUpload = new ServletFileUpload(factory);
 		
 		String filename = "default.jpg";
+		//System.out.println(fileUpload);
 		
 		try {
 			List<FileItem> fileList = fileUpload.parseRequest(req);
+			//System.out.println(fileList);
 			for(FileItem item : fileList) {
 				if(item.isFormField()) {}
 				else {
@@ -52,6 +54,7 @@ public class SignUpController extends HttpServlet {
 				}
 			} // for end
 			MemberDto memberDto = new MemberDto();
+			//System.out.println(fileList);
 			memberDto.setMid(fileList.get(0).getString());
 			memberDto.setMpwd(fileList.get(1).getString());
 			memberDto.setMname(fileList.get(2).getString());

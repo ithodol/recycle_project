@@ -24,11 +24,11 @@ getMyAdminInfo();
 
 
 const onAdminUpdate=()=>{
-	const adpwd = document.querySelector('.adpwdinput').value = data.adpwd;
-	const adphone =	document.querySelector('.adphoneinput').value = data.adphone;
-	const adname = 	document.querySelector('.adnameinput').value = data.adname;
-	const adnickname = document.querySelector('.adnicknameinput').value = data.adnickname;
-	const ademail = document.querySelector('.ademailinput').value = data.ademail;
+	const adpwd = document.querySelector('.adpwdinput').value;
+	const adphone =	document.querySelector('.adphoneinput').value ;
+	const adname = 	document.querySelector('.adnameinput').value ;
+	const adnickname = document.querySelector('.adnicknameinput').value ;
+	const ademail = document.querySelector('.ademailinput').value ;
 	
 	const obj = {
 		adpwd:adpwd, adphone:adphone, adname:adname,
@@ -39,12 +39,12 @@ const onAdminUpdate=()=>{
 		headers : {'Content-Type':'application/json'},
 		body : JSON.stringify(obj)
 	 }
-	 fetch('/recycle_project/admin/info,',option)
+	 fetch('/recycle_project/admin/info',option)
 	 	.then(r=>r.json())
 		.then(data=>{
 			if(data==true){
 				alert('정보 수정 완료했습니다.');
-				location.href="recycle_project/jsp/admin/admininfo.jsp"
+				location.href="/recycle_project/jsp/admin/admininfo.jsp"
 			}else{
 				alert('정보 수정 실패했습니다.');
 			}
