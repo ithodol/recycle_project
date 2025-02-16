@@ -67,40 +67,39 @@
 								<div class="form-floating mb-2">
 									<input type="text" id="mno"
 										class="form-control mnoinput" id="floatingPassword"
-										placeholder="회원번호" readonly> 
+										placeholder="회원번호" disabled> 
 										<label for="floatingPassword">회원번호</label>
 								</div>
 								<!-- 아이디 -->
 								<div class="form-floating mb-2">
 									<!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
 									<input type="text" id="adid" class="form-control midinput"
-										id="floatingInput" placeholder="아이디" readonly> <label
+										id="floatingInput" placeholder="아이디" disabled> <label
 										for="floatingInput">아이디</label>
 								</div>
 
 								<div class="form-floating mb-2">
 									<input type="text" id="adname" class="form-control mnameinput"
-										id="floatingPassword" placeholder="이름" readonly> <label
+										id="floatingPassword" placeholder="이름" > <label
 										for="floatingPassword">이름</label>
 								</div>
 							
 								<div class="form-floating mb-2">
 									<input type="text" id="adphone"
 										class="form-control mphoneinput" id="floatingPassword"
-										placeholder="연락처" readonly> <label
+										placeholder="연락처" > <label
 										for="floatingPassword">연락처</label>
 								</div>
 								<div class="form-floating mb-2">
 									<input type="text" id="ademail"
 										class="form-control mpointinput" id="floatingPassword"
-										placeholder="포인트" readonly> <label
+										placeholder="포인트" disabled> <label
 										for="floatingPassword">포인트</label>
 								</div>
 
-								<button class="login-btn w-100 btn btn-lg fw-bold mb-1"
-									type="button" onclick="onMemberDelete()">회원 삭제</button>
+								
 								<button class="login-btn w-100 btn btn-lg fw-bold" type="button"
-									onclick="MemberUpdatePage()">회원 수정</button>
+									onclick="onMemberUpdate()">회원 수정</button>
 							</form>
 						</div>
 
@@ -153,7 +152,7 @@
 		crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
-	<script src="/recycle_project/js/admin/memberview.js"></script>
+	<script src="/recycle_project/js/admin/memberupdate.js"></script>
 
 
 </body>

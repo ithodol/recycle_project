@@ -67,19 +67,7 @@
 
 							</ul>
 						</nav>
-						
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<!-- 모달 버튼 -->
-							<jsp:include page="../modal.jsp"></jsp:include>
-							
-							<button onclick="location.href='write.jsp'" class="btn btn-secondary me-md-2" 
-							style="background-color: #658a69;" type="button">글쓰기
-							</button>
-							<button class="btn btn-secondary" style="background-color: #658a69;" 
-							type="button">버튼
-							</button>
-						</div>
-												
+									
 					</div>   
 				</div>
 			</main>

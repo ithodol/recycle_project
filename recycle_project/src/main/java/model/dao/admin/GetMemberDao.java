@@ -32,12 +32,16 @@ public class GetMemberDao extends Dao{
 
 
 
-	public ArrayList<MemberDto> findAll() {
+	public ArrayList<MemberDto> findAll(int startRow, int display) {
 		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
 		try {
-			String sql = "select member.mno, mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by member.mno";
+			String sql = "select member.mno, mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by member.mno limit ? , ? ";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
+//			(2) ====== 페이지네이션 적용시 추가 =====
+				ps.setInt(1, startRow);
+				ps.setInt(2, display);
+//			===================================
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				MemberDto memberDto = new MemberDto();
@@ -56,8 +60,7 @@ public class GetMemberDao extends Dao{
 	
 	public MemberDto findbyMno(int mno) {
 		try {
-			String sql ="select member.mno,mid,mname,mphone,sum(pointlog.pocount) as mpoint "
-					+ "from member inner join pointlog on member.mno = pointlog.mno  where member.mno =?";
+			String sql ="select member.mno,mid,mname,mphone,IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno where member.mno=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1,mno);
 			ResultSet rs = ps.executeQuery();
