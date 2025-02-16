@@ -8,12 +8,12 @@ import model.dto.board.PageDto;
 
 public class PaginationMethod implements Pagination {
     @Override
-    public PageDto calPagination( int page ) {
+    public PageDto calPagination( int page, String table ) {
 	    int display = 10;
 	    int btnSize = 10;
 	    int startRow = (page-1) * display; 
 //	    조회할 테이블 튜플의 총 개수
-	    int totalSize = BoardDao.getInstance().getTotalSize("board");
+	    int totalSize = BoardDao.getInstance().getTotalSize(table);
 	    ArrayList<BoardDto> result = BoardDao.getInstance().findAll(startRow, display);
     	
         int totalPage = (totalSize % display == 0) ? (totalSize / display) : (totalSize / display + 1);

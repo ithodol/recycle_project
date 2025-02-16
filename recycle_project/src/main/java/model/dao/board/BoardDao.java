@@ -47,7 +47,7 @@ public class BoardDao extends Dao{
 //			(2) ====== 페이지네이션 적용시 추가 =====
 				ps.setInt(1, startRow);
 				ps.setInt(2, display);
-//			===================================
+//			    ================================
 			ResultSet rs = ps.executeQuery();
 			while( rs.next() ) {
 				BoardDto boardDto = new BoardDto();
