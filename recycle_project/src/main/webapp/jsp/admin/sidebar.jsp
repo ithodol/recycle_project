@@ -14,15 +14,15 @@
 			<div class="sb-sidenav-menu">
 				<div class="nav">
 					<!-- Dashboard -->
-					<div class="sb-sidenav-menu-heading">주요 기능</div>
-						<a class="nav-link" href="/recycle_project/jsp/admin/index.jsp">
+					<div class="sb-sidenav-menu-heading"></div>
+						<a class="nav-link" href="/recycle_project/jsp/admin/index.jsp?page=1">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> 현황
+								<i class="fas fa-solid fa-house"></i>
+							</div>&nbsp;홈
 						</a>
 				
 					<!-- 게시판 메뉴 -->
-					<div class="sb-sidenav-menu-heading">게시판</div>
+					<div class="sb-sidenav-menu-heading">회원 관리</div>
 					
 					<!-- 회원 드롭박스 -->
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -30,7 +30,7 @@
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-columns"></i>
-						</div> 회원 관리
+						</div>&nbsp;회원
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
@@ -47,14 +47,14 @@
 								</a>
 							</nav>
 						</div>
-					
+					<div class="sb-sidenav-menu-heading">게시판 관리</div>
 					<!-- 게시판 드롭박스 -->
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 						data-bs-target="#collapsePages" aria-expanded="false"
 						aria-controls="collapsePages">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-book-open"></i>
-						</div> 게시판 관리
+						</div>&nbsp;게시판
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
@@ -94,7 +94,7 @@
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-book-open"></i>
-						</div> 공지사항 관리
+						</div>&nbsp;공지사항
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
