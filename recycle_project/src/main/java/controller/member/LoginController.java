@@ -34,7 +34,6 @@ public class LoginController extends HttpServlet {
 			pointDto.setMno(loginMno);
 			pointDto.setPocontent("로그인");
 			pointDto.setPocount(1);
-			pointDto.setPodate("");
 			MemberDao.getInstance().setPoint(pointDto);
 		}
 		resp.setContentType("application/json");
