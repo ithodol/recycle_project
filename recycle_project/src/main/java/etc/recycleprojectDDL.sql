@@ -98,25 +98,25 @@ insert into pointlog( pocontent, pocount, podate, mno ) values
 create table board(
     bno int unsigned auto_increment,
     lno int default 1,
-    btitle varchar(100) not null ,
-    bcontent longtext  not null ,
-    baddress varchar(50) not null,
-   latitude  double  default 0, 
-	longitude double  default 0,
-    bdate datetime default now() ,
+    btitle varchar(100) not null,
+    bcontent longtext not null,
+    baddress varchar(100) default 'address',
+    lat double default 0,
+    lng double default 0,
+    bdate datetime default now(),
     bpeople int not null,
     bstartdate datetime,
     benddate datetime,
-    bview int default 0 ,
-    blike int default 0,
+    bview int default 0, 
+    blike int default 0, 
     bpoint int default 0,
-    mno int unsigned ,
+    mno int unsigned,
     constraint primary key( bno ) ,
     constraint foreign key ( mno ) references member( mno ) on update cascade on delete cascade     -- [회원]pk가 삭제되면 게시물fk는 null 변경
 );
 
 -- 게시판 샘플 5개
-insert into board (btitle, bcontent, baddress, latitude, longitude, bpeople, bstartdate, benddate, bpoint, mno) values 
+insert into board (btitle, bcontent, baddress, lat, lng, bpeople, bstartdate, benddate, bpoint, mno) values 
 ("함께 줍깅 합시다","부산에서 같이 줍깅할 팀원 구합니다~","부산시 수영구", 35.1460, 129.1130, 5,"2025-02-05","2025-02-06",0,1),
 ("남한산성 둘레길 1코스","서울을 한눈에 조망할 수 있는 코스로 넉넉하게 90분을 걸으며 쓰레기도 줍고 건강도 챙길 수 있는 코스 입니다.","경기 광주시", 37.4164, 127.2522, 3,"2025-02-06","2025-02-11",0,2),
 ("고려대 석탑대동제 뒷정리 멤버 구합니다.","고려대학교 민주광장 일대에서 23시에 모이실 분 모집합니다. 좋은 일도 하고 포인트도 벌고 ^^ 모집 신청하시고 리워드 받아가세요~","서울시 성북구", 37.5894, 127.0338, 4,"2025-02-07","2025-02-15",0,3),
@@ -220,4 +220,3 @@ select * from board;
 select * from recruit;
 select * from reply;
 select * from admin;
-select * from announcement;

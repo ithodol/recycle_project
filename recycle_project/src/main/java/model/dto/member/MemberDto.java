@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import model.dto.DataDto;
 
 @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter @ToString
-public class MemberDto {
+public class MemberDto implements DataDto{
+	private int id;
 	private int mno;
 	private String mid;
 	private String mpwd;
@@ -19,4 +21,9 @@ public class MemberDto {
 	private String mdate;
 	private int mpoint;
 	private String mprofile;
+	
+	@Override
+	public int getId() {
+		return id;
+	}
 }

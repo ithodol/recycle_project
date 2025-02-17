@@ -27,7 +27,7 @@ public class BoardController extends HttpServlet{
 		BoardDto boardDto = mapper.readValue( req.getReader() , BoardDto.class );
 //		세션 정보 가져오기
 		HttpSession session = req.getSession();
-		Object object = session.getAttribute("logInMno");
+		Object object = session.getAttribute("loginMno");
 		int loginMno = 0;
 		if( object != null ) {
 			loginMno = (Integer)object;
@@ -50,7 +50,7 @@ public class BoardController extends HttpServlet{
 //	    페이지네이션 인터페이스 호출
 	    Pagination pagination = new PaginationMethod();
 //	                                             페이지네이션 할 테이블명 " "에 입력
-	    PageDto pageDto = pagination.calPagination(page, "board");
+	    PageDto pageDto = pagination.calPagination(page, "board", BoardDto.class );
 //	    =======================================================
 	    
 	    	ObjectMapper mapper = new ObjectMapper();

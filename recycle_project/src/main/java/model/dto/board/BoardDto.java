@@ -5,17 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import model.dto.DataDto;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter @ToString
-public class BoardDto {
+public class BoardDto implements DataDto{
+	private int id;
 	private int bno;
+	private int lno;
 	private String btitle;
 	private String bcontent;
 	private String baddress;
+	private double lat;
+	private double lng;
 	private String bdate;
-	private String bpeople;
+	private int bpeople;
 	private String bstartdate;
 	private String benddate;
 	private int bview;
@@ -25,4 +30,9 @@ public class BoardDto {
 	private String mnickname;
 	private double latitude;
 	private double longitude;
+	
+	@Override
+	public int getId() {
+		return id;
+	}
 }

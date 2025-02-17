@@ -122,7 +122,7 @@ public class MemberDao extends Dao {
 	
 	
 	// 내 포인트 전체 조회	
-	public ArrayList<PointDto> getPointLog(int loginMno){
+	public ArrayList<PointDto> getPointLog(int loginMno, int startRow, int display){
 		ArrayList<PointDto> list = new ArrayList<PointDto>();
 		try {
 			String sql = "select * from pointlog where mno = ?";

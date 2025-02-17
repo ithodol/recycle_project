@@ -1,8 +1,9 @@
 package model.dao;
 
+import model.dto.DataDto;
 import model.dto.board.PageDto;
 
 public interface Pagination {
-    PageDto calPagination( int page, String table );
-    PageDto calPagination( int page, String table, String where );
+	<T extends DataDto> PageDto<T> calPagination( int page, String table, Class<T> dtoClass );
+//	<T extends DataDto> PageDto<T> calPagination( int page, String table, Class<T> dtoClass, String where );
 }

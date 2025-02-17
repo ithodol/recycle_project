@@ -43,7 +43,7 @@ public class GetMemberDao extends Dao{
 				ps.setInt(2, display);
 //			===================================
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
+			while(rs.next()) { 
 				MemberDto memberDto = new MemberDto();
 				memberDto.setMno(rs.getInt("mno"));
 				memberDto.setMid(rs.getString("mid"));

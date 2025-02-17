@@ -99,8 +99,9 @@ a{
 #header .LogInMenu a{ 
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 70px; 
-	font-size: 16px;
+	font-size: 16px; 
 }
 
 /* 본문 */
