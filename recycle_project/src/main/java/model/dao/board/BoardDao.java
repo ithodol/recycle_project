@@ -28,7 +28,7 @@ public class BoardDao extends Dao{
 				ps.setString(3, boardDto.getBcontent());
 				ps.setDouble(4, boardDto.getLat());
 				ps.setDouble(5, boardDto.getLng());
-				ps.setString(6, boardDto.getBpeople());
+				ps.setInt(6, boardDto.getBpeople());
 				ps.setString(7, boardDto.getBstartdate());
 				ps.setString(8, boardDto.getBenddate());
 				ps.setInt(9, boardDto.getMno());
@@ -58,7 +58,7 @@ public class BoardDao extends Dao{
 				boardDto.setBcontent(rs.getString("bcontent"));
 				boardDto.setBaddress(rs.getString("baddress"));
 				boardDto.setBdate(rs.getString("bdate"));
-				boardDto.setBpeople(rs.getString("bpeople"));
+				boardDto.setBpeople(rs.getInt("bpeople"));
 				boardDto.setBstartdate(rs.getString("bstartdate"));
 				boardDto.setBenddate(rs.getString("benddate"));
 				boardDto.setBview(rs.getInt("bview"));
@@ -94,5 +94,35 @@ public class BoardDao extends Dao{
 		}catch( SQLException e ) { System.out.println(e); }
 		return false;
 	} // f end	
+	
+//	5. 게시물 상세 페이지 조회
+	public BoardDto findByBno( int bno ) {
+		BoardDto result = new BoardDto();
+		try {
+			String sql = "select b.*, m.mnickname from board b "
+					+ "inner join member m where bno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setInt(1, bno);
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) { 
+				result.setBno(rs.getInt("bno"));
+				result.setBtitle(rs.getString("btitle"));
+				result.setBcontent(rs.getString("bcontent"));
+				result.setBaddress(rs.getString("baddress"));
+				result.setBdate(rs.getString("bdate"));
+				result.setLat(rs.getDouble("lat"));
+				result.setLng(rs.getDouble("lng"));
+				result.setBdate(rs.getString("bdate"));
+				result.setBpeople(rs.getInt("bpeople"));
+				result.setBstartdate(rs.getString("bstartdate"));
+				result.setBenddate(rs.getString("benddate"));
+				result.setBview(rs.getInt("bview"));
+				result.setBlike(rs.getInt("blike"));
+				result.setBpoint(rs.getInt("bpoint"));
+				result.setMnickname(rs.getString("mnickname"));
+			} // if end
+		}catch( SQLException e ) { System.out.println(e); }
+		return result;
+	}
 
 }

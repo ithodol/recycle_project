@@ -240,6 +240,13 @@ function highlightMarker(marker) {
     ));
 }
 
+function originMarker(marker) {
+    marker.setImage(new kakao.maps.MarkerImage(
+        'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png',
+        new kakao.maps.Size(36, 37)
+    ));
+}
+
 // 엔터키로 주소 입력
 document.getElementById('keyword').addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
