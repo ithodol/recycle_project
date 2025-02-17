@@ -21,7 +21,7 @@ const findAll = () => {
 							<td> ${board.bno} </td>
 							<td style="text-align: start;"> ${board.btitle} </td>
 							<td> ${board.mnickname} </td>
-							<td> ${board.bdate} </td>
+							<td> ${board.bdate.split(' ')[0]} </td>
 							<td> ${board.bpeople} </td>
 							<td> ${board.bview} </td>
 							<td> ${board.blike} </td>

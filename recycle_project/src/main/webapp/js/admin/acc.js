@@ -16,11 +16,11 @@ const findByBno = () => {
 			document.querySelector('.contentbox').innerHTML = data.bcontent;
 			document.querySelector('.mnicknamebox').innerHTML = data.mnickname;
 			document.querySelector('.viewbox').innerHTML = data.bview;
-			document.querySelector('.datebox').innerHTML = data.bdate;
+			document.querySelector('.datebox').innerHTML = data.bdate.split(' ')[0];
 			document.querySelector('.bpeoplebox').innerHTML = data.bpeople;
-			document.querySelector('.bstartdatebox').innerHTML = data.bstartdate;
-			document.querySelector('.benddatebox').innerHTML = data.benddate;
-			document.querySelector('.baddressbox').innerHTML = data.baddress;
+			document.querySelector('.bstartdatebox').innerHTML = data.bstartdate.split(' ')[0];
+			document.querySelector('.benddatebox').innerHTML = data.benddate.split(' ')[0];
+			document.querySelector('.baddressbox').innerHTML = data.baddress
 
 			document.querySelector('.pointbox').innerHTML = data.bpoint;
 		})
@@ -48,7 +48,7 @@ const putPoint = () => {
 			console.log(data);
 			if(data == true){
 				alert('포인트 지급 완료');
-				location.href="./jsp/index.jsp?page=1";
+				location.href="/recycle_project/jsp/admin/index.jsp?page=1";
 			}else{
 				alert('포인트 지급 실패');
 			}

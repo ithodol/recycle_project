@@ -82,12 +82,13 @@ public class AccDao extends Dao {
 	
 	
 	// 포인트 지급
-	public boolean putPoint(BoardDto boardDto) {
+	public boolean putPoint(BoardDto boardDto, int bno) {
 		try {
 			String sql = "update board set bpoint = ? where bno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, boardDto.getBpoint());
-			ps.setInt(2, boardDto.getBno());
+			ps.setInt(2, bno);
+			System.out.println(boardDto.getBno());
 			int c = ps.executeUpdate();
 			System.out.println(c); // 왜 0?
 			if(c == 1) {

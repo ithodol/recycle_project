@@ -165,12 +165,11 @@ public class MemberDao extends Dao {
 	// 
 	public boolean setPoint(PointDto pointDto) {
 		try {
-			String sql = "insert into pointlog( pocontent, pocount, podate, mno ) values(?, ?, ?, ?)";
+			String sql = "insert into pointlog( pocontent, pocount, podate, mno ) values(?, ?, now(), ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, pointDto.getPocontent());
 			ps.setInt(2, pointDto.getPocount());
-			ps.setString(3, pointDto.getPodate());
-			ps.setInt(4, pointDto.getMno());
+			ps.setInt(3, pointDto.getMno());
 			int count = ps.executeUpdate();
 			if(count == 1) {
 				return true;
