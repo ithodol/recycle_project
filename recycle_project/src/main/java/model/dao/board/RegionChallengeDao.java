@@ -33,7 +33,7 @@ public class RegionChallengeDao extends Dao{
 					boardDto.setBtitle(rs.getString("btitle"));
 					boardDto.setBaddress(rs.getString("baddress"));
 					boardDto.setBdate(rs.getString("bdate"));
-					boardDto.setBpeople(rs.getString("bpeople"));
+					boardDto.setBpeople(rs.getInt("bpeople"));
 					boardDto.setBstartdate(rs.getString("bstartdate"));
 					boardDto.setBenddate(rs.getString("benddate"));
 					boardDto.setBview(rs.getInt("bview"));

@@ -36,7 +36,7 @@ public class AccDao extends Dao {
 				boardDto.setBcontent(rs.getString("bcontent"));
 				boardDto.setBaddress(rs.getString("baddress"));
 				boardDto.setBdate(rs.getString("bdate"));
-				boardDto.setBpeople(rs.getString("bpeople"));
+				boardDto.setBpeople(rs.getInt("bpeople"));
 				boardDto.setBstartdate(rs.getString("bstartdate"));
 				boardDto.setBenddate(rs.getString("benddate"));
 				boardDto.setBview(rs.getInt("bview"));
@@ -66,7 +66,7 @@ public class AccDao extends Dao {
 				boardDto.setBcontent(rs.getString("bcontent"));
 				boardDto.setBview(rs.getInt("bview"));
 				boardDto.setBdate(rs.getString("bdate"));
-				boardDto.setBpeople(rs.getString("bpeople"));
+				boardDto.setBpeople(rs.getInt("bpeople"));
 				boardDto.setBstartdate(rs.getString("bstartdate"));
 				boardDto.setBenddate(rs.getString("benddate"));
 				boardDto.setBaddress(rs.getString("baddress"));
