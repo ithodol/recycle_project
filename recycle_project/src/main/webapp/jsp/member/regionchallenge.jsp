@@ -14,7 +14,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 
 
-	<button style="display: none;" class="btn btn-primary 사이드바"
+	<button style="display: none;" class="btn btn-primary sidebar"
 		type="button" data-bs-toggle="offcanvas"
 		data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
 
@@ -23,14 +23,16 @@
 	<div class="offcanvas offcanvas-start" tabindex="-1"
 		id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 		<div class="offcanvas-header">
-			<h5 class="offcanvas-title" id="offcanvasExampleLabel">약국 상세정보</h5>
+			<h5 class="offcanvas-title" id="offcanvasExampleLabel">챌린지 상세정보</h5>
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
 				aria-label="Close"></button>
 		</div>
 		<div class="offcanvas-body">
-			<div class="약국명"></div>
-			<div class="전화번호"></div>
-			<div class="주소"></div>
+			<span class=" fw-bold">제목 : </span> <span class="title fw-bold"> </span><br>
+			<span >닉네임 : </span> <span class="nickname"> </span><br>
+			<span>주소 : </span><span class="address"> </span><br>
+			<span>날짜 : </span><span class="benddate"> </span><br>
+			<div class=""><button class="login-btn w-100 btn btn-lg fw-bold mb-1 page">게시물 보러가기</button></div>
 		</div>
 	</div>
 
