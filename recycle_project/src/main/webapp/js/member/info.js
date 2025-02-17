@@ -77,7 +77,7 @@ const getPointLog = () => {
                                 <th> ${ index+1} </th> 
                                 <th> ${ point.pocontent } </th>
                                 <th> ${ point.pocount } </th> 
-                                <th> ${ point.podate } </th>
+                                <th> ${ point.podate.split(' ')[0] } </th>
                         	</tr>`
 				})
 				tbody.innerHTML = html;
