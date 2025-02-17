@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpSession;
 import model.dao.Pagination;
 import model.dao.PaginationMethod;
 import model.dao.board.BoardDao;
+import model.dto.DataDto;
 import model.dto.board.BoardDto;
 import model.dto.board.PageDto;
 

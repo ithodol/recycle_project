@@ -2,12 +2,12 @@ const getMember = () =>{
 	const option ={method : 'GET'}
 	fetch('/recycle_project/admin/find',option)
 		.then(r=>r.json())
-		.then(data=>{
-			if(data !=null){
+		.then(response=>{
+			if(response !=null){
 				const tbody = document.querySelector('tbody');
 				
 				let html =``;
-				data.forEach((member)=>{
+				response.data.forEach((member)=>{
 					html+=`<tr>
 								<td style="padding-left: 10px;"> ${member.mno} </td>
 								<td> ${member.mid} </td>
@@ -19,6 +19,7 @@ const getMember = () =>{
 						</tr>`
 				})
 				tbody.innerHTML = html;
+				getPageBtn( response );
 			}
 		})
 		.catch( e => { console.log(e) } )
