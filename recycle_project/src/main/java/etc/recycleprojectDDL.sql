@@ -168,6 +168,13 @@ create table recruit(
 );
 
 -- 모집 테이블 샘플 5개
+insert into recruit(mno, bno) values(1, 10);
+insert into recruit(mno, bno) values(2, 1);
+insert into recruit(mno, bno) values(3, 3);
+insert into recruit(mno, bno) values(4, 4);
+insert into recruit(mno, bno) values(5, 4);
+insert into recruit(mno, bno) values(6, 5);
+insert into recruit(mno, bno) values(7, 6);
 
 # 5. 댓글 테이블
 create table reply(
