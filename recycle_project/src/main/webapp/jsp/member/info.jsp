@@ -60,6 +60,15 @@
 						
 					</tbody>
 				</table>
+				
+				<div class="btnbox container">
+					<!-- 페이징 버튼 -->
+					<nav aria-label="Page navigation example">
+						<ul class="pagination pagebtnbox justify-content-center">
+					
+						</ul>
+					</nav>
+				</div>
 			</div>
 			
 		</div>
@@ -70,6 +79,7 @@
 	<!-- 부트스트랩 js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<!-- js -->
+	<script src="/recycle_project/js/pagination.js"></script>
 	<script src="/recycle_project/js/member/login.js"></script>
 	
 </body>

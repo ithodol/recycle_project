@@ -22,17 +22,17 @@ public class PointController extends HttpServlet{
 		System.out.println("point get test");
 		
 		Object result = null;
-		PageDto pageDto = null;
+		PageDto<PointLogDto> pageDto = null;
 		
 		Object object = req.getSession().getAttribute("loginMno");
 		if(object != null) {
 			int loginMno = (Integer)object;
 //			================== 페이지네이션 준비 ======================
 		    int page = Integer.parseInt(req.getParameter("page"));
-//		                                             페이지네이션 할 테이블명 " "에 입력
 		    pageDto.setLoginMno(loginMno);
 //		    페이지네이션 인터페이스 호출
 		    Pagination pagination = new PaginationMethod();
+//		                              			( page , "테이블명" , 사용한Dto.class )
 		    pageDto = pagination.calPagination(page, "pointlog", PointLogDto.class );
 //		    =======================================================
 		}

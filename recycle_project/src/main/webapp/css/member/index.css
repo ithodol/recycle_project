@@ -128,7 +128,8 @@ a{
 	width: 100%;
 	display: block;
 }
-
+#layoutnav .tablebox{ height: 480px; }
+#layoutnav .btnbox{ height: 52px; }
 /* 페이징 버튼 활성화시 */
 #layoutnav .active-g{ 
 	background-color: #658a69; color: white !important; 

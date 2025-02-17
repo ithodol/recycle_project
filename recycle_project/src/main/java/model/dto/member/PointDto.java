@@ -16,9 +16,4 @@ public class PointDto implements DataDto{
 	private int pocount;
 	private String podate;
 	private int mno;
-	
-	@Override
-	public int getId() {
-		return id;
-	}
 }

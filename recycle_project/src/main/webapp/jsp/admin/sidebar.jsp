@@ -127,8 +127,5 @@
 		</nav>
 	</div>
 		
-	<!-- js -->
-	<script src="tj2024b_web1/js/admin/footer.js"></script>
-		
 </body>
 </html>

@@ -17,9 +17,4 @@ public class PointLogDto implements DataDto{
 	private String podate;
 	private String pocontent;
 	private int point;
-	
-	@Override
-	public int getId() {
-		return id;
-	}
 }

@@ -28,9 +28,4 @@ public class BoardDto implements DataDto{
 	private int bpoint;	
 	private int mno;
 	private String mnickname;
-	
-	@Override
-	public int getId() {
-		return id;
-	}
 }
