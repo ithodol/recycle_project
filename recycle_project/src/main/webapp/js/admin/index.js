@@ -26,7 +26,7 @@ const findAll = () => {
 							<td> ${board.bview} </td>
 							<td> ${board.blike} </td>
 							<td>
-								<button class="btn btn-secondary" style="background-color: #658a69;" type="button" onclick="location.href='/recycle_project/jsp/admin/acc.jsp?bno=${board.bno}'">상세조회</button>
+								<button class="btn btn-secondary" style="background-color: #658a69;" type="button" onclick="onDetail(${board.bno})">상세조회</button>
 							</td>
 						</tr>
 						`
@@ -38,6 +38,10 @@ const findAll = () => {
 		
 }
 findAll();
+
+const onDetail = (bno) => {
+	location.href=`/recycle_project/jsp/admin/acc.jsp?bno=${bno}`;
+}
 
 
 const getPageBtn = (data) => {
