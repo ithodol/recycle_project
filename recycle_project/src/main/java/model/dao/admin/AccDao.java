@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import model.dao.Dao;
+import model.dto.admin.SharePointDto;
 import model.dto.board.BoardDto;
+import model.dto.member.MemberDto;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class AccDao extends Dao {
@@ -81,7 +83,7 @@ public class AccDao extends Dao {
 	}
 	
 	
-	// 포인트 지급
+	// 게시물 포인트 수정 0 -> n
 	public boolean putPoint(BoardDto boardDto, int bno) {
 		try {
 			String sql = "update board set bpoint = ? where bno = ?";
@@ -90,7 +92,7 @@ public class AccDao extends Dao {
 			ps.setInt(2, bno);
 			System.out.println(boardDto.getBno());
 			int c = ps.executeUpdate();
-			System.out.println(c); // 왜 0?
+			System.out.println(c); 
 			if(c == 1) {
 				return true;
 			}
@@ -100,8 +102,41 @@ public class AccDao extends Dao {
 	}
 	
 	
+	// bno에 해당하는 정보 가져오기
+	public ArrayList<SharePointDto> findMno(MemberDto memberDto, int bno) {
+		ArrayList<SharePointDto> list = new ArrayList<SharePointDto>();
+		try {
+			String sql = "select bpoint, bcontent from board b "
+					+ "inner join member m on b.mno = m.mno "
+					+ "inner join recruit r on b.bno = r.bno "
+					+ "where m.mno = ? and b.bno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, memberDto.getMno()); // 0 나옴 select문에서 2개의 테이블 값을 가져오는 방법?
+			ps.setInt(2, bno);
+			System.out.println(ps);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				SharePointDto sharePointDto = new SharePointDto();
+				sharePointDto.setBno(rs.getInt("reno"));
+				sharePointDto.setMno(rs.getInt("mno"));
+				sharePointDto.setBno(rs.getInt("bno"));
+				sharePointDto.setBpoint(rs.getInt("bpoint"));
+				sharePointDto.setBcontent(rs.getString("bcontent"));
+				list.add(sharePointDto);
+			}
+			
+		}catch(SQLException e) {System.out.println(e);}
+		
+		//System.out.println(list);
+		return list;
+	}
+	
+	
 	
 }
+
+
 
 
 
