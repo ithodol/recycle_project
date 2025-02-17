@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,25 @@ public class AdminDao extends Dao {
 			System.out.println(e);
 		}
 		return false;
+	}
+	public ArrayList<AdminDto> signupcheck() {
+		ArrayList<AdminDto> list = new ArrayList<AdminDto>();
+		try {
+			String sql = "select * from admin";
+			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				AdminDto adminDto = new AdminDto();
+				adminDto.setAdemail(rs.getString("ademail"));
+				adminDto.setAdid(rs.getString("adid"));
+				adminDto.setAdphone(rs.getString("adphone"));
+				list.add(adminDto);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return list;
 	}
 
 	public int login(AdminDto adminDto) {

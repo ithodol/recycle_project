@@ -47,11 +47,11 @@
 						</div>
 						<div class="form-floating mb-2">
 							<input type="text" id="adpwd" class="form-control  adphoneinput" id="floatingPassword" placeholder="연락처"> 
-							<label for="floatingPassword">연락처</label>
+							<label for="floatingPassword">연락처 ex)010-0000-0000</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="adpwd" class="form-control  ademailinput" id="floatingPassword" placeholder="이메일"> 
-							<label for="floatingPassword">이메일</label>
+							<input type="text" id="adpwd" class="form-control  ademailinput" id="floatingPassword" placeholder="이메일 "> 
+							<label for="floatingPassword">이메일 ex)abcd@gmail.com</label>
 						</div>
 						
 						<button class="login-btn w-100 btn btn-lg fw-bold" type="button" onclick="onSignUp()">회원가입</button>
