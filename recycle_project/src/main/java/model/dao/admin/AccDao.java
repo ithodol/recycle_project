@@ -130,7 +130,7 @@ public class AccDao extends Dao {
 		return list;
 	}
 	
-	
+	// bno에 신청한 각 mno에게 포인트 배포하기
 //	public SharePointDto sharePoint(int bno) {
 //		try {
 //			String sql = "";
@@ -139,7 +139,7 @@ public class AccDao extends Dao {
 //		
 //		return null;
 //	}
-	
+//	
 	
 	
 }
