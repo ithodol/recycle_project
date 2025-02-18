@@ -14,7 +14,7 @@
 
 	<!-- 본문 -->
 	<div id="layoutnav">
-		<div class="content">
+		<div class="view_content content">
             <div class="content_title">
        	        <h1>챌린지</h1>
    	            <ol class="breadcrumb mb-4">
