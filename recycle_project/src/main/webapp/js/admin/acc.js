@@ -30,7 +30,7 @@ const findByBno = () => {
 findByBno();
 
 
-// 포인트 지급
+// 게시물 포인트 지급
 const putPoint = () => {
 	const bno = new URL(location.href).searchParams.get("bno");
 	const point = document.querySelector('.pointbox').value;
@@ -56,6 +56,35 @@ const putPoint = () => {
 		.catch(e => {console.log(e);})
 	
 }
+
+
+
+// bno에 신청한 각 mno에게 포인트 배포
+const sharePoint = () => {
+	const bno = new URL(location.href).searchParams.get("bno");
+	
+	const option = {
+		method : 'GET'
+	}
+	
+	fetch(`/recycle_project/board/point/share?${bno}`, option)
+		.then(r => r.json())
+		.then(data => {
+			data.forEach(info => {
+				if(info != null){
+					alert('포인트 배포 완료');
+				}else{
+					alert('포인트 배포 실패');
+				}
+			})
+// info에 있는 정보들을 변수에 저장하고
+
+		})
+		.catch(e => {console.log(e);})
+		
+// post 
+}
+	
 
 
 
