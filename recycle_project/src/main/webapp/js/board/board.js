@@ -37,4 +37,54 @@ const findAll = () => {
 findAll();
 
 
+const getWriteBtn = () => {
+	const option = {
+		method : 'GET'
+	}
+	
+	let writebtn = document.querySelector('.writebtn');
+	let html = '';
+
+	
+	fetch('/recycle_project/member/info', option)
+		.then(r => r.json())
+		.then(data => {
+			console.log(data);
+			if(data == null){
+				console.log('비로그인');
+			
+			}else{
+				console.log('로그인');
+				html += `<button onclick="location.href='write.jsp'" class="btn btn-secondary me-md-2 align-self-end" 
+							style="background-color: #658a69;" type="button">글쓰기
+						</button>`;
+			}
+			writebtn.innerHTML = html;
+			
+			
+		})
+		.catch(e => {console.log(e);})
+	
+		
+	
+}
+
+getWriteBtn();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

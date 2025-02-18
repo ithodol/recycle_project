@@ -50,13 +50,9 @@
 			</div>
 					
 			<!-- 글쓰기 버튼 -->
-			<div class="d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
-				<button onclick="location.href='write.jsp'" class="btn btn-primary me-md-2 align-self-end" 
-				style="background-color: #658a69;" type="button">글쓰기
-				</button>
-				<button class="btn btn-primary align-self-end" style="background-color: #658a69;" 
-				type="button">버튼
-				</button>
+			<div class=" writebtn d-grid gap-2 d-md-flex justify-content-md-end align-self-start ">
+				
+				
 			</div>
 		</div>   
 	</div>
@@ -68,6 +64,7 @@
 	<!-- js -->
 	<script src="/recycle_project/js/pagination.js"></script>
 	<script src="/recycle_project/js/board/board.js"></script>
+
 
 </body>
 </html>
