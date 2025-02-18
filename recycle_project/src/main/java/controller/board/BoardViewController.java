@@ -22,7 +22,7 @@ public class BoardViewController extends HttpServlet{
 	    BoardDto result = BoardDao.getInstance().findByBno(bno);
 	    	ObjectMapper mapper = new ObjectMapper();
 	    	String jsonResult = mapper.writeValueAsString(result);
-	    resp.setContentType(jsonResult);
+	    resp.setContentType("application/json");
 	    resp.getWriter().print(jsonResult);
 	} // f end
 	
