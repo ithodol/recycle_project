@@ -80,7 +80,7 @@ public class GetMemberDao extends Dao{
 	}
 
 
-	public  ArrayList<PointLogDto> findPointLog(int mno) {
+	public  ArrayList<PointLogDto> findPointLog(int mno, int startRow, int display) {
 		ArrayList<PointLogDto> list = new ArrayList<PointLogDto>();
 		try {
 			String sql ="select pointlog.mno, pointlog.podate, pointlog.pocontent, pointlog.pocount as point from member inner join pointlog on member.mno = pointlog.mno where member.mno = ?  group by point ,pointlog.podate, pointlog.pocontent";

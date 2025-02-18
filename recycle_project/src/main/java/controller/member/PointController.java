@@ -11,8 +11,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.dao.Pagination;
 import model.dao.PaginationMethod;
-import model.dto.admin.PointLogDto;
 import model.dto.board.PageDto;
+import model.dto.member.PointDto;
 
 @WebServlet("/point")
 public class PointController extends HttpServlet{
@@ -22,18 +22,17 @@ public class PointController extends HttpServlet{
 		System.out.println("point get test");
 		
 		Object result = null;
-		PageDto<PointLogDto> pageDto = null;
+		PageDto<PointDto> pageDto = null;
 		
 		Object object = req.getSession().getAttribute("loginMno");
 		if(object != null) {
 			int loginMno = (Integer)object;
 //			================== 페이지네이션 준비 ======================
 		    int page = Integer.parseInt(req.getParameter("page"));
-		    pageDto.setLoginMno(loginMno);
 //		    페이지네이션 인터페이스 호출
 		    Pagination pagination = new PaginationMethod();
-//		                              			( page , "테이블명" , 사용한Dto.class )
-		    pageDto = pagination.calPagination(page, "pointlog", PointLogDto.class );
+//		                              			(mno, page , "테이블명" , 사용한Dto.class )
+		    pageDto = pagination.calPagination(loginMno, page, "pointlog", PointDto.class );
 //		    =======================================================
 		}
 		ObjectMapper mapper = new ObjectMapper();
