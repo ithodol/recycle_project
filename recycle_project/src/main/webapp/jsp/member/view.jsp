@@ -36,9 +36,9 @@
 						</div>
 						<div class="container col-6 py-1 d-md-flex justify-content-md-end">
 							추천수  <span class="likebox ms-2"> 추천수 구역 </span>
-							<span class="span_line mx-2""> | </span>
+							<span class="span_line mx-2"> | </span>
 							조회수  <span class="viewbox ms-2"> 조회수 구역 </span>
-							<span class="span_line mx-2""> | </span> 
+							<span class="span_line mx-2"> | </span> 
 							작성일  <span class="datebox ms-2"> 작성일 구역 </span>
 						</div>
 					</div>
@@ -47,12 +47,13 @@
 					<div class="contentbox px-3">본문이 들어갈 구역</div>
 					<br />
 					
-					<div class="map_wrap">
-					    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-					    <div class="hAddr">
+					<div class="map_wrap d-flex justify-content-center">
+					    <div id="map" style="width:70%;height:100%;position:relative;overflow:hidden;"></div>
+					    <div class="hAddr" >
 					        <span class="title">지도중심기준 행정동 주소정보</span>
 					        <span id="centerAddr"></span>
 					    </div>
+						<button class="moveBtn px-3 py-2">마커 위치로 이동</button>
 					</div>
 	
 					<!-- 수정 삭제 버튼 -->
@@ -84,7 +85,6 @@
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a6c0c8b3d768424cedeb0bc361e451e4&libraries=services"></script>
 	<!-- js -->
 	<script src="/recycle_project/js/board/view.js"></script>
-	<!-- <script src="/recycle_project/js/board/kakaoview.js"></script>
  -->
 </body>
 </html>
