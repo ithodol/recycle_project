@@ -59,7 +59,7 @@
 
 	<!-- 사용자 js -->
 	<script src="/recycle_project/js/admin/login.js"></script>
-	<script src="/recycle_project/js/admin/index.js"></script>
+	
 
 </body>
 </html>
