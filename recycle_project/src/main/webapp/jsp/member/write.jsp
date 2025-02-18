@@ -48,6 +48,7 @@
 							<option value="13"> 전라북도 </option>
 							<option value="14"> 전라남도 </option>
 							<option value="15"> 강원특별자치도 </option>
+							<option value="16"> 제주특별자치도</option>
 						</select>
 						<!-- 제목 -->
 						<input class="titleinput form-control my-2" type="text" placeholder="제목"/>

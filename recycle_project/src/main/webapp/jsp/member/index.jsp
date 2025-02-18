@@ -8,7 +8,7 @@
 	<!-- Title 이미지 -->
 	<link href="../../img/title.png" rel="shortcut icon" type="image/x-icon">
 </head>
-<body>
+<body style="background-color : #f1f5f1;">
 
 	<jsp:include page="header.jsp"></jsp:include>
 
@@ -26,9 +26,7 @@
 			<div class="carousel-item" data-bs-interval="10000">
 				<img src="/recycle_project/img/main3.jpg" class="d-block w-100" alt="">
 			</div>
-			<div class="carousel-item" data-bs-interval="10000">
-				<img src="/recycle_project/img/main4.jpg" class="d-block w-100" alt="">
-			</div>
+			
 		</div>
 		<!-- 왼쪽 버튼 -->
 		<button class="carousel-control-prev" type="button"
@@ -42,6 +40,12 @@
 			<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
 				class="visually-hidden">Next</span>
 		</button>
+	</div>
+	
+	<div>
+		
+	
+	
 	</div>
 	
 	<jsp:include page="footer.jsp"></jsp:include>
