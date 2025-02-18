@@ -46,24 +46,24 @@
 	<button class="login-btn btn btn-lg fw-bold" 
     style="background-color: #253f39 !important; color: white; 
            border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
-    type="button" onclick="">서울</button>
+    type="button" onclick="/recycle_project/jsp/member/board.jsp?value=1">서울</button>
 		
 		<button class="login-btn btn btn-lg fw-bold" 
     style="background-color: #253f39 !important; color: white; 
            border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
-    type="button" onclick="">인천</button>
+    type="button" onclick="/recycle_project/jsp/member/board.jsp?value=2">인천</button>
     <button class="login-btn btn btn-lg fw-bold" 
     style="background-color: #253f39 !important; color: white; 
            border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
-    type="button" onclick="">경기</button>
+    type="button" onclick="/recycle_project/jsp/member/board.jsp?value=8">경기</button>
     <button class="login-btn btn btn-lg fw-bold" 
     style="background-color: #253f39 !important; color: white; 
            border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
-    type="button" onclick="">충남</button>
+    type="button" onclick="/recycle_project/jsp/member/board.jsp?value=10">충남</button>
     <button class="login-btn btn btn-lg fw-bold" 
     style="background-color: #253f39 !important; color: white; 
            border-radius: 100px; padding: 80px 80px; font-size: 27px;"  
-    type="button" onclick="">부산</button>
+    type="button" onclick="/recycle_project/jsp/member/board.jsp?value=6">부산</button>
 	
 	
 	</div>
