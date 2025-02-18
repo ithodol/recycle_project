@@ -170,6 +170,7 @@ create table recruit(
 	constraint foreign key ( bno ) references board( bno ) on update cascade on delete cascade
 );
 
+
 -- 모집 테이블 샘플 5개
 insert into recruit(mno, bno) values(1, 10);
 insert into recruit(mno, bno) values(2, 1);
@@ -178,6 +179,21 @@ insert into recruit(mno, bno) values(4, 4);
 insert into recruit(mno, bno) values(5, 4);
 insert into recruit(mno, bno) values(6, 5);
 insert into recruit(mno, bno) values(7, 6);
+
+
+
+-- test --
+select * from recruit inner join member on recruit.mno = member.mno;
+select * from member where mno = 1;
+select * from board where bno = 10;
+SELECT * FROM recruit r INNER JOIN member m ON r.mno = m.mno WHERE m.mno = 1;
+select mno from member;
+select * from member m inner join board b on m.mno = b.mno where bno=10;
+-- 오류 select board.bpoint, board.bcontent, member.mno from board, member inner join member on board.mno = member.mno inner join recruit recruit on board.bno = recruit.bno where member.mno = 1 and board.bno = 1;
+-- select문에서 2개의 테이블 값을 가져오는 방법?
+select board.bpoint, board.bcontent from board inner join member on board.mno = member.mno inner join recruit recruit on board.bno = recruit.bno where member.mno = 1 and board.bno = 1;
+
+
 
 # 5. 댓글 테이블
 create table reply(
@@ -227,3 +243,4 @@ select * from board;
 select * from recruit;
 select * from reply;
 select * from admin;
+

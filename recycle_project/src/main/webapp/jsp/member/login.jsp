@@ -42,7 +42,7 @@
 							<label for="floatingPassword">계정비밀번호</label>
 						</div>
 						
-						<button class="login-btn w-100 btn btn-lg" type="button" onclick="onLogIn()">로그인</button>
+						<button class="login-btn w-100 btn btn-lg" type="button" onclick="onLogIn()" onclick="loginOk()">로그인</button>
 						<hr class="my-4">
 						<div class="login-a">
 							<small class="text-body-secondary"> <a class="nav-link" href="signup.jsp"> 회원가입 </a> </small> <div> | </div>
