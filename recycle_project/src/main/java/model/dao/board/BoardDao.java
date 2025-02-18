@@ -120,6 +120,7 @@ public class BoardDao extends Dao{
 				result.setBlike(rs.getInt("blike"));
 				result.setBpoint(rs.getInt("bpoint"));
 				result.setMnickname(rs.getString("mnickname"));
+				result.setMno(rs.getInt("mno"));
 			} // if end
 		}catch( SQLException e ) { System.out.println(e); }
 		return result;

@@ -25,16 +25,13 @@
 					<div class="sb-sidenav-menu-heading">회원 관리</div>
 					
 					<!-- 회원 드롭박스 -->
-					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-						data-bs-target="#collapseLayouts" aria-expanded="false"
+					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" 
+						data-bs-target="#collapseLayouts" aria-expanded="false" 
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-								<path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
-								<path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill mb-1" viewBox="0 0 16 16">
+  								<path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
 							</svg>
-						</div> 회원 관리
-							<i class="fas fa-columns"></i>
 						</div>&nbsp;회원
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
@@ -57,8 +54,11 @@
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 						data-bs-target="#collapsePages" aria-expanded="false"
 						aria-controls="collapsePages">
-						<div class="sb-nav-link-icon">
-							<i class="fas fa-book-open"></i>
+						<div class="sb-nav-link-icon mb-1">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+								<path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+								<path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
+							</svg>
 						</div>&nbsp;게시판
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
@@ -119,8 +119,10 @@
 					
 					<div class="sb-sidenav-menu-heading">Addons</div>
 					<a class="nav-link" href="/recycle_project/jsp/member/index.jsp">
-						<div class="sb-nav-link-icon">
-							<i class="fas fa-book-area"></i>
+						<div class="sb-nav-link-icon mb-1">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+								<path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+							</svg>
 						</div> 사용자 페이지
 					</a>
 					<a class="nav-link" href="charts.html">
