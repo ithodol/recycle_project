@@ -41,14 +41,37 @@
 				class="visually-hidden">Next</span>
 		</button>
 	</div>
-	
-	<div>
+	<!-- <div style= "margin-top:20px;display:flex;justify-content: center; font-size:10px;"> 지역별 챌린지</div> -->
+	<div style="margin-top : 20px;display:flex; justify-content: space-evenly;">
+	<button class="login-btn btn btn-lg fw-bold" 
+    style="background-color: #253f39 !important; color: white; 
+           border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
+    type="button" onclick="">서울</button>
 		
+		<button class="login-btn btn btn-lg fw-bold" 
+    style="background-color: #253f39 !important; color: white; 
+           border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
+    type="button" onclick="">인천</button>
+    <button class="login-btn btn btn-lg fw-bold" 
+    style="background-color: #253f39 !important; color: white; 
+           border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
+    type="button" onclick="">경기</button>
+    <button class="login-btn btn btn-lg fw-bold" 
+    style="background-color: #253f39 !important; color: white; 
+           border-radius: 100px; padding: 80px 80px; font-size: 27px;" 
+    type="button" onclick="">충남</button>
+    <button class="login-btn btn btn-lg fw-bold" 
+    style="background-color: #253f39 !important; color: white; 
+           border-radius: 100px; padding: 80px 80px; font-size: 27px;"  
+    type="button" onclick="">부산</button>
 	
 	
 	</div>
 	
+	
+	
 	<jsp:include page="footer.jsp"></jsp:include>
+
 
 </body>
 </html>
