@@ -28,11 +28,4 @@ public class BoardDto implements DataDto{
 	private int bpoint;	
 	private int mno;
 	private String mnickname;
-	private double latitude;
-	private double longitude;
-	
-	@Override
-	public int getId() {
-		return id;
-	}
 }

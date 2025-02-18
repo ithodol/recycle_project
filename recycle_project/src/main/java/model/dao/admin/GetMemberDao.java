@@ -74,7 +74,6 @@ public class GetMemberDao extends Dao{
 				return memberDto;
 			}
 			
-			
 		}catch(Exception e){
 			System.out.println(e);}
 		return null;

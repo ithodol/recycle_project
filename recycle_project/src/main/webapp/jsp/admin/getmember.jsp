@@ -18,6 +18,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
 	<link href="../../resources/css/styles.css" rel="stylesheet" />
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<!-- css -->
 	<link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
 	<!-- 폰트 -->
@@ -41,19 +42,19 @@
 				<div class="side_content">
 	             	<div class="content_title">
 	        	        <h1>회원 관리</h1>
-	     	            <ol class="breadcrumb mb-4">
+	     	            <ol class="breadcrumb mb-2">
 	  	                    <li class="breadcrumb-item active">회원정보 조회</li>
 	                    </ol>
 	                </div>
-	                <div class="container"> <!-- container -->
-						<table class="table boardlist" style="width:90%; margin:0px auto;">
+	                <div class="tablebox container"> <!-- container -->
+						<table class="table boardlist" style="width:90%; margin:0 auto;">
 							<thead>
-								<tr>
-									<th >회원번호</th>
-									<th>아이디</th>
-									<th>이름</th>
-									<th>포인트</th>
-									<th>상세조회</th>
+								<tr style="text-align: center;">
+									<th style="width: 20%;">회원번호</th>
+									<th style="width: 20%;">아이디</th>
+									<th style="width: 20%;">이름</th>
+									<th style="width: 20%;">포인트</th>
+									<th style="width: 20%;">수정</th>
 								</tr>
 							</thead>
 
@@ -62,16 +63,15 @@
 							</tbody>
 						</table>
 
-						<nav aria-label="Page navigation example">
-							<ul class="pagination pagebtnbox justify-content-center">
-
-							</ul>
-						</nav>
-									
 					</div>   
+					
+					<nav aria-label="Page navigation example">
+						<ul class="pagination pagebtnbox justify-content-center my-3">
+		
+						</ul>
+					</nav>
 				</div>
 			</main>
-
 		</div>
 	</div>
 	
@@ -84,7 +84,11 @@
 	<script	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
+<<<<<<< HEAD
+	<script src="/recycle_project/js/pagination.js"></script>
+=======
 	<script src="/recycle_project/js/pagination.js" type="text/javascript"></script>
+>>>>>>> refs/remotes/origin/master
 	<script src="/recycle_project/js/admin/getmember.js"></script>
 	
 

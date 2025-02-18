@@ -107,6 +107,7 @@
 	<!-- header.jsp와 중복. 오류 발생 -->
 	
 	<!-- js -->
+	<script src="/recycle_project/js/pagination.js"></script>
 	<script src="/recycle_project/js/member/info.js"></script>
 	
 </body>

@@ -125,9 +125,13 @@ public class MemberDao extends Dao {
 	public ArrayList<PointDto> getPointLog(int loginMno, int startRow, int display){
 		ArrayList<PointDto> list = new ArrayList<PointDto>();
 		try {
-			String sql = "select * from pointlog where mno = ?";
+			String sql = "select * from pointlog where mno = ? limit ? , ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, loginMno);
+//			(2) ====== 페이지네이션 적용시 추가 ======
+				ps.setInt(1, loginMno);
+				ps.setInt(2, startRow);
+				ps.setInt(3, display);
+//			    ================================
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				PointDto pointDto = new PointDto();
@@ -137,10 +141,8 @@ public class MemberDao extends Dao {
 				pointDto.setPodate( rs.getString("podate") );
 				pointDto.setMno( rs.getInt("mno") );
 				list.add(pointDto);
-			}
-			
+			} // w end
 		}catch(SQLException e) {System.out.println(e);}
-		
 		return list;
 	}
 	

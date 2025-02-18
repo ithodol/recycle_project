@@ -39,8 +39,8 @@ public class RegionChallengeDao extends Dao{
 					boardDto.setBview(rs.getInt("bview"));
 					boardDto.setBlike(rs.getInt("blike"));
 					boardDto.setBpoint(rs.getInt("bpoint"));
-					boardDto.setLatitude(rs.getDouble("latitude"));
-					boardDto.setLongitude(rs.getDouble("longitude"));
+					boardDto.setLat(rs.getDouble("lat"));
+					boardDto.setLng(rs.getDouble("lng"));
 					boardDto.setMnickname(rs.getString("mnickname"));
 					boardDto.setMno(rs.getInt("mno"));
 					list.add(boardDto);

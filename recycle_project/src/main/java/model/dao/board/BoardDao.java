@@ -46,7 +46,7 @@ public class BoardDao extends Dao{
 			String sql = "select b.*, m.mnickname from board b inner join member m "
 					+ "on b.mno = m.mno order by b.bno desc limit ? , ? " + str;
 			PreparedStatement ps = conn.prepareStatement(sql);
-//			(2) ====== 페이지네이션 적용시 추가 =====
+//			(2) ====== 페이지네이션 적용시 추가 ======
 				ps.setInt(1, startRow);
 				ps.setInt(2, display);
 //			    ================================
@@ -120,6 +120,7 @@ public class BoardDao extends Dao{
 				result.setBlike(rs.getInt("blike"));
 				result.setBpoint(rs.getInt("bpoint"));
 				result.setMnickname(rs.getString("mnickname"));
+				result.setMno(rs.getInt("mno"));
 			} // if end
 		}catch( SQLException e ) { System.out.println(e); }
 		return result;

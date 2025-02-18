@@ -21,7 +21,7 @@
 	                <li class="breadcrumb-item active">전체 지역</li>
                 </ol>
             </div>
-               <div class="container"> <!-- container -->
+            <div class="tablebox container"> <!-- container -->
 				<table class="table boardlist" style="text-align: center;">
 					<thead>
 						<tr>
@@ -34,39 +34,31 @@
 							<th style="width: 5%">추천수</th>
 						</tr>
 					</thead>
-	
+		
 					<tbody>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
-						<tr><td>.</td></tr>
 					</tbody>
 				</table>
-
+			</div>
+			
+			<div class="btnbox container">
 				<!-- 페이징 버튼 -->
 				<nav aria-label="Page navigation example">
 					<ul class="pagination pagebtnbox justify-content-center">
-						<li>페이징</li>
+					
 					</ul>
 				</nav>
+			</div>
 					
-				<!-- 글쓰기 버튼 -->
-				<div class="d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
-					<button onclick="location.href='write.jsp'" class="btn btn-primary me-md-2 align-self-end" 
-					style="background-color: #658a69;" type="button">글쓰기
-					</button>
-					<button class="btn btn-primary align-self-end" style="background-color: #658a69;" 
-					type="button">버튼
-					</button>
-				</div>
-			</div>   
-		</div>
+			<!-- 글쓰기 버튼 -->
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
+				<button onclick="location.href='write.jsp'" class="btn btn-primary me-md-2 align-self-end" 
+				style="background-color: #658a69;" type="button">글쓰기
+				</button>
+				<button class="btn btn-primary align-self-end" style="background-color: #658a69;" 
+				type="button">버튼
+				</button>
+			</div>
+		</div>   
 	</div>
 	
 	<jsp:include page="footer.jsp"></jsp:include>

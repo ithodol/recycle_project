@@ -74,13 +74,14 @@ a{
 	width: 100%;
 	display: block;
 }
+.tablebox{ height: 550px; }
 
 /* 페이징 버튼 활성화시 */
-#layoutnav .active-g{ 
+.pagebtnbox .active-g{ 
 	background-color: #658a69; color: white !important; 
 	border: 1px solid #c0c0c0 !important;
 }
-#layoutnav .arrow {
+.pagebtnbox .arrow {
     display: inline-block;
     font-size: 9.5px;
     font-weight: bold;

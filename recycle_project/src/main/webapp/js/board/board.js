@@ -29,7 +29,7 @@ const findAll = () => {
 						
 			}) // for end
 			boardlist.innerHTML = html;
-			getPageBtn( response );
+			getPageBtn( response, "board" );
 		}) // then end
 		.catch( e => { console.log(e); } )
 	

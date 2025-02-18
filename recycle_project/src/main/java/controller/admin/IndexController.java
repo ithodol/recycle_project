@@ -28,7 +28,7 @@ public class IndexController extends HttpServlet{
 	    
 //	    페이지네이션 인터페이스
 	    Pagination pagination = new PaginationMethod();
-	    PageDto pageDto = pagination.calPagination(page, "board");
+	    PageDto<BoardDto> pageDto = pagination.calPagination(page, "board", BoardDto.class );
 //	    =======================================================
 	    
     	ObjectMapper mapper = new ObjectMapper();
