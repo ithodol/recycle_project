@@ -22,11 +22,22 @@
 /* kakao api css */
 .map_wrap {position:relative;width:100%;height:350px;}
 .title {font-weight:bold;display:block;}
-.hAddr {position:absolute;left:15%;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
+.hAddr {position:absolute;left:5%;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
 #centerAddr {display:block;margin-top:2px;font-weight: normal;}
 .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 .moveBtn {
-	position:absolute; right:15%; bottom:10px;
+	position:absolute; right:5%; bottom:-25px;
 	border-radius: 5px; background:#658a69; z-index:3;
 	border: none; color: white;
+}
+
+/* 신청 */
+#layoutnav .recruit_content{ 
+	background-color: #f5f7fa; border-radius: 10px; 
+	box-shadow: #eeeeee 3px 3px; margin-right: -15px;
+}
+#layoutnav .recruitbox{ 
+	flex-wrap: wrap; height: 210px; width: 300px;
+	border: 1px solid #c0c0c0; border-radius: 10px;
+	box-shadow: #eeeeee 3px 3px;
 }

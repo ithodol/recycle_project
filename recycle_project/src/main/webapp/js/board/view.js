@@ -8,14 +8,19 @@ const findByBno = () => {
 	fetch( `/recycle_project/board/view?bno=${ bno }`)
 		.then( r => r.json() )
 		.then( data => {
-			console.log( data );
+			bstartdate = data.bstartdate.substr(0,10);
+			benddate = data.benddate.substr(0,10);
+			
 			document.querySelector('.titlebox').innerHTML = data.btitle;
 			document.querySelector('.midbox').innerHTML = data.mnickname;
 			document.querySelector('.likebox').innerHTML = data.blike;
 			document.querySelector('.viewbox').innerHTML = data.bview;
 			document.querySelector('.datebox').innerHTML = data.bdate;
 			document.querySelector('.contentbox').innerHTML = data.bcontent;
-
+			document.querySelector('.startdateinput').innerHTML = bstartdate;
+			document.querySelector('.enddateinput').innerHTML = benddate;
+			document.querySelector('.peopleinput').innerHTML = data.bpeople;
+			
 			mapEvent(data.lat, data.lng);
 			
 		}) // then end
@@ -23,6 +28,7 @@ const findByBno = () => {
 } // f end
 findByBno();
 
+// 2. kakao api
 const mapEvent = (lat, lng) => {
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
@@ -113,5 +119,51 @@ const mapEvent = (lat, lng) => {
         }
     }
 };
+
+// 3. 인원모집 현황
+const findRecruit = () => {
+	fetch( `/recycle_project/board/recruit?bno=${ bno }` )
+		.then( r => r.json() )
+		.then( data => {
+			data.forEach( recruit => {
+				let html = '';
+				let count = 0;
+				
+				html += `<div class="p-2 bd-highlight"> ${ recruit.mnickname } </div>`;
+				
+				count++
+				console.log(count);
+				document.querySelector('.recruitbox').innerHTML = html;
+				document.querySelector('.peoplecountinput').innerHTML = count;
+			}) // for end
+		}) // then end
+		.catch( e => { console.log(e); })
+} // f end
+findRecruit();
+
+// 4. 챌린지 참여
+const recruitWrite = () => {
+	// 유효성검사
+	if( !confirm('챌린지에 참여하시겠습니까?') ){ return; }
+	
+	const option = {
+		method : 'POST',
+		headers : { 'Content-Type' : 'text/plain' },
+		body : bno
+	} // o end
+	fetch( `/recycle_project/board/recruit?bno=${ bno }` , option )
+		.then( r => r.json() )
+		.then( data => {
+			if( data ){ alert('챌린지 참여가 완료되었습니다.'); findRecruit(); }
+			document.querySelector('.recruitbox').innerHTML = html
+			findRecruit();
+		}) // then end
+		.catch( e => { console.log(e); })
+} // f end
+
+
+
+
+
 
 

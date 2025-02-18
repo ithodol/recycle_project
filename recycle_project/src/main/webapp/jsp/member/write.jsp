@@ -55,7 +55,18 @@
 						<textarea id="summernote" name="editordata" class="contentinput form-control my-2" rows="" cols=""></textarea>
 						<!-- 모집설정 -->
 						<h5 class="mt-4"> 인원수 / 날짜 </h5>
-						<input class="peopleinput form-control my-2" style="width: 25%;" type="text" placeholder="인원수"/>
+						<select class="peopleinput form-select my-2" style="width: 25%;">
+							<!-- -> 지역번호 -->
+							<option value="2"> 2 </option>
+							<option value="3"> 3 </option>
+							<option value="4"> 4 </option>
+							<option value="5"> 5 </option>
+							<option value="6"> 6 </option>
+							<option value="7"> 7 </option>
+							<option value="8"> 8 </option>
+							<option value="9"> 9 </option>
+							<option value="10"> 10 </option>
+						</select>
 						<input class="startdateinput form-control my-2" style="width: 25%;" type="datetime-local" placeholder="시작날짜"/>
 						<input class="enddateinput form-control my-2" style="width: 25%;" type="datetime-local" placeholder="종료날짜"/>
 					</form>
