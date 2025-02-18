@@ -39,20 +39,22 @@ public class SharePointController extends HttpServlet{
 	
 	
 	// bno에 신청한 각 mno에게 포인트 배포하기 
-//	@Override
-//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		System.out.println("sharepoint post test");
-//		int bno = Integer.parseInt(req.getParameter("bno"));
-//		
-//		SharePointDto sharepointDto = AccDao.getInstance().sharePoint(bno);
-//		
-//		ObjectMapper mapper = new ObjectMapper();
-//		String result = mapper.writeValueAsString(sharepointDto);
-//		
-//		resp.setContentType("application/json");
-//		resp.getWriter().print(result);
-//		
-//	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("sharepoint post test");
+		
+		
+		SharePointDto sharePointDto = new SharePointDto();
+		
+		boolean result = AccDao.getInstance().sharePoint(sharePointDto);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonResult = mapper.writeValueAsString(result);
+		
+		resp.setContentType("application/json");
+		resp.getWriter().print(jsonResult);
+		
+	}
 	
 	
 	

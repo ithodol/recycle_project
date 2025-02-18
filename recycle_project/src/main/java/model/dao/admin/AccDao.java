@@ -106,10 +106,10 @@ public class AccDao extends Dao {
 	public ArrayList<SharePointDto> findMno(int bno) {
 		ArrayList<SharePointDto> list = new ArrayList<SharePointDto>();
 		try {
-			String sql = "select board.bpoint, board.bcontent, member.mno, recruit.reno from board "
-					+ "inner join member on board.mno = member.mno "
-					+ "inner join recruit recruit on board.bno = recruit.bno "
-					+ "where board.bno = ?";
+			String sql = "select board.bpoint, board.bcontent, member.mno, recruit.reno from recruit "
+					+ "inner join member on recruit.mno = member.mno "
+					+ "inner join board on recruit.bno = board.bno "
+					+ "where board.bno=? and board.bpoint=0";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, bno);
 			//System.out.println(ps);
@@ -117,7 +117,7 @@ public class AccDao extends Dao {
 			
 			while(rs.next()) {
 				SharePointDto sharePointDto = new SharePointDto();
-				sharePointDto.setBno(rs.getInt("reno"));
+				sharePointDto.setReno(rs.getInt("reno"));
 				sharePointDto.setMno(rs.getInt("mno"));
 				sharePointDto.setBpoint(rs.getInt("bpoint"));
 				sharePointDto.setBcontent(rs.getString("bcontent"));
@@ -126,20 +126,30 @@ public class AccDao extends Dao {
 			
 		}catch(SQLException e) {System.out.println(e);}
 		
-		System.out.println(list);
+		//System.out.println(list);
 		return list;
 	}
 	
+	
 	// bno에 신청한 각 mno에게 포인트 배포하기
-//	public SharePointDto sharePoint(int bno) {
-//		try {
-//			String sql = "";
-//		}catch(SQLException e) {System.out.println(e);}
-//		
-//		
-//		return null;
-//	}
-//	
+	public boolean sharePoint(SharePointDto sharePointDto) {
+		try {
+			String sql = "insert into pointlog(pocontent, pocount, podate, mno) value (?, ?, now(), ?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			System.out.println(sharePointDto);
+			ps.setString(1, sharePointDto.getBcontent());
+			ps.setInt(2, sharePointDto.getBpoint());
+			ps.setInt(3, sharePointDto.getMno());
+			//System.out.println(ps);
+			int c = ps.executeUpdate();
+			
+			if(c == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return false;
+	}
+	
 	
 	
 }
