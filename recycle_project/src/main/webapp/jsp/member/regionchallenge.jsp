@@ -47,7 +47,7 @@
 			</div>
 			<div class="container">
 				<!-- container -->
-				<div id="map"  style="width: 100%; height: 550px; margin:0px auto;"></div>
+				<div id="map"  style="width: 90%; height: 550px; margin:0px auto;"></div>
 			</div>
 		</div>
 	</div>

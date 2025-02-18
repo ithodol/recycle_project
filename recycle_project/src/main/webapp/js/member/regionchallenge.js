@@ -35,7 +35,7 @@
 			// for vs .forEach( ( 반복변수명 ) => { } )  vs  .map( (반복변수명)=>{ return } )
 			let markers = data.map(position => {
 			            let marker = new kakao.maps.Marker({
-			                position: new kakao.maps.LatLng(position.latitude, position.longitude)
+			                position: new kakao.maps.LatLng(position.lat, position.lng)
 			           
 						});
 						console.log(position);
