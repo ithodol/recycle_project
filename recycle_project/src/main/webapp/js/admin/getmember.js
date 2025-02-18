@@ -3,7 +3,7 @@ const getMember = () =>{
 	if( page == null){ page = 1; }
 	
 	const option ={method : 'GET'}
-	fetch(`/recycle_project/admin/find?page=${ page }`,option)
+	fetch(`/recycle_project/admin/find?page=${page}`,option)
 		.then(r=>r.json())
 		.then(response=>{
 			if(response !=null){

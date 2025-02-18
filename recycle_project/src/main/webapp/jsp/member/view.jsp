@@ -7,6 +7,8 @@
 <title>Recycle Project - 챌린지</title>
 	<!-- Title 이미지 -->
 	<link href="../../img/title.ico" rel="shortcut icon" type="image/x-icon">
+	<!-- css -->
+	<link href="/recycle_project/css/board/view.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -24,40 +26,41 @@
 
 			<div class="container">
 				<!-- container -->
-				<div>
-					작성자 : <span class="midbox"> 작성자 구역 </span> 조회수 : <span
-						class="viewbox"> 조회수 구역 </span> 작성일 : <span class="datebox">
-						작성일 구역 </span>
-				</div>
-				<br /> <br />
-
-				<div style="text-align: center; font-size: 30px" class="titlebox">
+				<div style="font-size: 20px; width: 100%;" 
+				class="container titlebox px-2">
 					제목이 들어갈 구역</div>
-				<br /> <br />
+				<div class="content_subtitle row" >
+					<div class="container col-6">
+						작성자 : <span class="midbox"> 작성자 구역 </span> 
+					</div>
+					<div class="container col-6">
+						추천수  <span class="likebox mx-2"> 추천수 구역 </span> 
+						조회수  <span class="viewbox mx-2"> 조회수 구역 </span> 
+						작성일  <span class="datebox mx-2"> 작성일 구역 </span>
+					</div>
+				</div>
+				<br />
 
-				<div class="contentbox">본문이 들어갈 구역</div>
+				<div class="contentbox p-3">본문이 들어갈 구역</div>
 				<br /> <br />
+				
+				<!-- 수정 삭제 버튼 -->
+				<div
+					class="d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
+					<button onclick="" class="btn btn-primary me-md-2 align-self-end"
+						style="background-color: #658a69;" type="button">수정</button>
+					<button class="btn btn-primary align-self-end"
+						style="background-color: #658a69;" type="button">삭제</button>
+				</div>
 
 				<div>
 					<textarea class="rcontentinput form-control"></textarea>
-					<!--  form-control : 부트스트랩css -->
-					<button onclick="onReplyWrite()" type="button"
-						class="btn btn-primary">댓글 게시</button>
+					<button onclick="" class="btn btn-primary me-md-2 align-self-end"
+						style="background-color: #658a69;" type="button">댓글 쓰기</button>
 				</div>
 
 				<div class="replybox mt-5"></div>
 
-				<!-- 글쓰기 버튼 -->
-				<div
-					class="d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
-					<!-- 모달 버튼 -->
-
-					<button onclick="location.href='write.jsp'"
-						class="btn btn-primary me-md-2 align-self-end"
-						style="background-color: #658a69;" type="button">글쓰기</button>
-					<button class="btn btn-primary align-self-end"
-						style="background-color: #658a69;" type="button">취소</button>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -67,7 +70,7 @@
 	<!-- JQuery -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- js -->
-	<script src="/recycle_project/js/board/board.js"></script>
+	<script src="/recycle_project/js/board/view.js"></script>
 
 </body>
 </html>

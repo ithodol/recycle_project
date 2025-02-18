@@ -3,6 +3,7 @@ package model.dao.member;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import lombok.Getter;
@@ -18,10 +19,10 @@ public class MemberDao extends Dao {
 	
 	
 	// 회원가입
-	public boolean signup(MemberDto memberDto) {
+	public int signup(MemberDto memberDto) {
 		try {
 			String sql = "insert into member(mid, mpwd, mname, mnickname, mphone, memail, mprofile) values (?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, memberDto.getMid());
 			ps.setString(2, memberDto.getMpwd());
 			ps.setString(3, memberDto.getMname());
@@ -31,11 +32,15 @@ public class MemberDao extends Dao {
 			ps.setString(7, memberDto.getMprofile());
 			int c = ps.executeUpdate();
 			if(c == 1) {
-				return true;
+				ResultSet rs = ps.getGeneratedKeys();
+				if(rs.next()) {
+					int mno = rs.getInt(1);
+					return mno;
+				}
 			}
 		}catch(SQLException e) {System.out.println(e);}
 		
-		return false;
+		return 0;
 	}
 	
 	
@@ -83,14 +88,13 @@ public class MemberDao extends Dao {
 	// 내 정보 수정
 	public boolean update(MemberDto memberDto) {
 		try {
-			String sql = "update member set mpwd = ?, mnickname = ?, mphone = ?, memail = ?, mprofile = ? where mno = ?";
+			String sql = "update member set mpwd = ?, mnickname = ?, mphone = ?, memail = ? where mno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, memberDto.getMpwd());
 			ps.setString(2, memberDto.getMnickname());
 			ps.setString(3, memberDto.getMphone());
 			ps.setString(4, memberDto.getMemail());
-			ps.setString(5, memberDto.getMprofile());
-			ps.setInt(6, memberDto.getMno());
+			ps.setInt(5, memberDto.getMno());
 			
 			int c = ps.executeUpdate();
 			if(c == 1) {
@@ -141,6 +145,79 @@ public class MemberDao extends Dao {
 		}catch(SQLException e) {System.out.println(e);}
 		return list;
 	}
+	
+	
+	// 남은 포인트 조회
+	public int getPoint(int loginMno) {
+		try {
+			String sql = "select sum(pocount) as mpoint from pointlog where mno = ? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(  1 , loginMno);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				return rs.getInt("mpoint");
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return -1;
+	}
+	
+	
+	
+	
+	// 
+	public boolean setPoint(PointDto pointDto) {
+		try {
+			String sql = "insert into pointlog( pocontent, pocount, podate, mno ) values(?, ?, now(), ?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, pointDto.getPocontent());
+			ps.setInt(2, pointDto.getPocount());
+			ps.setInt(3, pointDto.getMno());
+			int count = ps.executeUpdate();
+			if(count == 1) {
+				return true;
+			}
+		}catch(SQLException e) {System.out.println(e);}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

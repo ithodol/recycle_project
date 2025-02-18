@@ -62,6 +62,7 @@
 								
 							</tbody>
 						</table>
+
 					</div>   
 					
 					<nav aria-label="Page navigation example">
@@ -83,8 +84,13 @@
 	<script	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
+<<<<<<< HEAD
 	<script src="/recycle_project/js/pagination.js"></script>
+=======
+	<script src="/recycle_project/js/pagination.js" type="text/javascript"></script>
+>>>>>>> refs/remotes/origin/master
 	<script src="/recycle_project/js/admin/getmember.js"></script>
+	
 
 
 </body>

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+#layoutnav .titlebox{ 
+	border-top: 1px solid #c0c0c0; 
+	background-color: #e2e2e2;
+}
+#layoutnav .content_subtitle{ 
+	border-top: 1px solid #c0c0c0; 
+	border-bottom: 1px solid #c0c0c0; 
+	margin: 0px 1px;
+}

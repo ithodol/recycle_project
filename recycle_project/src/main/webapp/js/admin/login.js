@@ -19,7 +19,7 @@ const onLogIn = () =>{
 			.then( data => {
 				if( data > 0 ){ 
 					alert(`${adid}님 환영합니다`);
-					location.href="index.jsp"; 
+					location.href="/recycle_project/jsp/admin/index.jsp?page=1"; 
 				}else{ alert('ID와 PASSWORD를 확인해주세요'); }
 			})
 			.catch( error => { console.log(error )})

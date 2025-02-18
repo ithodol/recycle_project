@@ -4,15 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Recycle Project Admin - 마이페이지</title>
+<title>Recycle Project Admin - 회원 상세 조회</title>
+<!-- Title 이미지 -->
 <link href="../../img/title.ico" rel="shortcut icon" type="image/x-icon">
+
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Dashboard - SB Admin</title>
+<title>Recycle Project Admin - 회원 상세 조회</title>
 <!-- 부트스트랩 css -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
@@ -20,17 +22,12 @@
 <link href="../../resources/css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
 	crossorigin="anonymous"></script>
-<!-- 부트스트랩 CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
-<!-- 사용자 CSS -->
+<!-- css -->
+<link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
+<link href="/recycle_project/css/admin/memberview.css" rel="stylesheet" />
 <link href="/recycle_project/css/admin/login.css" rel="stylesheet" />
 <!-- css -->
 <link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
-
 <!-- 폰트 -->
 <style>
 @import
@@ -51,57 +48,89 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="side_content">
-					<div style="margin-top : 50px">
-						<div class="login-box col-md-10 mx-auto col-lg-5">
+					<div class="content_title">
+						<h1>회원정보 상세조회</h1>
+						<ol class="breadcrumb mb-4">
+							<li class="breadcrumb-item active"></li>
+						</ol>
+					</div>
+					<div class="container tableflex">
+						<!-- container -->
+						<div class="login-box col-md-10 col-lg-5">
 							<div class="form-floating mb-n2 logo-box"
 								style="justify-content: center !important;">
 
-								<div class="login-title" style="margin-left: 0px;">관리자 정보
-									수정</div>
+								<div class="login-title" >회원 상세
+									조회</div>
 							</div>
 							<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
+								<div class="form-floating mb-2">
+									<input type="text" id="mno"
+										class="form-control mnoinput" id="floatingPassword"
+										placeholder="회원번호" disabled> 
+										<label for="floatingPassword">회원번호</label>
+								</div>
 								<!-- 아이디 -->
 								<div class="form-floating mb-2">
 									<!-- id 속성은 마크업당 1번만 가능 , class 속성은 마크업당 여러개 가능 , 띄어쓰기 구분 -->
-									<input type="text" id="adid" class="form-control adidinput"
-										id="floatingInput" placeholder="아이디" readonly> <label
+									<input type="text" id="adid" class="form-control midinput"
+										id="floatingInput" placeholder="아이디" disabled> <label
 										for="floatingInput">아이디</label>
 								</div>
 
 								<div class="form-floating mb-2">
-									<input type="text" id="adname" class="form-control adnameinput"
-										id="floatingPassword" placeholder="이름" readonly> <label
+									<input type="text" id="adname" class="form-control mnameinput"
+										id="floatingPassword" placeholder="이름" > <label
 										for="floatingPassword">이름</label>
 								</div>
-								<div class="form-floating mb-2">
-									<input type="text" id="adnickname"
-										class="form-control adnicknameinput" id="floatingPassword"
-										placeholder="닉네임" readonly> <label
-										for="floatingPassword">닉네임</label>
-								</div>
+							
 								<div class="form-floating mb-2">
 									<input type="text" id="adphone"
-										class="form-control adphoneinput" id="floatingPassword"
-										placeholder="연락처" readonly> <label
+										class="form-control mphoneinput" id="floatingPassword"
+										placeholder="연락처" > <label
 										for="floatingPassword">연락처</label>
 								</div>
 								<div class="form-floating mb-2">
 									<input type="text" id="ademail"
-										class="form-control ademailinput" id="floatingPassword"
-										placeholder="이메일" readonly> <label
-										for="floatingPassword">이메일</label>
+										class="form-control mpointinput" id="floatingPassword"
+										placeholder="포인트" disabled> <label
+										for="floatingPassword">포인트</label>
 								</div>
 
-								<button class="login-btn w-100 btn btn-lg fw-bold mb-1"
-									type="button" onclick="onAdminDelete()">회원 탈퇴</button>
+								
 								<button class="login-btn w-100 btn btn-lg fw-bold" type="button"
-									onclick="AdminUpdatePage()">정보 수정</button>
+									onclick="onMemberUpdate()">회원 수정</button>
 							</form>
 						</div>
+
+						<div class="contentLeft" >
+							<ol class="breadcrumb mb-4">
+								<li class="breadcrumb-item active">포인트 적립 내역</li>
+							</ol>
+
+							<table class="table boardlist">
+								<thead>
+									<tr>
+										<th class="no">번호</th>
+										<th>포인트</th>
+										<th>포인트지급내용</th>
+										<th>적립날짜</th>
+									</tr>
+								</thead>
+
+								<tbody class="memberbypoint">
+
+								</tbody>
+							</table>
+
+							<nav aria-label="Page navigation example">
+								<ul class="pagination pagebtnbox justify-content-center">
+
+								</ul>
+							</nav>
+
+						</div>
 					</div>
-
-
-
 				</div>
 			</main>
 
@@ -123,7 +152,8 @@
 		crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
-	<script src="/recycle_project/js/admin/login.js"></script>
-	<script src="/recycle_project/js/admin/admininfo.js"></script>
+	<script src="/recycle_project/js/admin/memberupdate.js"></script>
+
+
 </body>
 </html>

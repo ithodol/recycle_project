@@ -12,7 +12,7 @@
 	<nav class="logoBox sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
 		<img src="../../img/logo.jpg" class="side_logo" />
-		<a class="side_title navbar-brand ps-3" href="/recycle_project/jsp/admin/index.jsp" style="color: #658a69">
+		<a class="side_title navbar-brand ps-3" href="/recycle_project/jsp/admin/index.jsp?page=1" style="color: #658a69">
 		Spring</a>
 		<!-- Sidebar Toggle-->
 		<button class="sidebar_btn btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"

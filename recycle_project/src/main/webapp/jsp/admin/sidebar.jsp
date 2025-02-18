@@ -14,15 +14,15 @@
 			<div class="sb-sidenav-menu">
 				<div class="nav">
 					<!-- Dashboard -->
-					<div class="sb-sidenav-menu-heading">주요 기능</div>
-						<a class="nav-link" href="/recycle_project/jsp/admin/index.jsp">
+					<div class="sb-sidenav-menu-heading"></div>
+						<a class="nav-link" href="/recycle_project/jsp/admin/index.jsp?page=1">
 							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> 현황
+								<i class="fas fa-solid fa-house"></i>
+							</div>&nbsp;홈
 						</a>
 				
 					<!-- 게시판 메뉴 -->
-					<div class="sb-sidenav-menu-heading">게시판</div>
+					<div class="sb-sidenav-menu-heading">회원 관리</div>
 					
 					<!-- 회원 드롭박스 -->
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -34,6 +34,8 @@
 								<path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
 							</svg>
 						</div> 회원 관리
+							<i class="fas fa-columns"></i>
+						</div>&nbsp;회원
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
@@ -42,7 +44,7 @@
 						<div class="collapse" id="collapseLayouts"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="dropmenu nav-link" href="/recycle_project/jsp/admin/getmember.jsp">
+								<a class="dropmenu nav-link" href="/recycle_project/jsp/admin/getmember.jsp?page=1">
 									회원정보 조회
 								</a> 
 								<a class="dropmenu nav-link" href="layout-sidenav-light.html">
@@ -50,14 +52,14 @@
 								</a>
 							</nav>
 						</div>
-					
+					<div class="sb-sidenav-menu-heading">게시판 관리</div>
 					<!-- 게시판 드롭박스 -->
 					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 						data-bs-target="#collapsePages" aria-expanded="false"
 						aria-controls="collapsePages">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-book-open"></i>
-						</div> 게시판 관리
+						</div>&nbsp;게시판
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
@@ -97,7 +99,7 @@
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-book-open"></i>
-						</div> 공지사항 관리
+						</div>&nbsp;공지사항
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
@@ -135,6 +137,9 @@
 			</div>
 		</nav>
 	</div>
+		
+	<!-- js -->
+	<script src="/recycle_project/js/member/footer.js"></script>
 		
 </body>
 </html>

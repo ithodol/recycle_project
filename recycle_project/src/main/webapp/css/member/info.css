@@ -1,0 +1,74 @@
+@charset "UTF-8";
+body{
+	background-color: #f1f5f1 !important;
+}
+
+.logo-box{
+	height: 81px;
+}
+.info-title > h3{
+	margin-bottom: 0px;
+	font-weight: bold;
+}
+
+.mprofilebox > .mprofile{
+	width : 200px;
+	height: 200px;
+	border-radius: 50px;
+	border: 1px solid #e8e8e8;
+	padding: 5px;
+	object-fit: cover;
+	
+}
+.mprofilebox {
+	text-align: center;
+	
+}
+.mypoint{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+
+.bottom-btn{
+	background-color: #658a69 !important;
+	color: white !important;
+	margin: 10px 0px;
+}
+
+
+.point-table{
+	padding-left: 80px !important;
+	margin-top: 67px !important;
+}
+
+.point-table > div{
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.table{
+	
+	text-align: center;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th{
+	background-color: #f8f9fa !important;
+}
+
+.r-width{
+	width: 770px !important;
+}
+
+.r-h{
+	height: 850px !important;
+    position: relative !important;
+    
+}
+.r-bottom-btn{
+	position: absolute;
+    bottom: 58px;
+    margin-bottom: 0px;
+    padding: 8px 284px !important;
+}
