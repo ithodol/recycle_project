@@ -191,7 +191,7 @@ select mno from member;
 select * from member m inner join board b on m.mno = b.mno where bno=10;
 -- 오류 select board.bpoint, board.bcontent, member.mno from board, member inner join member on board.mno = member.mno inner join recruit recruit on board.bno = recruit.bno where member.mno = 1 and board.bno = 1;
 -- select문에서 2개의 테이블 값을 가져오는 방법?
-select board.bpoint, board.bcontent from board inner join member on board.mno = member.mno inner join recruit recruit on board.bno = recruit.bno where member.mno = 1 and board.bno = 1;
+select board.bpoint, board.bcontent, member.mno, recruit.reno from board inner join member on board.mno = member.mno inner join recruit recruit on board.bno = recruit.bno where board.bno = 1;
 
 
 
