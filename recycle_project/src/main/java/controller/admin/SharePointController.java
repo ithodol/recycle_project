@@ -17,25 +17,49 @@ import model.dto.member.MemberDto;
 
 @WebServlet("/point/share")
 public class SharePointController extends HttpServlet{
-	// 게시물에 신청한 사람들의 정보 가져오기
+	// bno에 신청한 사람들의 정보 가져오기
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("sharepoint get test");
 		// 현재 페이지 bno 가져오기
 		int bno = Integer.parseInt(req.getParameter("bno"));
-		//System.out.println(bno);
+		System.out.println(bno);
 
 		// bno에 해당하는 정보 가져오기
-		MemberDto memberDto = new MemberDto();
-		ArrayList<SharePointDto> findList = AccDao.getInstance().findMno(memberDto, bno); 
-		//System.out.println(findList);
+		
+		ArrayList<SharePointDto> findList = AccDao.getInstance().findMno(bno); 
+		System.out.println(findList);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String result = mapper.writeValueAsString(findList);
 		
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
-		
-		
 	}
+	
+	
+	// bno에 신청한 각 mno에게 포인트 배포하기 
+//	@Override
+//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		System.out.println("sharepoint post test");
+//		int bno = Integer.parseInt(req.getParameter("bno"));
+//		
+//		SharePointDto sharepointDto = AccDao.getInstance().sharePoint(bno);
+//		
+//		ObjectMapper mapper = new ObjectMapper();
+//		String result = mapper.writeValueAsString(sharepointDto);
+//		
+//		resp.setContentType("application/json");
+//		resp.getWriter().print(result);
+//		
+//	}
+	
+	
+	
+	
+	
 }
+
+
+
+

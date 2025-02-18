@@ -103,24 +103,22 @@ public class AccDao extends Dao {
 	
 	
 	// bno에 해당하는 정보 가져오기
-	public ArrayList<SharePointDto> findMno(MemberDto memberDto, int bno) {
+	public ArrayList<SharePointDto> findMno(int bno) {
 		ArrayList<SharePointDto> list = new ArrayList<SharePointDto>();
 		try {
-			String sql = "select bpoint, bcontent from board b "
-					+ "inner join member m on b.mno = m.mno "
-					+ "inner join recruit r on b.bno = r.bno "
-					+ "where m.mno = ? and b.bno = ?";
+			String sql = "select board.bpoint, board.bcontent, member.mno, recruit.reno from board "
+					+ "inner join member on board.mno = member.mno "
+					+ "inner join recruit recruit on board.bno = recruit.bno "
+					+ "where board.bno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, memberDto.getMno()); // 0 나옴 select문에서 2개의 테이블 값을 가져오는 방법?
-			ps.setInt(2, bno);
-			System.out.println(ps);
+			ps.setInt(1, bno);
+			//System.out.println(ps);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				SharePointDto sharePointDto = new SharePointDto();
 				sharePointDto.setBno(rs.getInt("reno"));
 				sharePointDto.setMno(rs.getInt("mno"));
-				sharePointDto.setBno(rs.getInt("bno"));
 				sharePointDto.setBpoint(rs.getInt("bpoint"));
 				sharePointDto.setBcontent(rs.getString("bcontent"));
 				list.add(sharePointDto);
@@ -128,9 +126,19 @@ public class AccDao extends Dao {
 			
 		}catch(SQLException e) {System.out.println(e);}
 		
-		//System.out.println(list);
+		System.out.println(list);
 		return list;
 	}
+	
+	
+//	public SharePointDto sharePoint(int bno) {
+//		try {
+//			String sql = "";
+//		}catch(SQLException e) {System.out.println(e);}
+//		
+//		
+//		return null;
+//	}
 	
 	
 	
