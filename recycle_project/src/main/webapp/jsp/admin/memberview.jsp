@@ -22,6 +22,11 @@
 <link href="../../resources/css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
 	crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
 <!-- css -->
 <link href="/recycle_project/css/admin/index.css" rel="stylesheet" />
 <link href="/recycle_project/css/admin/memberview.css" rel="stylesheet" />
@@ -60,15 +65,13 @@
 							<div class="form-floating mb-n2 logo-box"
 								style="justify-content: center !important;">
 
-								<div class="login-title" >회원 상세
-									조회</div>
+								<div class="login-title">회원 상세 조회</div>
 							</div>
 							<form class="p-4 p-md-5 border rounded-bottom-3 bg-body-tertiary">
 								<div class="form-floating mb-2">
-									<input type="text" id="mno"
-										class="form-control mnoinput" id="floatingPassword"
-										placeholder="회원번호" readonly> 
-										<label for="floatingPassword">회원번호</label>
+									<input type="text" id="mno" class="form-control mnoinput"
+										id="floatingPassword" placeholder="회원번호" readonly> <label
+										for="floatingPassword">회원번호</label>
 								</div>
 								<!-- 아이디 -->
 								<div class="form-floating mb-2">
@@ -83,7 +86,7 @@
 										id="floatingPassword" placeholder="이름" readonly> <label
 										for="floatingPassword">이름</label>
 								</div>
-							
+
 								<div class="form-floating mb-2">
 									<input type="text" id="adphone"
 										class="form-control mphoneinput" id="floatingPassword"
@@ -104,7 +107,7 @@
 							</form>
 						</div>
 
-						<div class="contentLeft" >
+						<div class="contentLeft">
 							<ol class="breadcrumb mb-4">
 								<li class="breadcrumb-item active">포인트 적립 내역</li>
 							</ol>
@@ -122,8 +125,9 @@
 								<tbody class="memberbypoint">
 
 								</tbody>
-							</table>
 
+
+							</table>
 							<nav aria-label="Page navigation example">
 								<ul class="pagination pagebtnbox justify-content-center">
 
@@ -131,6 +135,8 @@
 							</nav>
 
 						</div>
+
+
 					</div>
 				</div>
 			</main>
@@ -153,7 +159,8 @@
 		crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
-		<script src="/recycle_project/js/admin/pagination.js"></script>
+
+	<script src="/recycle_project/js/pagination2.js"></script>
 	<script src="/recycle_project/js/admin/memberview.js"></script>
 
 

@@ -38,19 +38,19 @@
 						</div>
 						
 						<div class="form-floating mb-2">
-							<input type="text" id="adpwd" class="form-control  adnameinput" id="floatingPassword" placeholder="이름"> 
+							<input type="text" id="adpwd" class="form-control  adnameinput" id="floatingadname" placeholder="이름"> 
 							<label for="floatingPassword">이름</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="adpwd" class="form-control  adnicknameinput" id="floatingPassword" placeholder="닉네임"> 
+							<input type="text" id="adpwd" class="form-control  adnicknameinput" id="floatingadnickname" placeholder="닉네임"> 
 							<label for="floatingPassword">닉네임</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="adpwd" class="form-control  adphoneinput" id="floatingPassword" placeholder="연락처"> 
+							<input type="text" id="adpwd" class="form-control  adphoneinput" id="floatingadphone" placeholder="연락처"> 
 							<label for="floatingPassword">연락처 ex)010-0000-0000</label>
 						</div>
 						<div class="form-floating mb-2">
-							<input type="text" id="adpwd" class="form-control  ademailinput" id="floatingPassword" placeholder="이메일 "> 
+							<input type="text" id="adpwd" class="form-control  ademailinput" id="floatingademail" placeholder="이메일 " onkeypress="if(event.key === 'Enter'){ onSignUp(); return; }"> 
 							<label for="floatingPassword">이메일 ex)abcd@gmail.com</label>
 						</div>
 						

@@ -54,6 +54,7 @@ public class BoardDao extends Dao{
 			while( rs.next() ) {
 				BoardDto boardDto = new BoardDto();
 				boardDto.setBno(rs.getInt("bno"));
+				boardDto.setLno(rs.getInt("lno"));
 				boardDto.setBtitle(rs.getString("btitle"));
 				boardDto.setBcontent(rs.getString("bcontent"));
 				boardDto.setBaddress(rs.getString("baddress"));
