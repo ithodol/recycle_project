@@ -80,6 +80,7 @@ public class MemberDao extends Dao {
                 memberDto.setMprofile(rs.getString("mprofile"));
                 return memberDto;
 			}
+			
 		}catch(SQLException e) {System.out.println(e);}
 		return null;
 	}
@@ -126,6 +127,7 @@ public class MemberDao extends Dao {
 		ArrayList<PointDto> list = new ArrayList<PointDto>();
 		try {
 			String sql = "select * from pointlog where mno = ? limit ? , ?";
+			System.out.println(sql);
 			PreparedStatement ps = conn.prepareStatement(sql);
 //			(2) ====== 페이지네이션 적용시 추가 ======
 				ps.setInt(1, loginMno);
@@ -133,6 +135,7 @@ public class MemberDao extends Dao {
 				ps.setInt(3, display);
 //			    ================================
 			ResultSet rs = ps.executeQuery();
+			System.out.println(ps);
 			while(rs.next()) {
 				PointDto pointDto = new PointDto();
 				pointDto.setPono( rs.getInt("pono") );
@@ -143,7 +146,9 @@ public class MemberDao extends Dao {
 				list.add(pointDto);
 			} // w end
 		}catch(SQLException e) {System.out.println(e);}
+		System.out.println(list);
 		return list;
+		
 	}
 	
 	
