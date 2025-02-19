@@ -13,7 +13,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.dao.board.ReplyDao;
 import model.dto.board.ReplyDto;
-import web.model.dao.BoardDao;
 
 @WebServlet("/board/reply")
 public class ReplyController extends HttpServlet{
