@@ -20,12 +20,4 @@ public class PageDto<T extends DataDto> {
 	private int endBtn;
 	private int loginMno;
 	private List<T> data;
-	
-	public void setData(List<T> data) {
-		this.data = data;
-	}
-	
-	public List<T> getData(){
-		return data;
-	}
 }

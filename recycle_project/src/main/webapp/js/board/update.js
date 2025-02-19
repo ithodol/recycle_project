@@ -1,19 +1,20 @@
 console.log('update.js open');
 
 const bno = new URL( location.href ).searchParams.get("bno");
-let lat;	let lng;
-console.log(bno);
 
 const viewByBno = () => {
-	fetch( `/recyclt_project/board/view?bno=${ bno }` )
+	fetch( `/recycle_project/board/view?bno=${ bno }` )
 		.then( r => r.json() )
 		.then( data => {
+			console.log(data);
 			document.querySelector('.lnoselect').value = data.lno;
 			document.querySelector('.titleinput').value = data.btitle;
-			document.querySelector('.contentinput').value = data.bcontent;
+			$('#summernote').summernote('editor.insertText', data.bcontent);
 			document.querySelector('.peopleinput').value = data.bpeople;
 			document.querySelector('.startdateinput').value = data.bstartdate;
-			document.querySelector('.enddateinput').value = benddata;
+			document.querySelector('.enddateinput').value = data.benddate;
+			
+			lat = data.lat;	lng = data.lng;
 		})
 		.catch( e => { console.log(e); })
 } // f end
@@ -54,7 +55,7 @@ const onUpdate = () => {
 		body : JSON.stringify( obj )
 	} // o end
 	
-	fetch( `/recycle_project/board?bno=$( bno )` , option )
+	fetch( `/recycle_project/board?bno=${ bno }` , option )
 		.then( r => r.json())
 		.then( data => {
 			if( data ){ alert('수정이 완료되었습니다.') }

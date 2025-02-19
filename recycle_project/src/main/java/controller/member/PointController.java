@@ -32,7 +32,7 @@ public class PointController extends HttpServlet{
 //		    페이지네이션 인터페이스 호출
 		    Pagination pagination = new PaginationMethod();
 //		                              			(mno, page , "테이블명" , 사용한Dto.class )
-		    pageDto = pagination.calPagination(loginMno, page, "pointlog", PointDto.class );
+		    pageDto = pagination.calPagination(loginMno, page, "pointlog where mno="+loginMno , PointDto.class );
 //		    =======================================================
 		}
 		ObjectMapper mapper = new ObjectMapper();
