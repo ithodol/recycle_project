@@ -100,7 +100,8 @@ public class BoardDao extends Dao{
 		BoardDto result = new BoardDto();
 		try {
 			String sql = "select b.*, m.mnickname from board b "
-					+ "inner join member m where bno = ?";
+					+ "inner join member m on b.mno = m.mno "
+					+ "where bno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 				ps.setInt(1, bno);
 			ResultSet rs = ps.executeQuery();

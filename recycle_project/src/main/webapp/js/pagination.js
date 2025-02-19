@@ -8,7 +8,7 @@ const getPageBtn = ( response, jsp ) => {
 	let html = '';
 		// 첫페이지 버튼
 		html += `<li class="page-item ${ Math.max(response.startBtn - 1, 1) == 1 ? 'disabled' : '' }">
-					<a class="page-link" href="${ jsp }.jsp?page=1" aria-label="Previous"> 
+					<a class="page-link" href="${ jsp }.jsp?$page=1" aria-label="Previous"> 
 						<span aria-hidden="true">&laquo;</span>
 					</a>
 				</li>`;

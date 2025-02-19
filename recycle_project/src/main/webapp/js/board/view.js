@@ -125,24 +125,23 @@ const findRecruit = () => {
 	fetch( `/recycle_project/board/recruit?bno=${ bno }` )
 		.then( r => r.json() )
 		.then( data => {
+			let html = '';
+			let count = 0;
 			data.forEach( recruit => {
-				let html = '';
-				let count = 0;
 				
 				html += `<div class="p-2 bd-highlight"> ${ recruit.mnickname } </div>`;
 				
 				count++
-				console.log(count);
-				document.querySelector('.recruitbox').innerHTML = html;
-				document.querySelector('.peoplecountinput').innerHTML = count;
 			}) // for end
+			document.querySelector('.recruitbox').innerHTML = html;
+			document.querySelector('.peoplecountinput').innerHTML = count;
 		}) // then end
 		.catch( e => { console.log(e); })
 } // f end
 findRecruit();
 
 // 4. 챌린지 참여
-const recruitWrite = () => {
+const recruitWrite = ( mno ) => {
 	// 유효성검사
 	if( !confirm('챌린지에 참여하시겠습니까?') ){ return; }
 	
@@ -154,15 +153,89 @@ const recruitWrite = () => {
 	fetch( `/recycle_project/board/recruit?bno=${ bno }` , option )
 		.then( r => r.json() )
 		.then( data => {
-			if( data ){ alert('챌린지 참여가 완료되었습니다.'); findRecruit(); }
-			document.querySelector('.recruitbox').innerHTML = html
+			if( data ){ alert('챌린지 참여가 완료되었습니다.'); }
 			findRecruit();
+			recruitBtn();
 		}) // then end
 		.catch( e => { console.log(e); })
 } // f end
 
+// 5. loginMno 가져오기
+const getLoginMno = () => {
+	return fetch('/recycle_project/member/info')
+		.then(r => r.json())
+		.then(data => {
+			loginMno = data.mno;
+			return loginMno;				
+		})
+		.catch(e => {
+			console.log(e);
+			return 0;
+		})
+} // f end
 
+// 5. 본인만 수정 삭제 버튼 출력
+const getWriteBtn = ( ) => {
+	let btnbox = document.querySelector('.btnbox');
+	let html = '';
+	
+	getLoginMno().then( loginMno => {
+		fetch(`/recycle_project/board/view?bno=${ bno }`)
+			.then(r => r.json())
+			.then(data => {
+				console.log(data);
+				if( data == null ){
+					console.log('비로그인');
+				}else if(data.mno != loginMno){
+					console.log('회원정보 불일치');
+				}else{
+					console.log('회원정보 일치');
+					html += `<button onclick="onUpdate()" class="btn btn-primary me-md-2 align-self-end"
+								style="background-color: #658a69;" type="button">수정</button>
+							<button onclick="onDelete()" class="btn btn-primary align-self-end"
+								style="background-color: #658a69;" type="button">삭제</button>`;
+					btnbox.innerHTML = html;
+				} // if end
+			}) // then end
+			.catch(e => {console.log(e);})
+	}) // then end
+} // f end
+getWriteBtn();
 
+// 7. 챌린지 적용했을 시 버튼 출력
+const recruitBtn = ( ) => {
+	let recruitbtn = document.querySelector('.recruitbtn');
+	let html = '';
+
+	getLoginMno().then( loginMno => {
+		fetch(`/recycle_project/board/recruit?bno=${ bno }`)
+			.then( r => r.json() )
+			.then( data => {
+				console.log(data);
+				console.log(loginMno);
+				for( let i = 0 ; i < data.length ; i++ ){
+					if( data[i] == null || loginMno == 0 ){
+						console.log('비로그인');
+						html = `<button class="btn btn-primary" onclick="location.href='../member/login.jsp'"
+									style="background-color: #658a69; width: 300px" type="button">로그인 후 참여가능합니다.</button>`
+						break;
+					}else if(data[i].mno == loginMno){
+						console.log('챌린지 참여 o')
+						html = `<button onclick="recruitDelete(${ loginMno })" class="btn btn-primary"
+									style="background-color: #658a69; width: 300px" type="button">챌린지 취소</button>`;
+						break;
+					}else{
+						console.log('챌린지 참여 x')
+						html = `<button onclick="recruitWrite(${ loginMno })" class="btn btn-primary"
+									style="background-color: #658a69; width: 300px" type="button">챌린지 참여</button>`
+					}
+				} // for end
+				recruitbtn.innerHTML = html;
+			})
+			.catch(e => {console.log(e);})
+	}) // then end
+} // f end
+recruitBtn();
 
 
 
