@@ -59,8 +59,8 @@ const putPoint = () => {
 
 
 
-// bno에 신청한 각 mno에게 포인트 배포
-const sharePoint = () => {
+// bno에 신청한 mno의 정보가져오기 GET
+const sharePointGet = () => {
 	const bno = new URL(location.href).searchParams.get("bno");
 	//console.log(bno);
 	
@@ -74,47 +74,21 @@ const sharePoint = () => {
 			console.log(data);
 			data.forEach(info => {
 				if(info != null){
-					
-
-						
-						const option2 = {
-							method : 'POST',
-							Headers : {'Content-Type' : 'application/json'},
-							body : JSON.stringify(obj)
-						}	
-						
-						fetch(`/recycle_project/point/share?bno=${bno}`, option2)
-							.then(r => r.json())
-							.then(data2 => {
-
-								const obj ={pocontent : info.bcontent,
-											pocount : info.bpoint,
-											mno : info.mno}
-								
-								if(data2 == true){
-
-									alert('포인트 배포 완료')
-									//location.href="/recycle_project/jsp/admin/index.jsp?page=1";
-								}
-							})
-
+					alert('포인트 배포 tjdrhd');
+					//sharePointPost(info); // mno에게 포인트 배포
+				}else if(info == null){
+					alert('해당 챌린지에 신청한 사람이 없습니다.');
 				}else{
 					alert('포인트 배포 실패');
 				}
 			})
 		})
 		.catch(e => {console.log(e);})
-		
-		
-		
-		
 
-		
-		
-// info에 있는 정보들을 변수에 저장하고
-// post 
 }
-	
+
+
+
 
 
 

@@ -15,6 +15,8 @@ create table member(
     mprofile varchar(255) default 'default.jpg',
     constraint primary key( mno )
 ); 
+select * from member where mno=13;
+
 insert into member ( mid , mpwd , mname ,mnickname, mphone, memail, mprofile ) values
 ( 'qweqwe' , 'qweqwe' , '유재석' , '닉네임', '010-3333-3333', 'qweqwe@naver.com','default.jpg' ),
 ( 'gmlaks3703' , 'pp0601' , '박희만' , '김둥', '010-5738-4837', '010-5738-4837','default.jpg' ),
@@ -79,7 +81,7 @@ insert into member ( mid , mpwd , mname ,mnickname, mphone, memail, mprofile ) v
 # 2. 포인트 로그 테이블
 create table pointlog(
 	pono int unsigned auto_increment,
-    pocontent varchar(30) not null,
+    pocontent varchar(100) not null,
     pocount int not null,
     podate datetime default now(),
     mno int unsigned,
@@ -209,7 +211,7 @@ create table board(
     constraint primary key( bno ) ,
     constraint foreign key ( mno ) references member( mno ) on update cascade on delete cascade     -- [회원]pk가 삭제되면 게시물fk는 null 변경
 );
-
+select * from board;
 -- 게시판 샘플 
 insert into board (btitle, bcontent, baddress, lat, lng, bpeople, bstartdate, benddate, bpoint, mno) values 
 ("함께 줍깅 합시다","부산에서 같이 줍깅할 팀원 구합니다~","부산시 수영구", 35.1460, 129.1130, 5,"2025-02-05","2025-02-06",0,1),
@@ -410,7 +412,6 @@ insert into recruit(mno, bno) values(59, 28);
 
 
 
-
 -- test --
 select * from recruit inner join member on recruit.mno = member.mno;
 select * from member where mno = 1;
@@ -427,6 +428,7 @@ select * from recruit;
 insert into pointlog(pocontent, pocount, podate, mno) value ('축제 정리', '5400', now(), 1);
 select * from pointlog;
 
+select b.*, m.mnickname from board b inner join member m on b.mno = m.mno where b.bpoint=0 order by b.bno desc limit 1, 3;
 
 # 5. 댓글 테이블
 create table reply(
@@ -476,5 +478,7 @@ select * from board;
 select * from recruit;
 select * from reply;
 select * from admin;
+
+
 
 
