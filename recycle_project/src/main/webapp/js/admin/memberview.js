@@ -43,7 +43,7 @@ const findByMnoPoint= () =>{
 						<td class="no"> ${ index+1 } </th> 
 					     <td > ${ data.point } </th>
 					     <td > ${ data.pocontent } </th> 
-					     <td > ${ data.podate } </th>
+					     <td > ${ data.podate.split(' ')[0] } </th>
 					    </tr>`
 				})
 				memberbypoint.innerHTML = html;
