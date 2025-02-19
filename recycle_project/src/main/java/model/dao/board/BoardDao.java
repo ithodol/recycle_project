@@ -44,7 +44,8 @@ public class BoardDao extends Dao{
 		ArrayList<BoardDto> result = new ArrayList<>();
 		try {
 			String sql = "select b.*, m.mnickname from board b inner join member m "
-					+ "on b.mno = m.mno order by b.bno desc limit ? , ? " + str;
+					+ "on b.mno = m.mno " + str	+ " order by b.bno desc limit ? , ?";
+			System.out.println(sql);
 			PreparedStatement ps = conn.prepareStatement(sql);
 //			(2) ====== 페이지네이션 적용시 추가 ======
 				ps.setInt(1, startRow);
@@ -54,6 +55,7 @@ public class BoardDao extends Dao{
 			while( rs.next() ) {
 				BoardDto boardDto = new BoardDto();
 				boardDto.setBno(rs.getInt("bno"));
+				boardDto.setLno(rs.getInt("lno"));
 				boardDto.setBtitle(rs.getString("btitle"));
 				boardDto.setBcontent(rs.getString("bcontent"));
 				boardDto.setBaddress(rs.getString("baddress"));
