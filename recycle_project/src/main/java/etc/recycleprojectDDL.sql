@@ -381,4 +381,4 @@ select * from recruit;
 select * from reply;
 select * from admin;
 
-
+select b.*, m.mnickname from board b inner join member m on b.mno = m.mno order by b.bno desc where lno=1 limit ? , ?;

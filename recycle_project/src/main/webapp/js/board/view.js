@@ -28,7 +28,24 @@ const findByBno = () => {
 } // f end
 findByBno();
 
-// 2. kakao api
+// 2. 상세페이지 삭제
+const onDelete = () => {
+	// 유효성검사
+	if( !confirm('정말 삭제하시겠습니까?')){ return; }
+	
+	const option = { method : 'DELETE' }
+	fetch( `/recycle_project/board?bno=${ bno }` , option )
+		.then( r => r.json() )
+		.then( data => {
+			if( data ){ 
+				alert('챌린지 삭제가 완료되었습니다.'); 
+				location.href='board.jsp';
+			}else { alert('챌린지 삭제 실패'); }
+		}) // then end
+		.catch( e => { console.log(e); })
+} // f end
+
+// 1-2. kakao api
 const mapEvent = (lat, lng) => {
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
@@ -210,7 +227,7 @@ const getWriteBtn = ( ) => {
 					console.log('회원정보 불일치');
 				}else{
 					console.log('회원정보 일치');
-					html += `<button onclick="onUpdate()" class="btn btn-primary me-md-2 align-self-end"
+					html += `<button onclick="location.href='boardupdate.jsp?bno=${ bno }'" class="btn btn-primary me-md-2 align-self-end"
 								style="background-color: #658a69;" type="button">수정</button>
 							<button onclick="onDelete()" class="btn btn-primary align-self-end"
 								style="background-color: #658a69;" type="button">삭제</button>`;
