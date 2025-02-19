@@ -1,7 +1,14 @@
 const mno = new URL(location.href).searchParams.get('mno');
+const page = new URL(location.href).searchParams.get('page')
+		if(page == null){
+			page = 1;
+		}
 let checkphone = ''
 
 const findByMno = ()=>{
+	
+	
+		
 	
 	const option={method:'GET'}
 	fetch(`/recycle_project/admin/view?mno=${mno}`,option)
@@ -24,18 +31,19 @@ findByMno();
 const findByMnoPoint= () =>{
 	
 	const option ={method : 'GET'}
-	fetch(`/recycle_project/admin/point?mno=${mno}`,option)
+	fetch(`/recycle_project/admin/point?mno=${mno}&page=${page}`,option)
 	.then(r=>r.json())
-		.then(point=>{
-			if(point != null){
+		.then(response=>{
+			if(response != null){
 				const memberbypoint =  document.querySelector('.memberbypoint');
 				let html=``;
-				point.forEach( (point,index)=>{
+				console.log(response);
+				response.data.forEach( (data,index)=>{
 					html += `<tr>
-					     <td class="no"> ${ index+1 } </th> 
-					     <td > ${ point.point } </th>
-					     <td > ${ point.pocontent } </th> 
-					     <td > ${ point.podate } </th>
+						<td class="no"> ${ index+1 } </th> 
+					     <td > ${ data.point } </th>
+					     <td > ${ data.pocontent } </th> 
+					     <td > ${ data.podate } </th>
 					    </tr>`
 				})
 				memberbypoint.innerHTML = html;
