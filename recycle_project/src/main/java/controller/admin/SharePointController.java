@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.dao.admin.AccDao;
+import model.dto.admin.AdminDto;
+import model.dto.admin.PointLogDto;
 import model.dto.admin.SharePointDto;
 import model.dto.board.BoardDto;
 import model.dto.member.MemberDto;
@@ -23,7 +25,7 @@ public class SharePointController extends HttpServlet{
 		System.out.println("sharepoint get test");
 		// 현재 페이지 bno 가져오기
 		int bno = Integer.parseInt(req.getParameter("bno"));
-		System.out.println(bno);
+		//System.out.println(bno);
 
 		// bno에 해당하는 정보 가져오기
 		
@@ -42,13 +44,15 @@ public class SharePointController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("sharepoint post test");
-		
-		
-		SharePointDto sharePointDto = new SharePointDto();
-		
-		boolean result = AccDao.getInstance().sharePoint(sharePointDto);
-		
 		ObjectMapper mapper = new ObjectMapper();
+		
+		PointLogDto pointLogDto = mapper.readValue(req.getReader(), PointLogDto.class);
+
+		boolean result = AccDao.getInstance().sharePoint(pointLogDto);
+		
+		//SharePointDto sharePointDto = mapper.readValue(req.getReader(), SharePointDto.class);
+		//boolean result = AccDao.getInstance().sharePoint(sharePointDto);
+		
 		String jsonResult = mapper.writeValueAsString(result);
 		
 		resp.setContentType("application/json");

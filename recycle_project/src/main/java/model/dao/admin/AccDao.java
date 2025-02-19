@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import model.dao.Dao;
+import model.dto.admin.PointLogDto;
 import model.dto.admin.SharePointDto;
 import model.dto.board.BoardDto;
 import model.dto.member.MemberDto;
@@ -23,8 +24,10 @@ public class AccDao extends Dao {
 	public ArrayList<BoardDto> findAll( int startRow , int display ) {
 		ArrayList<BoardDto> result = new ArrayList<>();
 		try {
-			String sql = "select b.*, m.mnickname from board b inner join member m "
-					+ "on b.mno = m.mno order by b.bno desc limit ? , ?";
+			String sql = "select b.*, m.mnickname from board b "
+					+ "inner join member m on b.mno = m.mno "
+					+ "where b.bpoint = 0 "
+					+ "order by b.bno desc limit ? , ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 	//		(2) ====== 페이지네이션 적용시 추가 =====
 				ps.setInt(1, startRow);
@@ -43,7 +46,7 @@ public class AccDao extends Dao {
 				boardDto.setBenddate(rs.getString("benddate"));
 				boardDto.setBview(rs.getInt("bview"));
 				boardDto.setBlike(rs.getInt("blike"));
-				boardDto.setBpoint(rs.getInt("bpoint"));
+//				boardDto.setBpoint(rs.getInt("bpoint"));
 				boardDto.setMnickname(rs.getString("mnickname"));
 				result.add(boardDto);
 			} // w end
@@ -106,10 +109,10 @@ public class AccDao extends Dao {
 	public ArrayList<SharePointDto> findMno(int bno) {
 		ArrayList<SharePointDto> list = new ArrayList<SharePointDto>();
 		try {
-			String sql = "select board.bpoint, board.bcontent, member.mno, recruit.reno from recruit "
+			String sql = "select board.bpoint, board.btitle, member.mno, recruit.reno from recruit "
 					+ "inner join member on recruit.mno = member.mno "
 					+ "inner join board on recruit.bno = board.bno "
-					+ "where board.bno=? and board.bpoint=0";
+					+ "where board.bno=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, bno);
 			//System.out.println(ps);
@@ -120,26 +123,26 @@ public class AccDao extends Dao {
 				sharePointDto.setReno(rs.getInt("reno"));
 				sharePointDto.setMno(rs.getInt("mno"));
 				sharePointDto.setBpoint(rs.getInt("bpoint"));
-				sharePointDto.setBcontent(rs.getString("bcontent"));
+				sharePointDto.setBtitle(rs.getString("btitle"));
 				list.add(sharePointDto);
 			}
 			
 		}catch(SQLException e) {System.out.println(e);}
 		
-		//System.out.println(list);
+		System.out.println(list);
 		return list;
 	}
 	
 	
 	// bno에 신청한 각 mno에게 포인트 배포하기
-	public boolean sharePoint(SharePointDto sharePointDto) {
+	public boolean sharePoint(PointLogDto pointLogDto) {
 		try {
 			String sql = "insert into pointlog(pocontent, pocount, podate, mno) value (?, ?, now(), ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			System.out.println(sharePointDto);
-			ps.setString(1, sharePointDto.getBcontent());
-			ps.setInt(2, sharePointDto.getBpoint());
-			ps.setInt(3, sharePointDto.getMno());
+			//System.out.println(sharePointDto);
+			ps.setString(1, pointLogDto.getPotitle());
+			ps.setInt(2, pointLogDto.getPocount());
+			ps.setInt(3, pointLogDto.getMno());
 			//System.out.println(ps);
 			int c = ps.executeUpdate();
 			
@@ -150,9 +153,37 @@ public class AccDao extends Dao {
 		return false;
 	}
 	
+} // 대왕
 	
 	
-}
+	// bno에 신청한 각 mno에게 포인트 배포하기
+//	public boolean sharePoint(SharePointDto sharePointDto) {
+//		try {
+//			String sql = "insert into pointlog(pocontent, pocount, podate, mno) value (?, ?, now(), ?)";
+//			PreparedStatement ps = conn.prepareStatement(sql);
+//			//System.out.println(sharePointDto);
+//			ps.setString(1, sharePointDto.getBtitle());
+//			ps.setInt(2, sharePointDto.getBpoint());
+//			ps.setInt(3, sharePointDto.getMno());
+//			//System.out.println(ps);
+//			int c = ps.executeUpdate();
+//			
+//			if(c == 1) {
+//				return true;
+//			}
+//		}catch(SQLException e) {System.out.println(e);}
+//		return false;
+//	}
+//	
+//	
+//	
+//}
+	
+
+//	
+//	
+//	
+//}
 
 
 

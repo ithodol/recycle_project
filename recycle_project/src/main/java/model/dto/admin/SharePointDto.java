@@ -14,4 +14,5 @@ public class SharePointDto {
 	private int bno;
 	private int bpoint;
 	private String bcontent;
+	private String btitle;
 }

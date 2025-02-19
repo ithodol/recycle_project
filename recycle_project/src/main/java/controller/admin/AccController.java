@@ -42,6 +42,12 @@ public class AccController extends HttpServlet{
 		
 		boolean result = AccDao.getInstance().putPoint(boardDto, bno);
 		
+		//if(result) {
+			// bno에 해당하는 포인트와 타이틀ㅇ과 게시물에 참여한 회원목록을 구한다
+			// 회원목록마다 포인트오 ㅏ타이틀을 이용하여 포인트로그 지급
+			// 패치 여러번 쓰지 말기 서블릿에서 진행?
+		//}
+		
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
 	}

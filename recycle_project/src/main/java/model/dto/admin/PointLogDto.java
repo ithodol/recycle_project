@@ -15,6 +15,9 @@ public class PointLogDto implements DataDto{
 	private int id;
 	private int mno;
 	private String podate;
+	private String potitle;
 	private String pocontent;
 	private int point;
+	private int pocount;
+	
 }
