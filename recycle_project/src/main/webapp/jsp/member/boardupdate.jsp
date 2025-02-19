@@ -101,7 +101,7 @@
 					<div class="my-4 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
 						<button onclick="onUpdate()" class="btn btn-primary me-md-2 align-self-end" 
 						style="background-color: #658a69;" type="button">
-							작성
+							수정
 						</button>
 						<button onclick="onCancle()" class="btn btn-primary align-self-end" 
 						style="background-color: #658a69;" type="button">
