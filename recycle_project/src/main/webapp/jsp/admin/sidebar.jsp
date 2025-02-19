@@ -82,7 +82,7 @@
 										data-bs-parent="#sidenavAccordionPages">
 										<nav class="sb-sidenav-menu-nested nav">
 											<a class="dropmenu_inner dropmenu nav-link" href="login.html">승인 목록</a> 
-											<a class="dropmenu_inner dropmenu nav-link" href="register.html">재활용 계산</a> 
+											<a class="dropmenu_inner dropmenu nav-link" href="/recycle_project/jsp/admin/recyclecaculator.jsp">재활용 계산</a> 
 										</nav>
 									</div>
 								<!-- 회원 게시판 조회 메뉴  -->
