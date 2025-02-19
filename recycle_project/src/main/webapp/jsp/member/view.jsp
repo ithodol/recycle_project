@@ -72,19 +72,15 @@
 							
 							</div>
 							
-							<div class="row mb-4 d-flex justify-content-center"> 
-								<button onclick="recruitWrite()" class="btn btn-primary"
-								style="background-color: #658a69; width: 300px" type="button">챌린지 동참</button>
+							<div class="recruitbtn row mb-4 d-flex justify-content-center"> 
+								
 							</div>
 						</div>
 					</div>
 					<br/>
 					<!-- 수정 삭제 버튼 -->
-					<div class="m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
-						<button onclick="" class="btn btn-primary me-md-2 align-self-end"
-							style="background-color: #658a69;" type="button">수정</button>
-						<button class="btn btn-primary align-self-end"
-							style="background-color: #658a69;" type="button">삭제</button>
+					<div class="btnbox m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
+						
 					</div>
 					<br/>
 					<div class="m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">

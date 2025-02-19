@@ -60,8 +60,10 @@ public class PaginationMethod implements Pagination {
 	    
 	    PageDto<T> pageDto = new PageDto<T>();
 	    ArrayList<T> result;
-
-	    if (dtoClass.equals(PointLogDto.class)) { 
+	    
+	    if (dtoClass.equals(BoardDto.class)) {
+            result = (ArrayList<T>) BoardDao.getInstance().findAll(startRow, display, "where lno="+mno);
+        } else if (dtoClass.equals(PointLogDto.class)) { 
         	result = (ArrayList<T>) GetMemberDao.getInstance().findPointLog(mno, startRow, display);
     	} else if (dtoClass.equals(PointDto.class)) { 
         	result = (ArrayList<T>) MemberDao.getInstance().getPointLog(mno, startRow, display);

@@ -36,7 +36,7 @@ const findAll = () => {
 } // f end
 findAll();
 
-
+// 2. 로그인시에만 쓰기버튼 출력
 const getWriteBtn = () => {
 	const option = {
 		method : 'GET'
@@ -44,7 +44,6 @@ const getWriteBtn = () => {
 	
 	let writebtn = document.querySelector('.writebtn');
 	let html = '';
-
 	
 	fetch('/recycle_project/member/info', option)
 		.then(r => r.json())
@@ -68,7 +67,6 @@ const getWriteBtn = () => {
 		
 	
 }
-
 getWriteBtn();
 
 
