@@ -23,20 +23,20 @@
 					<option selected disabled onclick="">전체 지역</option>
 					<option selected disabled onclick="">서울</option>
 					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick=""></option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					<option selected disabled onclick="">인천</option>
-					
+					<option selected disabled onclick="">대전</option>
+					<option selected disabled onclick="">대구</option>
+					<option selected disabled onclick="">울산</option>
+					<option selected disabled onclick="">부산</option>
+					<option selected disabled onclick="">광주</option>
+					<option selected disabled onclick="">경기도</option>
+					<option selected disabled onclick="">충북</option>
+					<option selected disabled onclick="">충남</option>
+					<option selected disabled onclick="">경북</option>
+					<option selected disabled onclick="">경남</option>
+					<option selected disabled onclick="">전북</option>
+					<option selected disabled onclick="">전남</option>
+					<option selected disabled onclick="">강원</option>
+					<option selected disabled onclick="">제주</option>
 					
 				</select>
 					
