@@ -332,6 +332,7 @@ select * from recruit;
 insert into pointlog(pocontent, pocount, podate, mno) value ('축제 정리', '5400', now(), 1);
 select * from pointlog;
 
+
 # 5. 댓글 테이블
 create table reply(
 	rno int unsigned auto_increment,

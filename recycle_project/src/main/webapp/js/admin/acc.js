@@ -11,7 +11,7 @@ const findByBno = () => {
 	fetch(`/recycle_project/board/acc/view?bno=${bno}`, option)
 		.then(r => r.json())
 		.then(data => {
-			console.log(data);
+			//console.log(data);
 			document.querySelector('.titlebox').innerHTML = data.btitle;
 			document.querySelector('.contentbox').innerHTML = data.bcontent;
 			document.querySelector('.mnicknamebox').innerHTML = data.mnickname;
@@ -34,7 +34,7 @@ findByBno();
 const putPoint = () => {
 	const bno = new URL(location.href).searchParams.get("bno");
 	const point = document.querySelector('.pointbox').value;
-	console.log(point);
+	//console.log(point);
 	
 	const option = {
 		method : 'PUT',
@@ -45,10 +45,10 @@ const putPoint = () => {
 	fetch(`/recycle_project/board/acc/view?bno=${bno}`, option)
 		.then(r => r.json())
 		.then(data => {
-			console.log(data);
+			//console.log(data);
 			if(data == true){
 				alert('포인트 지급 완료');
-				location.href="/recycle_project/jsp/admin/index.jsp?page=1";
+				
 			}else{
 				alert('포인트 지급 실패');
 			}
@@ -62,26 +62,56 @@ const putPoint = () => {
 // bno에 신청한 각 mno에게 포인트 배포
 const sharePoint = () => {
 	const bno = new URL(location.href).searchParams.get("bno");
+	//console.log(bno);
 	
 	const option = {
 		method : 'GET'
 	}
 	
-	fetch(`/recycle_project/board/point/share?${bno}`, option)
+	fetch(`/recycle_project/point/share?bno=${bno}`, option)
 		.then(r => r.json())
 		.then(data => {
+			console.log(data);
 			data.forEach(info => {
 				if(info != null){
-					alert('포인트 배포 완료');
+					
+
+						
+						const option2 = {
+							method : 'POST',
+							Headers : {'Content-Type' : 'application/json'},
+							body : JSON.stringify(obj)
+						}	
+						
+						fetch(`/recycle_project/point/share?bno=${bno}`, option2)
+							.then(r => r.json())
+							.then(data2 => {
+
+								const obj ={pocontent : info.bcontent,
+											pocount : info.bpoint,
+											mno : info.mno}
+								
+								if(data2 == true){
+
+									alert('포인트 배포 완료')
+									//location.href="/recycle_project/jsp/admin/index.jsp?page=1";
+								}
+							})
+
 				}else{
 					alert('포인트 배포 실패');
 				}
 			})
-// info에 있는 정보들을 변수에 저장하고
-
 		})
 		.catch(e => {console.log(e);})
 		
+		
+		
+		
+
+		
+		
+// info에 있는 정보들을 변수에 저장하고
 // post 
 }
 	

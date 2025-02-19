@@ -126,7 +126,7 @@ public class AccDao extends Dao {
 			
 		}catch(SQLException e) {System.out.println(e);}
 		
-		//System.out.println(list);
+		System.out.println(list);
 		return list;
 	}
 	
@@ -136,7 +136,7 @@ public class AccDao extends Dao {
 		try {
 			String sql = "insert into pointlog(pocontent, pocount, podate, mno) value (?, ?, now(), ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			System.out.println(sharePointDto);
+			//System.out.println(sharePointDto);
 			ps.setString(1, sharePointDto.getBcontent());
 			ps.setInt(2, sharePointDto.getBpoint());
 			ps.setInt(3, sharePointDto.getMno());

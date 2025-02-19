@@ -23,7 +23,7 @@ public class SharePointController extends HttpServlet{
 		System.out.println("sharepoint get test");
 		// 현재 페이지 bno 가져오기
 		int bno = Integer.parseInt(req.getParameter("bno"));
-		System.out.println(bno);
+		//System.out.println(bno);
 
 		// bno에 해당하는 정보 가져오기
 		
