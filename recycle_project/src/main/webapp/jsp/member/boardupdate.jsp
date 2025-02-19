@@ -25,13 +25,13 @@
 	            <div class="content_title">
 	   	            <h1>챌린지</h1>
 	   	            <ol class="breadcrumb">
-		                <li class="breadcrumb-item active">글쓰기</li>
+		                <li class="breadcrumb-item active">글수정</li>
 	                </ol>
 	            </div>
 		
 				<div class="container">
 					<form>
-						<select class="lnoselect form-select my-2">
+						<select name="lno" class="lnoselect form-select my-2">
 							<!-- -> 지역번호 -->
 							<option value="1"> 서울특별시 </option>
 							<option value="2"> 인천광역시 </option>
@@ -99,7 +99,7 @@
 
 					<!-- 글쓰기 버튼 -->
 					<div class="my-4 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
-						<button onclick="onWrite()" class="btn btn-primary me-md-2 align-self-end" 
+						<button onclick="onUpdate()" class="btn btn-primary me-md-2 align-self-end" 
 						style="background-color: #658a69;" type="button">
 							작성
 						</button>
@@ -126,6 +126,7 @@
 	
 	<!-- 주의할점 : JS 불러오는 순서 존재하므로 내가 만든 JS를 가장 아래에서 호출 -->
 	<script src="/recycle_project/js/board/write.js"></script>
+	<script src="/recycle_project/js/board/update.js"></script>
 	<script src="/recycle_project/js/board/kakao.js"></script>
 </body>
 </html>

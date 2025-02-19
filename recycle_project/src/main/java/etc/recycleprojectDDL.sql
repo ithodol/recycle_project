@@ -85,7 +85,7 @@ create table pointlog(
     pocount int not null, 
     podate datetime default now(),
     mno int unsigned,
-    constraint primary key( pono ),
+    constraint primary key( pono ), 
     constraint foreign key( mno ) references member( mno ) on update cascade on delete cascade
 );
 
@@ -477,7 +477,7 @@ select * from pointlog;
 select * from board;
 select * from recruit;
 select * from reply;
-select * from admin;
+select * from admin; 
 
 
 

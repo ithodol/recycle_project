@@ -28,12 +28,29 @@ const findByBno = () => {
 } // f end
 findByBno();
 
-// 2. kakao api
+// 2. 상세페이지 삭제
+const onDelete = () => {
+	// 유효성검사
+	if( !confirm('정말 삭제하시겠습니까?')){ return; }
+	
+	const option = { method : 'DELETE' }
+	fetch( `/recycle_project/board?bno=${ bno }` , option )
+		.then( r => r.json() )
+		.then( data => {
+			if( data ){ 
+				alert('챌린지 삭제가 완료되었습니다.'); 
+				location.href='board.jsp';
+			}else { alert('챌린지 삭제 실패'); }
+		}) // then end
+		.catch( e => { console.log(e); })
+} // f end
+
+// 1-2. kakao api
 const mapEvent = (lat, lng) => {
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
-        level: 1 // 지도의 확대 레벨
+        level: 3 // 지도의 확대 레벨
     };
 
     // 지도를 생성합니다    
@@ -141,7 +158,7 @@ const findRecruit = () => {
 findRecruit();
 
 // 4. 챌린지 참여
-const recruitWrite = ( mno ) => {
+const recruitWrite = ( ) => {
 	// 유효성검사
 	if( !confirm('챌린지에 참여하시겠습니까?') ){ return; }
 	
@@ -160,7 +177,27 @@ const recruitWrite = ( mno ) => {
 		.catch( e => { console.log(e); })
 } // f end
 
-// 5. loginMno 가져오기
+// 5. 챌린지 취소
+const recruitDelete = ( ) => {
+	// 유효성검사
+		if( !confirm('챌린지를 취소하시겠습니까?') ){ return; }
+		
+		const option = {
+			method : 'DELETE',
+			headers : { 'Content-Type' : 'text/plain' },
+			body : bno
+		} // o end
+		fetch( `/recycle_project/board/recruit?bno=${ bno }` , option )
+			.then( r => r.json() )
+			.then( data => {
+				if( data ){ alert('챌린지 취소가 완료되었습니다.'); }
+				findRecruit();
+				recruitBtn();
+			}) // then end
+			.catch( e => { console.log(e); })
+}
+
+// 6. loginMno 가져오기
 const getLoginMno = () => {
 	return fetch('/recycle_project/member/info')
 		.then(r => r.json())
@@ -174,7 +211,7 @@ const getLoginMno = () => {
 		})
 } // f end
 
-// 5. 본인만 수정 삭제 버튼 출력
+// 7. 본인만 수정 삭제 버튼 출력
 const getWriteBtn = ( ) => {
 	let btnbox = document.querySelector('.btnbox');
 	let html = '';
@@ -190,7 +227,7 @@ const getWriteBtn = ( ) => {
 					console.log('회원정보 불일치');
 				}else{
 					console.log('회원정보 일치');
-					html += `<button onclick="onUpdate()" class="btn btn-primary me-md-2 align-self-end"
+					html += `<button onclick="location.href='boardupdate.jsp?bno=${ bno }'" class="btn btn-primary me-md-2 align-self-end"
 								style="background-color: #658a69;" type="button">수정</button>
 							<button onclick="onDelete()" class="btn btn-primary align-self-end"
 								style="background-color: #658a69;" type="button">삭제</button>`;
@@ -202,40 +239,69 @@ const getWriteBtn = ( ) => {
 } // f end
 getWriteBtn();
 
-// 7. 챌린지 적용했을 시 버튼 출력
-const recruitBtn = ( ) => {
-	let recruitbtn = document.querySelector('.recruitbtn');
-	let html = '';
+// 8. 챌린지 적용했을 시 버튼 출력
+const recruitBtn = () => {
+    let recruitbtn = document.querySelector('.recruitbtn');
+    if (!recruitbtn) {
+        console.error("recruitbtn 요소를 찾을 수 없습니다!");
+        return;
+    }
 
-	getLoginMno().then( loginMno => {
-		fetch(`/recycle_project/board/recruit?bno=${ bno }`)
-			.then( r => r.json() )
-			.then( data => {
-				console.log(data);
-				console.log(loginMno);
-				for( let i = 0 ; i < data.length ; i++ ){
-					if( data[i] == null || loginMno == 0 ){
-						console.log('비로그인');
-						html = `<button class="btn btn-primary" onclick="location.href='../member/login.jsp'"
-									style="background-color: #658a69; width: 300px" type="button">로그인 후 참여가능합니다.</button>`
-						break;
-					}else if(data[i].mno == loginMno){
-						console.log('챌린지 참여 o')
-						html = `<button onclick="recruitDelete(${ loginMno })" class="btn btn-primary"
-									style="background-color: #658a69; width: 300px" type="button">챌린지 취소</button>`;
-						break;
-					}else{
-						console.log('챌린지 참여 x')
-						html = `<button onclick="recruitWrite(${ loginMno })" class="btn btn-primary"
-									style="background-color: #658a69; width: 300px" type="button">챌린지 참여</button>`
-					}
-				} // for end
-				recruitbtn.innerHTML = html;
-			})
-			.catch(e => {console.log(e);})
-	}) // then end
-} // f end
+    let html = '';
+
+    getLoginMno().then(loginMno => {
+        console.log("로그인한 회원 번호:", loginMno);
+
+        // 비로그인 상태일 경우 '로그인 후 참여' 버튼 출력
+        if (loginMno === 0) {
+            console.log("비로그인 상태 - 로그인 버튼 출력");
+            recruitbtn.innerHTML = `<button class="btn btn-primary" onclick="location.href='../member/login.jsp'"
+                                        style="background-color: #658a69; width: 300px" type="button">
+                                        로그인 후 참여 가능합니다.
+                                    </button>`;
+            return;
+        }
+
+        if (typeof bno === "undefined") {
+            console.error("bno 값이 정의되지 않았습니다!");
+            return;
+        }
+
+        fetch(`/recycle_project/board/recruit?bno=${bno}`)
+            .then(r => r.json())
+            .then(data => {
+                console.log("서버 응답 데이터:", data);
+
+                let isParticipant = false; // 챌린지 참여 여부 확인 변수
+
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i] && data[i].mno === loginMno) {
+                        console.log('챌린지 참여 중');
+                        isParticipant = true;
+                        break;
+                    }
+                }
+
+                if (isParticipant) {
+                    html = `<button onclick="recruitDelete()" class="btn btn-primary"
+                                style="background-color: #658a69; width: 300px" type="button">
+                                챌린지 취소
+                            </button>`;
+                } else {
+                    html = `<button onclick="recruitWrite()" class="btn btn-primary"
+                                style="background-color: #658a69; width: 300px" type="button">
+                                챌린지 참여
+                            </button>`;
+                }
+
+                console.log("최종 HTML:", html);
+                recruitbtn.innerHTML = html;
+            })
+            .catch(e => console.error("fetch 오류:", e));
+    }).catch(e => console.error("getLoginMno 오류:", e));
+};
 recruitBtn();
+
 
 
 

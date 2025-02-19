@@ -64,12 +64,21 @@ public class BoardController extends HttpServlet{
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(">> 챌린지 PUT RUN");
+		ObjectMapper mapper = new ObjectMapper();
+		BoardDto boardDto = mapper.readValue( req.getReader() , BoardDto.class );
+		boolean result = BoardDao.getInstance().update(boardDto);
+		resp.setContentType("application/json");
+	    resp.getWriter().print(result);
 	}
 	
 //	4. 게시물 삭제
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(">> 챌린지 DELETE RUN");
+		int bno = Integer.parseInt(req.getParameter("bno"));
+		boolean result = BoardDao.getInstance().delete(bno);
+		resp.setContentType("application/json");
+	    resp.getWriter().print(result);
 	}
 	
 }
