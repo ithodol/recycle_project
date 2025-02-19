@@ -20,7 +20,7 @@
 				<ol class="breadcrumb mb-4">
 					<li class="breadcrumb-item active">
 					<select class="form-select" id="validationCustom04" onchange='location.href = this.value;' required>
-					<option  selected value='/recycle_project/jsp/member/board.jsp?page=1&lno=0'>전체 지역</option>
+					<option   value='/recycle_project/jsp/member/board.jsp?page=1'>전체 지역</option>
 					<option  value='/recycle_project/jsp/member/locationview.jsp?page=1&lno=1'>서울</option>
 					<option   value='/recycle_project/jsp/member/locationview.jsp?page=1&lno=2'>인천</option>
 					<option   value='/recycle_project/jsp/member/locationview.jsp?page=1&lno=3'>대전</option>

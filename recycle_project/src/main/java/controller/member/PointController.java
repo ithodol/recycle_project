@@ -32,14 +32,15 @@ public class PointController extends HttpServlet{
 //		    페이지네이션 인터페이스 호출
 		    Pagination pagination = new PaginationMethod();
 //		                              			(mno, page , "테이블명" , 사용한Dto.class )
-		    pageDto = pagination.calPagination(loginMno, page, "pointlog where mno="+loginMno , PointDto.class );
+		    pageDto = pagination.calPagination(loginMno, page, "pointlog where mno="+loginMno, PointDto.class );
 //		    =======================================================
 		}
+		//System.out.println(pageDto);
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonResult = mapper.writeValueAsString(pageDto);
-		
+
 		resp.setContentType("application/json");
-		resp.getWriter().print(jsonResult);
+		resp.getWriter().print(jsonResult); 
 		
 	}
 

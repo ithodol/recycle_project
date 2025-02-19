@@ -42,7 +42,7 @@
 		</button>
 	</div>
 	<!-- <div style= "margin-top:20px;display:flex;justify-content: center; font-size:10px;"> 지역별 챌린지</div> -->
-	<div style="margin-top : 20px;display:flex; justify-content: space-evenly;">
+	<div style="margin-top : 20px; margin-bottom : 80px; display:flex; justify-content: space-evenly;">
 	<button class="login-btn btn btn-lg fw-bold" 
     style="background-color: #253f39 !important; color: white; 
            border-radius: 100px; padding: 80px 80px; font-size: 27px;" 

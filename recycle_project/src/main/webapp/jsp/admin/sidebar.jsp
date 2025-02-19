@@ -44,9 +44,9 @@
 								<a class="dropmenu nav-link" href="/recycle_project/jsp/admin/getmember.jsp?page=1">
 									회원정보 조회
 								</a> 
-								<a class="dropmenu nav-link" href="layout-sidenav-light.html">
+								<!-- <a class="dropmenu nav-link" href="layout-sidenav-light.html">
 									로그
-								</a>
+								</a> -->
 							</nav>
 						</div>
 					<div class="sb-sidenav-menu-heading">게시판 관리</div>
@@ -94,7 +94,7 @@
 						</div>
 					
 					<!-- 공지사항 드롭박스 -->
-					<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+					<!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 						data-bs-target="#announcement" aria-expanded="false"
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
@@ -105,7 +105,7 @@
 						</div>
 					</a>
 						<!-- 공지사항 메뉴 -->
-						<div class="collapse" id="announcement"
+						<!-- <div class="collapse" id="announcement"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
 								<a class="dropmenu nav-link" href="layout-static.html">
@@ -115,7 +115,7 @@
 									공지사항 조회
 								</a>
 							</nav>
-						</div>
+						</div -->
 					
 					<div class="sb-sidenav-menu-heading">Addons</div>
 					<a class="nav-link" href="/recycle_project/jsp/member/index.jsp">
@@ -125,7 +125,7 @@
 							</svg>
 						</div> 사용자 페이지
 					</a>
-					<a class="nav-link" href="charts.html">
+					<!--  <a class="nav-link" href="charts.html">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-chart-area"></i>
 						</div> Charts
@@ -134,7 +134,7 @@
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-table"></i>
 						</div> Tables
-					</a>
+					</a>-->
 				</div>
 			</div>
 		</nav>

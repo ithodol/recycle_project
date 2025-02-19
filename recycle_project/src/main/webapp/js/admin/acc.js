@@ -48,7 +48,6 @@ const putPoint = () => {
 			//console.log(data);
 			if(data == true){
 				alert('포인트 지급 완료');
-				
 			}else{
 				alert('포인트 지급 실패');
 			}
@@ -58,11 +57,10 @@ const putPoint = () => {
 }
 
 
-
 // bno에 신청한 mno의 정보가져오기 GET
 const sharePointGet = () => {
 	const bno = new URL(location.href).searchParams.get("bno");
-	//console.log(bno);
+	console.log(bno);
 	
 	const option = {
 		method : 'GET'
@@ -70,22 +68,22 @@ const sharePointGet = () => {
 	
 	fetch(`/recycle_project/point/share?bno=${bno}`, option)
 		.then(r => r.json())
-		.then(data => {
-			console.log(data);
-			data.forEach(info => {
+		.then(data2 => {
+			//console.log(data2);
+			data2.forEach(info => {
+				console.log(info);
 				if(info != null){
-					alert('포인트 배포 tjdrhd');
-					//sharePointPost(info); // mno에게 포인트 배포
-				}else if(info == null){
-					alert('해당 챌린지에 신청한 사람이 없습니다.');
+
+					//sharePointPost(data2); // mno에게 포인트 배포
 				}else{
-					alert('포인트 배포 실패');
+					alert('정보 가져오기 실패');
 				}
 			})
 		})
 		.catch(e => {console.log(e);})
 
 }
+
 
 
 

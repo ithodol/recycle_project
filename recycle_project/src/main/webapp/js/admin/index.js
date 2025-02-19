@@ -31,9 +31,7 @@ const findAll = () => {
 								</td>
 							</tr>
 							`
-							if(board.point == 0){
-								alert('포인트 0');
-							}
+
 			})
 			boardData.innerHTML = html;
 			getPageBtn(data, 'index');

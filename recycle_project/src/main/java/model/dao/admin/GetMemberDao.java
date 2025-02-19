@@ -35,7 +35,7 @@ public class GetMemberDao extends Dao{
 	public ArrayList<MemberDto> findAll(int startRow, int display) {
 		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
 		try {
-			String sql = "select member.mno, mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by member.mno limit ? , ? ";
+			String sql = "select member.mno, mnickname,mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by member.mno limit ? , ? ";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 //			(2) ====== 페이지네이션 적용시 추가 =====
@@ -48,6 +48,7 @@ public class GetMemberDao extends Dao{
 				memberDto.setMno(rs.getInt("mno"));
 				memberDto.setMid(rs.getString("mid"));
 				memberDto.setMname(rs.getString("mname"));
+				memberDto.setMnickname(rs.getString("mnickname"));
 				memberDto.setMpoint(rs.getInt("mpoint"));
 				list.add(memberDto);
 			}
@@ -56,6 +57,29 @@ public class GetMemberDao extends Dao{
 		}
 		return list;
 	}
+	
+	public ArrayList<MemberDto> findRank() {
+		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
+		try {
+			String sql = "select member.mno, mnickname,mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by mpoint DESC  limit 0 , 10 ";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) { 
+				MemberDto memberDto = new MemberDto();
+				memberDto.setMno(rs.getInt("mno"));
+				memberDto.setMid(rs.getString("mid"));
+				memberDto.setMname(rs.getString("mname"));
+				memberDto.setMnickname(rs.getString("mnickname"));
+				memberDto.setMpoint(rs.getInt("mpoint"));
+				list.add(memberDto);
+			}
+		}catch(SQLException e ) {
+			System.out.println(e);
+		}
+		return list;
+	}
+	
 	
 	
 	public MemberDto findbyMno(int mno) {

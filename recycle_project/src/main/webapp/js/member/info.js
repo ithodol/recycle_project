@@ -1,5 +1,7 @@
 console.log('info.js test');
 
+let index = 1
+
 // 마이페이지 정보 조회
 const getMyInfo = () => {
 	const option = {
@@ -60,28 +62,34 @@ const onDelete = () => {
 
 // 내 포인트 내역 조회
 const getPointLog = () => {
+	const page = new URL(location.href).searchParams.get('page')
+	if(page == null){
+		page = 1;
+	}
+	
 	const option = {
 		method : 'GET'
 	}
-	fetch('/recycle_project/point', option)
+	fetch(`/recycle_project/point?page=${page}`, option)
 		.then(r => r.json())
-		.then(data => {
-			if(data != null){
+		.then(response => {
+			if(response != null){
 				const tbody = document.querySelector('tbody');
 				let html = ``
-				data.forEach((point, index) =>{
+				response.data.forEach((point) =>{
 					//const date = new Date(point.podate);
 					//const dateOnly = date.toISOString().split('T')[0];
 					//console.log(dateOnly);
 					html += `<tr>
-                                <th> ${ index+1} </th> 
                                 <th> ${ point.pocontent } </th>
                                 <th> ${ point.pocount } </th> 
                                 <th> ${ point.podate.split(' ')[0] } </th>
                         	</tr>`
 				})
 				tbody.innerHTML = html;
+				
 			}
+			getPageBtn(response, "info");
 		})
 		.catch(e => {console.log(e);})
 }
