@@ -16,7 +16,7 @@ const getMember = () =>{
 								<td> ${member.mid} </td>
 								<td> ${member.mname} </td>
 								<td> ${member.mpoint} </td>
-								<td><button onclick="location.href='/recycle_project/jsp/admin/memberview.jsp?mno=${member.mno}'"
+								<td><button onclick="location.href='/recycle_project/jsp/admin/memberview.jsp?mno=${member.mno}&page=1'"
 								 class="btn btn-secondary mx-1" style="background-color: #658a69; padding-bottom: 26px; height: 20px;" 
 								type="button">수정</button></td>
 							</tr>`

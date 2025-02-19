@@ -153,6 +153,7 @@
 		crossorigin="anonymous"></script>
 	<script src="../../resources/js/datatables-simple-demo.js"></script>
 	<!-- js -->
+		<script src="/recycle_project/js/admin/pagination.js"></script>
 	<script src="/recycle_project/js/admin/memberview.js"></script>
 
 
