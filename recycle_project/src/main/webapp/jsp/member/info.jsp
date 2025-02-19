@@ -18,10 +18,10 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	
 	<!-- 회원가입 폼 -->
-	<div class="container col-xl-10 col-xxl-8 px-4 py-5">
-		<div class="row g-lg-5 py-5">
+	<div class="container col-xl-16 col-xxl-16 py-5">
+		<div class="row">
 			<!-- 왼쪽 정보 구역 -->
-			<div class="col-md-10 mx-auto col-lg-5">
+			<div class="col-md-4 mx-auto col-lg-4">
 				<div class="form-floating mb-n2 logo-box">
 					<div class="info-title text-light mx-auto">
 						<h3>내 정보</h3>
@@ -72,7 +72,7 @@
 			
 			<!-- 오른쪽 포인트 구역 -->
 			<!--<div class="col-lg-7 text-center text-lg-start point-table">-->
-			<div class="col-md-10 mx-auto col-lg-5 r-width">
+			<div class="col-md-8 mx-auto col-lg-8">
 				<div class="form-floating mb-n2 logo-box">
 					<div class="info-title text-light mx-auto">
 						<h3>포인트 적립 내역</h3>
@@ -93,7 +93,6 @@
 								
 							</tbody>
 						</table>
-						<button class="bottom-btn btn btn-lg r-bottom-btn" type="button" onclick="">페이지</button>
 					</div>
 				</form>
 			</div>
