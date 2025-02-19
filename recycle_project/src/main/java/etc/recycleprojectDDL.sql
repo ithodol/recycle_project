@@ -424,12 +424,14 @@ select * from member m inner join board b on m.mno = b.mno where bno=10;
 select board.bpoint, board.bcontent, member.mno, recruit.reno from board inner join member on board.mno = member.mno inner join recruit recruit on board.bno = recruit.bno where board.bno = 1;
 select board.bpoint, board.bcontent, member.mno, recruit.reno from recruit inner join member on recruit.mno = member.mno inner join board on recruit.bno = board.bno where board.bno=1 and board.bpoint=0;
 insert into recruit(mno, bno) value (1, 11);
-select * from recruit;
+select * from recruit where mno=1;
 insert into pointlog(pocontent, pocount, podate, mno) value ('축제 정리', '5400', now(), 1);
 select * from pointlog;
+select * from member;
 
 select b.*, m.mnickname from board b inner join member m on b.mno = m.mno where b.bpoint=0 order by b.bno desc limit 1, 3;
-
+select * from board where bno=4;
+select * from pointlog where mno=1;
 # 5. 댓글 테이블
 create table reply(
 	rno int unsigned auto_increment,
