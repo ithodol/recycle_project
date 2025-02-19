@@ -38,8 +38,8 @@
 					<!-- 메뉴항목 -->
 					<li class="nav-item"><a class="header_menu nav-link mx-3" href="board.jsp">챌린지</a></li>
 					<li class="nav-item"><a class="header_menu nav-link mx-3" href="/recycle_project/jsp/member/regionchallenge.jsp">지도에서 찾기</a></li>
-					<li class="nav-item"><a class="header_menu nav-link mx-3" href="board.jsp?cno=3">공지사항</a></li>
-					<li class="nav-item"><a class="header_menu nav-link mx-3" href="board.jsp?cno=4">뉴스</a></li>
+					<li class="nav-item"><a class="header_menu nav-link mx-3" href="board.jsp?cno=3">랭킹</a></li>
+					<li class="nav-item"><a class="header_menu nav-link mx-3" href="board.jsp?cno=4">공지사항</a></li>
 					
 					<!-- 드롭다운 -->
 					<!-- <li class="nav-item dropdown"><a

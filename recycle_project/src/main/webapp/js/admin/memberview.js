@@ -1,9 +1,11 @@
-const mno = new URL(location.href).searchParams.get('mno');
-const page = new URL(location.href).searchParams.get('page')
-		if(page == null){
-			page = 1;
-		}
+
+		
+		
+		// 페이지 버튼 생성 함수
+		
 let checkphone = ''
+
+
 
 const findByMno = ()=>{
 	
@@ -11,7 +13,7 @@ const findByMno = ()=>{
 		
 	
 	const option={method:'GET'}
-	fetch(`/recycle_project/admin/view?mno=${mno}`,option)
+	fetch(`/recycle_project/admin/view?mno=${mno}&page=${page}`,option)
 	.then(r=>r.json())
 	.then(data=>{
 		if(data != null){
@@ -47,6 +49,7 @@ const findByMnoPoint= () =>{
 					    </tr>`
 				})
 				memberbypoint.innerHTML = html;
+				getPageBtn( response , 'memberview' );
 			}
 		})
 		.catch( e => { console.log(e) } )
