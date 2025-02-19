@@ -60,7 +60,7 @@ const putPoint = () => {
 // bno에 신청한 mno의 정보가져오기 GET
 const sharePointGet = () => {
 	const bno = new URL(location.href).searchParams.get("bno");
-	console.log(bno);
+	//console.log(bno);
 	
 	const option = {
 		method : 'GET'
@@ -71,10 +71,10 @@ const sharePointGet = () => {
 		.then(data2 => {
 			//console.log(data2);
 			data2.forEach(info => {
-				console.log(info);
+				//console.log(info);
 				if(info != null){
 
-					//sharePointPost(data2); // mno에게 포인트 배포
+					sharePointPost(data2); // mno에게 포인트 배포
 				}else{
 					alert('정보 가져오기 실패');
 				}
@@ -87,7 +87,52 @@ const sharePointGet = () => {
 
 
 
+// 각 mno에게 포인트 배포하기
+const sharePointPost = (data2) => {
+   const bno = new URL(location.href).searchParams.get("bno");
+  
+   let obj = {}
+   let info2 = {}
 
+	console.log(data2);
+	for(let index = 0; index <= data2.length -1; index ++){
+		const infodata = data2[index]
+		info2[infodata.reno] = infodata;
+	}
+
+	console.log(info2);
+   const option2 = {
+      method : 'POST',
+      Headers : {'Content-Type' : 'application/json'},
+      body : JSON.stringify(obj)
+   } // 옵션 end
+
+
+
+   fetch(`/recycle_project/point/share?bno=${bno}`, option2)
+      .then(r => r.json())
+	  .then(data3 => {
+		//console.log(data3); false
+            if(data3 == true){
+				for(let index = 0; index <= info2.length-1; index++){
+					const objdata = info2[index]
+					obj[objdata.reno] = {
+						pocontent: objdata.btitle,
+					    pocount: objdata.bpoint,
+					    mno: objdata.mno
+					}
+				}
+				console.log(obj);
+
+               alert('포인트 배포 완료')
+               //location.href="/recycle_project/jsp/admin/index.jsp?page=1";
+            }
+         })
+         
+
+   
+      
+} // f end
 
 
 
