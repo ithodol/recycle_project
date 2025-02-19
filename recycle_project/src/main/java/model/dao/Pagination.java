@@ -5,5 +5,5 @@ import model.dto.board.PageDto;
 
 public interface Pagination {
 	<T extends DataDto> PageDto<T> calPagination( int page, String table, Class<T> dtoClass );
-	<T extends DataDto> PageDto<T> calPagination( int mno, int page, String table, Class<T> dtoClass );
+	<T extends DataDto> PageDto<T> calPagination( int no, int page, String table, Class<T> dtoClass );
 }

@@ -83,13 +83,17 @@
 						
 					</div>
 					<br/>
+					
 					<div class="m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
 						<textarea class="rcontentinput form-control"></textarea>
 						<button onclick="" class="btn btn-primary align-self-end"
 							style="background-color: #658a69; width: 100px; height: 62px;" type="button">댓글 쓰기</button>
 					</div>
 	
-					<div class="replybox mt-5"></div>
+					<div class="replybox mt-5">
+					
+					</div>
+					
 				</div>
 			</div>
 		</div>

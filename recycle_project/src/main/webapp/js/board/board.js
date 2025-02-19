@@ -16,7 +16,7 @@ const findAll = () => {
 				html += `<tr>
 							<td> ${ board.bno } </td>
 							<td style="text-align: left;">
-								<a href="view.jsp?bno=${ board.bno }">
+								<a href="view.jsp?bno=${ board.bno }&page=1">
 									${ board.btitle } 
 								</a> 
 							</td>
@@ -59,15 +59,12 @@ const getWriteBtn = () => {
 						</button>`;
 			}
 			writebtn.innerHTML = html;
-			
-			
 		})
 		.catch(e => {console.log(e);})
-	
-		
-	
 }
 getWriteBtn();
+
+
 
 
 
