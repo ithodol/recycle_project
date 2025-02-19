@@ -40,7 +40,7 @@ public class PointController extends HttpServlet{
 		String jsonResult = mapper.writeValueAsString(pageDto);
 
 		resp.setContentType("application/json");
-		resp.getWriter().print(jsonResult);
+		resp.getWriter().print(jsonResult); 
 		
 	}
 

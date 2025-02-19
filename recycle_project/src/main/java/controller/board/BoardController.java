@@ -13,7 +13,6 @@ import jakarta.servlet.http.HttpSession;
 import model.dao.Pagination;
 import model.dao.PaginationMethod;
 import model.dao.board.BoardDao;
-import model.dto.DataDto;
 import model.dto.board.BoardDto;
 import model.dto.board.PageDto;
 
@@ -64,8 +63,10 @@ public class BoardController extends HttpServlet{
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(">> 챌린지 PUT RUN");
+		int bno = Integer.parseInt(req.getParameter("bno"));
 		ObjectMapper mapper = new ObjectMapper();
 		BoardDto boardDto = mapper.readValue( req.getReader() , BoardDto.class );
+			boardDto.setBno(bno);
 		boolean result = BoardDao.getInstance().update(boardDto);
 		resp.setContentType("application/json");
 	    resp.getWriter().print(result);
