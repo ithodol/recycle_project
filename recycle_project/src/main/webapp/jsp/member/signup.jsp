@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Recycle Project - 회원가입</title>
+	<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+	</script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<!-- CSS -->
 	<link href="/recycle_project/css/member/signup.css" rel="stylesheet" />
@@ -45,7 +48,7 @@
 								</div>
 								
 								<div class="form-floating mb-2">
-									<input type="text" name="uploadfile" class="form-control  adnameinput" id="floatingPassword" placeholder="이름"> 
+									<input type="text" name="uploadfile" class="form-control  adnameinput name" id="name" placeholder="이름"> 
 									<label for="floatingPassword">이름</label>
 								</div>
 								<div class="form-floating mb-2">
@@ -57,14 +60,14 @@
 									<label for="floatingPassword">연락처</label>
 								</div>
 								<div class="form-floating mb-2">
-									<input type="text" name="uploadfile" class="form-control  ademailinput" id="floatingPassword" placeholder="이메일"> 
+									<input type="text" name="uploadfile" class="form-control  ademailinput email" id="email" placeholder="이메일"> 
 									<label for="floatingPassword">이메일</label>
 								</div>
 								<div class="form-floating mb-3">
 					            	<input type="file" name="uploadfile" class="form-control" id="floatingInput" placeholder="아이디">
 					            	<label for="floatingInput">프로필 사진</label>
 					          	</div>
-								<button class="login-btn w-100 btn btn-lg fw-bold margin" type="button" onclick="onSignUp()">회원가입</button>
+								<button class="login-btn w-100 btn btn-lg fw-bold margin" type="button" onclick="onSignUp(); sendEmail();">회원가입</button>
 							</form>
 							<div class="bottom-box">
 								계정이 있으신가요? <a href="login.jsp"> 로그인하러 가기</a>
@@ -78,10 +81,12 @@
 		</div>
 	
 	<jsp:include page="footer.jsp"></jsp:include>
-	
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- 부트스트랩 js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<!-- 사용자 js -->
 	<script src="/recycle_project/js/member/signup.js"></script>
+	<script src="/recycle_project/js/member/email.js"></script>
+
 </body>
 </html>
