@@ -5,6 +5,7 @@ const findAll = () => {
 		page = 1;
 	}
 	
+	console.log(page);
 	const option = {
 		method :  'GET'
 	}
@@ -18,66 +19,33 @@ const findAll = () => {
 			boardList.forEach( (board) => {
 				html += `
 						<tr>
-							<td> ${board.bno} </td>
-							<td style="text-align: start;"> ${board.btitle} </td>
-							<td> ${board.mnickname} </td>
-							<td> ${board.bdate.split(' ')[0]} </td>
-							<td> ${board.bpeople} </td>
-							<td> ${board.bview} </td>
-							<td> ${board.blike} </td>
-							<td>
+							<td style="width: 8.571428571428571%;"> ${board.bno} </td>
+							<td style="width: 40%;"> ${board.btitle} </td>
+							<td style="width: 8.571428571428571%;"> ${board.mnickname} </td>
+							<td style="width: 8.571428571428571%;"> ${board.bdate.split(' ')[0]} </td>
+							<td style="width: 8.571428571428571%;"> ${board.bpeople} </td>
+							<td style="width: 8.571428571428571%;"> ${board.bview} </td>
+							<td style="width: 8.571428571428571%;"> ${board.blike} </td>
+							<td style="width: 8.571428571428571%;">
 								<button class="btn btn-secondary" style="background-color: #658a69;" type="button" onclick="onDetail(${board.bno})">상세조회</button>
 							</td>
 						</tr>
 						`
 			})
 			boardData.innerHTML = html;
-			getPageBtn(data);
+			getPageBtn(data, 'index');
 		})
 		.catch(e => {console.log(e);})
 		
 }
 findAll();
 
+// 상세조회 페이지로 이동
 const onDetail = (bno) => {
 	location.href=`/recycle_project/jsp/admin/acc.jsp?bno=${bno}`;
 }
 
 
-const getPageBtn = (data) => {
-	
-	page = parseInt(data.page)
-	
-	const pagebtnbox = document.querySelector('.pagebtnbox')
-	
-	let html = ``
-	
-	html += `
-			<li class="page-item">
-				<a class="page-link" href="index.jsp?page=${page <= 1 ? 1 : page-1}">
-					이전
-				</a>
-			</li>
-			`
-	for(let index = data.startBtn; index <= data.endBtn; index++){
-		html += `
-				<li class="page-item"> 
-					<a class="page-link ${page == index ? 'active': ''}" href="index.jsp?page=${index}">
-						${index}
-					</a>
-				</li>	
-				`
-	}
-	
-	html += `
-			<li class="page-item">
-				<a class="page-link" href="index.jsp?page=${page >= data.totalpage ? page : page +1}">
-					다음
-				</a>
-			</li>
-			`
-	pagebtnbox.innerHTML = html;
-}
 
 
 

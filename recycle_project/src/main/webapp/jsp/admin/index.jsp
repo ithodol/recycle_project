@@ -44,18 +44,18 @@
 	  	                    <li class="breadcrumb-item active">챌린지 목록</li>
 	                    </ol>
 	                </div>
-	                <div class="container"> <!-- container -->
-						<table class="table boardlist" style="text-align: center;">
+	                <div class="tablebox container"> <!-- container -->
+						<table class="table boardlist" style="text-align: center; margin:0 auto;">
 							<thead >
 								<tr>
-									<th>번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>작성일</th>
-									<th>모집인원</th>
-									<th>조회수</th>
-									<th>추천</th>
-									<th>승인/포인트</th>
+									<th style="width: 8.571428571428571%;">번호</th>
+									<th style="width: 40%;">제목</th>
+									<th style="width: 8.571428571428571%;">작성자</th>
+									<th style="width: 8.571428571428571%;">작성일</th>
+									<th style="width: 8.571428571428571%;">모집인원</th>
+									<th style="width: 8.571428571428571%;">조회수</th>
+									<th style="width: 8.571428571428571%;">추천</th>
+									<th style="width: 8.571428571428571%;">승인/포인트</th>
 								</tr>
 							</thead>
 
@@ -63,13 +63,14 @@
 								
 							</tbody>
 						</table>
-						<!-- 페이징 버튼 -->
-						<nav aria-label="Page navigation example">
-							<ul class="pagination pagebtnbox justify-content-center">
-								
-							</ul>
-						</nav>										
+		
 					</div>   
+											<!-- 페이징 버튼 -->
+					<nav aria-label="Page navigation example">
+						<ul class="pagination pagebtnbox justify-content-center my-3">
+							
+						</ul>
+					</nav>	
 				</div>
 			</main>
 
@@ -86,6 +87,7 @@
 	<script src="../../resources/js/datatables-simple-demo.js"></script> 
 	<!-- js -->
 	<!-- <script src="/recycle_project/js/pagination.js"></script>  -->
+	<script src="/recycle_project/js/pagination.js" type="text/javascript"></script>
 	<script src="/recycle_project/js/admin/index.js"></script>
 
 </body>
