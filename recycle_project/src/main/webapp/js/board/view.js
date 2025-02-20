@@ -91,7 +91,7 @@ const mapEvent = (lat, lng) => {
                         ${detailAddr}
 						<div class="d-flex justify-content-center">
 	                        <button class="px-2" onclick="closeInfoWindow()" 
-							style="margin-top:5px; font-weight: 10px; background:#658a69; 
+							style="margin-top:5px; font-weight: 8px; background:#658a69; 
 							color:white; border:none; cursor:pointer; ">닫기</button>
 						</div>
                     </div>`;
@@ -315,9 +315,11 @@ const replyFindAll = () => {
 			response.data.forEach( reply => {
 				html += `<div class="card mt-3">
 							<div class="card-header">
-				        	    <img src="/tj2024b_web1/upload/${ reply.mprofile }" style="width:30px;" />
-                               		${ reply.mnickname }
-                               </div>
+				        	    <img src="/tj2024b_web1/upload/${ reply.mprofile }" 
+								class="reply_img" />
+                               	<span class="mnickname" > ${ reply.mnickname } </span>
+								<span class="rdate"> ${ reply.rdate } </span>
+                            </div>
 							<div class="card-body">
 								${ reply.rcontent }
 							</div>
