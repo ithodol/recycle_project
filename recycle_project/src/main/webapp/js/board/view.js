@@ -302,7 +302,7 @@ const recruitBtn = () => {
 };
 recruitBtn();
 
-// 3. 해당 게시물 댓글 조회
+// 9. 해당 게시물 댓글 조회
 const replyFindAll = () => {
 	let page = new URL( location.href ).searchParams.get('page');
 	if( page == null){ page = 1; }
