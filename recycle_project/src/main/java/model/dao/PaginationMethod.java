@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import model.dao.admin.GetMemberDao;
 import model.dao.board.BoardDao;
+import model.dao.board.ReplyDao;
 import model.dao.member.MemberDao;
 import model.dto.DataDto;
 import model.dto.admin.PointLogDto;
 import model.dto.board.BoardDto;
 import model.dto.board.PageDto;
+import model.dto.board.ReplyDto;
 import model.dto.member.MemberDto;
 import model.dto.member.PointDto;
 
@@ -47,7 +49,7 @@ public class PaginationMethod implements Pagination {
     } // f end
     
     @Override 
-    public <T extends DataDto> PageDto<T> calPagination( int mno, int page, String table, Class<T> dtoClass ) {
+    public <T extends DataDto> PageDto<T> calPagination( int no, int page, String table, Class<T> dtoClass ) {
 	    int display = 10;
 	    int btnSize = 10;
 	    int startRow = (page-1) * display; 
@@ -62,12 +64,14 @@ public class PaginationMethod implements Pagination {
 	    ArrayList<T> result;
 	    
 	    if (dtoClass.equals(BoardDto.class)) {
-            result = (ArrayList<T>) BoardDao.getInstance().findAll(startRow, display, "where lno="+mno);
+            result = (ArrayList<T>) BoardDao.getInstance().findAll(startRow, display, "where lno="+no);
         } else if (dtoClass.equals(PointLogDto.class)) { 
-        	result = (ArrayList<T>) GetMemberDao.getInstance().findPointLog(mno, startRow, display);
+        	result = (ArrayList<T>) GetMemberDao.getInstance().findPointLog(no, startRow, display);
     	} else if (dtoClass.equals(PointDto.class)) { 
-        	result = (ArrayList<T>) MemberDao.getInstance().getPointLog(mno, startRow, display);
-    	} else {
+        	result = (ArrayList<T>) MemberDao.getInstance().getPointLog(no, startRow, display);
+    	} else if (dtoClass.equals(ReplyDto.class)) {
+            result = (ArrayList<T>) ReplyDao.getInstance().findAll(no, startRow, display);
+        } else {
             throw new IllegalArgumentException("Unsupported DTO type");
         }
 	    

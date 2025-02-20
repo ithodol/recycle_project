@@ -1,7 +1,6 @@
 package controller.board;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -11,7 +10,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import model.dao.Pagination;
+import model.dao.PaginationMethod;
 import model.dao.board.ReplyDao;
+import model.dto.board.PageDto;
 import model.dto.board.ReplyDto;
 
 @WebServlet("/board/reply")
@@ -24,12 +26,14 @@ public class ReplyController extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		ReplyDto replyDto = mapper.readValue( req.getReader(), ReplyDto.class );
 		HttpSession session = req.getSession();
-		Object object = session.getAttribute("logInMno");
-		int bno = Integer.parseInt(req.getParameter("bno"));
+		Object object = session.getAttribute("loginMno");
 		
 		boolean result = false;
 		if( object != null ) {
 			int mno = (Integer)object;
+			System.out.println( mno );
+			int bno = Integer.parseInt(req.getParameter("bno"));
+			System.out.println(bno);
 			replyDto.setMno(mno);
 			replyDto.setBno(bno);
 			result = ReplyDao.getInstance().write(replyDto);
@@ -42,12 +46,19 @@ public class ReplyController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(">> REPLY GET RUN");
-		int bno = Integer.parseInt(req.getParameter("bno"));
-		ArrayList<ReplyDto> result = ReplyDao.getInstance().findAll(bno);
+//		================== 페이지네이션 준비 ======================
+	    int page = Integer.parseInt(req.getParameter("page"));
+	    int bno = Integer.parseInt(req.getParameter("bno"));
+	    
+//	    페이지네이션 인터페이스 호출
+	    Pagination pagination = new PaginationMethod();
+//	    PageDto<사용할Dto> pageDto = pageination.caPagination( no, page, "테이블명 조건문 ="+변수, 사용할Dto.class );
+	    PageDto<ReplyDto> pageDto = pagination.calPagination( bno, page, "reply where bno="+bno, ReplyDto.class );
+//	    =======================================================
 			ObjectMapper mapper = new ObjectMapper();
-			String jsonResult = mapper.writeValueAsString(result);
+			String jsonResult = mapper.writeValueAsString(pageDto);
 		resp.setContentType("application/json");
-		resp.getWriter().print(result);
+		resp.getWriter().print(jsonResult);
 	} // f end
 	
 //	3. 댓글 수정
@@ -66,8 +77,9 @@ public class ReplyController extends HttpServlet{
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(">> REPLY DELETE RUN");
 		ObjectMapper mapper = new ObjectMapper();
-		Object object = mapper.readValue( req.getReader(), ReplyDto.class );
-		int rno = (Integer)object;
+//		Object object = mapper.readValue( req.getReader(), ReplyDto.class );
+//		int rno = (Integer)object;
+		int rno = Integer.parseInt(req.getParameter("rno"));
 		boolean result = ReplyDao.getInstance().delete(rno); 
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);

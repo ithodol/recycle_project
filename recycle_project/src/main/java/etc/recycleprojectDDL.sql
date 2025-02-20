@@ -499,4 +499,3 @@ select * from reply;
 select * from admin;
 
 select member.mno, mnickname,mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by mpoint DESC limit 0,10;
-
