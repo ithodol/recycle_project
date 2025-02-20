@@ -105,9 +105,12 @@
 								<tr >
 									<th style="width: 33%; align-content: center;">총합</th>
 									<th style="width: 33;"><input readonly type="text"
-										id="mid" class="form-control midinput" id="floatingInput"
+										id="mid" class="form-control gtotalinput" id="floatingInput"
+										placeholder="무게 총합"></th>
+									<th style="width: 33;"><input readonly type="text"
+										id="mid" class="form-control wtotalinput" id="floatingInput"
 										placeholder="총합"></th>
-									<th style="width: 33%;"><!-- <button class="login-btn w-100 btn btn-m fw-bold" style ="background-color: #658a69 !important;color : white; " type="button" onclick="totalCaculator()">총합 계산</button> --></th>
+								
 								
 
 
