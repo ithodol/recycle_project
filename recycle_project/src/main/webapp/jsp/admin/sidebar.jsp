@@ -81,14 +81,14 @@
 										aria-labelledby="headingOne"
 										data-bs-parent="#sidenavAccordionPages">
 										<nav class="sb-sidenav-menu-nested nav">
-											<a class="dropmenu_inner dropmenu nav-link" href="login.html">승인 목록</a> 
-											<a class="dropmenu_inner dropmenu nav-link" href="register.html">재활용 계산</a> 
+											<a class="dropmenu_inner dropmenu nav-link" href="/recycle_project/jsp/admin/approvechallenge.jsp?page=1">승인 목록</a> 
+											<a class="dropmenu_inner dropmenu nav-link" href="/recycle_project/jsp/admin/recyclecaculator.jsp">재활용 계산</a> 
 										</nav>
 									</div>
 								<!-- 회원 게시판 조회 메뉴  -->
-								<a class="dropmenu nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseError" aria-expanded="false"
-									aria-controls="pagesCollapseError"> 회원 게시판 조회
+								<a class="dropmenu nav-link collapsed" href="/recycle_project/jsp/member/board.jsp?bno=1" 
+							
+									> 회원 게시판 조회
 								</a>
 							</nav>
 						</div>
