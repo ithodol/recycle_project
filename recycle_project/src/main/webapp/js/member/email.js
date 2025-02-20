@@ -6,7 +6,8 @@ const sendEmail = () => {
         
     }
     console.log(templateParams);
-    emailjs.send('recycle_project', 'template_sdbh5wd', templateParams).then(function(response){
+    emailjs.send('recycle_project', 'template_sdbh5wd', templateParams)
+		.then(function(response){
         console.log('Success!', response.status, response.text);
         setStatus('success');
     }, function(error){
@@ -14,3 +15,6 @@ const sendEmail = () => {
         setStatus('fail');
     })
 }
+
+
+

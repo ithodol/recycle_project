@@ -89,30 +89,23 @@ const sharePointGet = () => {
 
 // 각 mno에게 포인트 배포하기
 const sharePointPost = (data2) => {
-   //const bno = new URL(location.href).searchParams.get("bno");
-  
    let obj = {}
    let info2 = {}
 
-	console.log(data2);
 	for(let index = 0; index <= data2.length -1; index ++){
 		const infodata = data2[index]
 		info2[infodata.reno] = infodata;
 	}
 
-	console.log(info2);
    const option2 = {
       method : 'POST',
       Headers : {'Content-Type' : 'application/json'},
       body : JSON.stringify(obj)
-   } // 옵션 end
-
-
+   }
 
    fetch(`/recycle_project/point/share`, option2)
       .then(r => r.json())
 	  .then(data3 => {
-		//console.log(data3); false
             if(data3 == true){
 				for(let index = 0; index <= info2.length-1; index++){
 					const objdata = info2[index]
@@ -121,18 +114,11 @@ const sharePointPost = (data2) => {
 					    pocount: objdata.bpoint,
 					    mno: objdata.mno
 					}
-				}
-				console.log(obj);
-
-               alert('포인트 배포 완료')
-               //location.href="/recycle_project/jsp/admin/index.jsp?page=1";
-            }
+				}alert('포인트 배포 완료');
+                	location.href="/recycle_project/jsp/admin/index.jsp?page=1";
+            }else{alert('포인트 배포 실패');}
          })
-         
-
-   
-      
-} // f end
+}
 
 
 
