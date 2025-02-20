@@ -302,6 +302,34 @@ const recruitBtn = () => {
 };
 recruitBtn();
 
+// 3. 해당 게시물 댓글 조회
+const replyFindAll = () => {
+	let page = new URL( location.href ).searchParams.get('page');
+	if( page == null){ page = 1; }
+	const bno = new URL( location.href ).searchParams.get("bno");
+	let html = '';
+	
+	fetch( `/recycle_project/board/reply?bno=${ bno }&page=${ page }` )
+		.then( r => r.json() )
+		.then( response => {
+			response.data.forEach( reply => {
+				html += `<div class="card mt-3">
+							<div class="card-header">
+				        	    <img src="/tj2024b_web1/upload/${ reply.mprofile }" style="width:30px;" />
+                               		${ reply.mnickname }
+                               </div>
+							<div class="card-body">
+								${ reply.rcontent }
+							</div>
+						</div>`;
+			}) // for end
+			document.querySelector('.replybox').innerHTML = html;
+		}) // then end
+		.catch( e => { console.log(e); })
+		
+} // f end
+replyFindAll();
+
 
 
 
