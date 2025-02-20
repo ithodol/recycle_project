@@ -136,6 +136,10 @@ public class AccDao extends Dao {
 	
 	// bno에 신청한 각 mno에게 포인트 배포하기
 	public boolean sharePoint(PointLogDto pointLogDto) {
+		System.out.println("post test");
+		System.out.println(pointLogDto.getPotitle());
+		System.out.println(pointLogDto.getPocount());
+		System.out.println(pointLogDto.getMno());
 		try {
 			String sql = "insert into pointlog(pocontent, pocount, podate, mno) value (?, ?, now(), ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -145,7 +149,7 @@ public class AccDao extends Dao {
 			ps.setInt(3, pointLogDto.getMno());
 			//System.out.println(ps);
 			int c = ps.executeUpdate();
-			
+			System.out.println(c);
 			if(c == 1) {
 				return true;
 			}
