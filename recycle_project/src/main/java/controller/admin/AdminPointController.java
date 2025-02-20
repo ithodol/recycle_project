@@ -29,10 +29,11 @@ public class AdminPointController extends HttpServlet{
 	    int mno = Integer.parseInt(req.getParameter("mno"));
 	    
 //	    페이지네이션 인터페이스 호출
-	    Pagination pagination = new PaginationMethod();
+	    Pagination pagination = new PaginationMethod(); 
 	    //String where = "member  where mno ="+mno;
+
 //	    PageDto<사용할Dto> pageDto = pageination.caPagination( no, page, "테이블명 조건문 ="+변수, 사용할Dto.class);
-	    PageDto<PointLogDto> pageDto = pagination.calPagination( mno, page,"pointlog where mno ="+mno, PointLogDto.class );
+	    PageDto<PointLogDto> pageDto = pagination.calPagination( mno, page,"pointlog where mno ="+mno,PointLogDto.class );
 //	    =======================================================
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonResult = mapper.writeValueAsString(pageDto);

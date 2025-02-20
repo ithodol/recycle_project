@@ -26,7 +26,7 @@ public class ReplyController extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		ReplyDto replyDto = mapper.readValue( req.getReader(), ReplyDto.class );
 		HttpSession session = req.getSession();
-		Object object = session.getAttribute("loginMno");
+		Object object = session.getAttribute("loginMno"); 
 		
 		boolean result = false;
 		if( object != null ) {
@@ -79,7 +79,7 @@ public class ReplyController extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 //		Object object = mapper.readValue( req.getReader(), ReplyDto.class );
 //		int rno = (Integer)object;
-		int rno = Integer.parseInt(req.getParameter("rno"));
+		int rno = Integer.parseInt(req.getParameter("rno")); 
 		boolean result = ReplyDao.getInstance().delete(rno); 
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);

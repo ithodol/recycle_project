@@ -15,7 +15,7 @@ import model.dto.board.BoardDto;
 import model.dto.board.PageDto;
 
 @WebServlet("/board/view/lno")
-public class BoardLnoViewController extends HttpServlet{
+public class BoardLnoViewController extends HttpServlet{ 
 	
 //	lno별 게시물 조회
 	@Override

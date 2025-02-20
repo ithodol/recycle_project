@@ -41,3 +41,8 @@
 	border: 1px solid #c0c0c0; border-radius: 10px;
 	box-shadow: #eeeeee 3px 3px;
 }
+
+/* 댓글 */
+#layoutnav .replybox{ font-size: 15px; }
+#layoutnav .reply_img{ border-radius: 5px; width: 20px;}
+#layoutnav .rdate{ font-size: 10px; color: gray; }
