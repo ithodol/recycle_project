@@ -86,9 +86,9 @@
 										</nav>
 									</div>
 								<!-- 회원 게시판 조회 메뉴  -->
-								<a class="dropmenu nav-link collapsed" href="/recycle_project/jsp/member/board.jsp" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseError" aria-expanded="false"
-									aria-controls="pagesCollapseError"> 회원 게시판 조회
+								<a class="dropmenu nav-link collapsed" href="/recycle_project/jsp/member/board.jsp?bno=1" 
+							
+									> 회원 게시판 조회
 								</a>
 							</nav>
 						</div>
