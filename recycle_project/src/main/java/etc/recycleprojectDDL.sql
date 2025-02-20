@@ -471,8 +471,8 @@ insert into reply( rcontent, rdate , bno , mno ) values
 (' 시간이 안맞아 아쉽네요 다음번에 또 올려주시면 꼭 참여하겠습니다!!👍','2024-02-20 10:19:20',113,2),
 (' 다른 좋은 코스도 올리겠습니다 참여부탁드립니다🙌🙌' ,'2024-02-20 10:19:20',113,4),
 (' 날씨가 좋으면 좋겠네요🌤','2024-02-20 10:19:20',113,2),
-(' 줍깅 참여하고 나서 맛집 방문 어떠신가요?🍜' ,'2024-02-20 10:19:20',113,);
-
+(' 줍깅 참여하고 나서 맛집 방문 어떠신가요?🍜' ,'2024-02-20 10:19:20',113,3);
+ 
 # 6. 관리자 테이블
 create table admin(
 	adno int unsigned auto_increment,
@@ -502,4 +502,3 @@ select * from reply;
 select * from admin;
 
 select member.mno, mnickname,mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by mpoint DESC limit 0,10;
-

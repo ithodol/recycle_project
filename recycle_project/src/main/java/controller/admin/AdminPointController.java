@@ -28,7 +28,7 @@ public class AdminPointController extends HttpServlet{
 	    int page = Integer.parseInt(req.getParameter("page"));
 	    int mno = Integer.parseInt(req.getParameter("mno"));
 	    
-//	    페이지네이션 인터페이스 호출 
+//	    페이지네이션 인터페이스 호출
 	    Pagination pagination = new PaginationMethod(); 
 	    //String where = "member  where mno ="+mno;
 

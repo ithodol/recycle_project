@@ -30,7 +30,7 @@
 				aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
-			</button>
+			</button> 
 			<!-- 메뉴박스 -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<!-- 왼쪽 메뉴 목록 -->
