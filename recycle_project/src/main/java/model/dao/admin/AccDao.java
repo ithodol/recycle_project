@@ -86,7 +86,7 @@ public class AccDao extends Dao {
 	}
 	
 	
-	// 게시물 포인트 수정 0 -> n
+	// 게시물 포인트 지급(수정 기본값 0 -> n
 	public boolean putPoint(BoardDto boardDto, int bno) {
 		try {
 			String sql = "update board set bpoint = ? where bno = ?";
@@ -96,11 +96,8 @@ public class AccDao extends Dao {
 			System.out.println(boardDto.getBno());
 			int c = ps.executeUpdate();
 			System.out.println(c); 
-			if(c == 1) {
-				return true;
-			}
+			if(c == 1) { return true; }
 		}catch(SQLException e) {System.out.println(e);}
-		
 		return false;
 	}
 	
@@ -135,25 +132,29 @@ public class AccDao extends Dao {
 	
 	
 	// bno에 신청한 각 mno에게 포인트 배포하기
-	public boolean sharePoint(PointLogDto pointLogDto) {
-		System.out.println("post test");
-		System.out.println(pointLogDto.getPotitle());
-		System.out.println(pointLogDto.getPocount());
-		System.out.println(pointLogDto.getMno());
-		try {
-			String sql = "insert into pointlog(pocontent, pocount, podate, mno) value (?, ?, now(), ?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			//System.out.println(sharePointDto);
-			ps.setString(1, pointLogDto.getPotitle());
-			ps.setInt(2, pointLogDto.getPocount());
-			ps.setInt(3, pointLogDto.getMno());
-			//System.out.println(ps);
-			int c = ps.executeUpdate();
-			System.out.println(c);
-			if(c == 1) {
-				return true;
-			}
-		}catch(SQLException e) {System.out.println(e);}
+	public boolean sharePoint(ArrayList<SharePointDto> postList) {
+//		System.out.println("post test");
+////		System.out.println(postList);
+////		System.out.println(postList.);
+////		System.out.println(postList.getBpoint());
+////		System.out.println(postList.getMno());
+//		
+//		try {// for ArrayList(배열).size()인덱스 = 1:
+//			for(int index = 0; index <= postList.size()-1; index++) {
+//				String sql = "insert into pointlog(pocontent, pocount, podate, mno) values (?, ?, now(), ?)";
+//				PreparedStatement ps = conn.prepareStatement(sql);
+//				//System.out.println(sharePointDto);
+//				ps.setString(1, postList.indexOf(index).btitle);
+//				ps.setInt(2, postList.indexOf(index).bpoint);
+//				ps.setInt(3, postList.indexOf(index).btitle);
+//				//System.out.println(ps);
+//				int c = ps.executeUpdate();
+//				System.out.println(c);
+//				if(c == 1) {
+//					return true;
+//				} // if end
+//			} // for end
+//		}catch(SQLException e) {System.out.println(e);}
 		return false;
 	}
 	

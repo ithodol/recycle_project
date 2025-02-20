@@ -34,7 +34,9 @@ public class SharePointController extends HttpServlet{
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String result = mapper.writeValueAsString(findList);
-		
+		// 이동할 때는 배열로 이동함 
+		// 배열을  text로 객체로 바꿔서 보냄
+
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
 	}
@@ -44,19 +46,22 @@ public class SharePointController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("sharepoint post test");
-		ObjectMapper mapper = new ObjectMapper();
 		
-		PointLogDto pointLogDto = mapper.readValue(req.getReader(), PointLogDto.class);
-
-		boolean result = AccDao.getInstance().sharePoint(pointLogDto);
 		
-		//SharePointDto sharePointDto = mapper.readValue(req.getReader(), SharePointDto.class);
-		//boolean result = AccDao.getInstance().sharePoint(sharePointDto);
+//		PointLogDto pointLogDto = mapper.readValue(req.getReader(), PointLogDto.class);
+//		boolean result = AccDao.getInstance().sharePoint(pointLogDto);
+	
+		ObjectMapper mapper = new ObjectMapper(); // 바디를 읽어줌 
+		ArrayList<SharePointDto> postList= mapper.readValue(req.getReader(), ArrayList.class);
+		System.out.println(postList);
+	
 		
-		String jsonResult = mapper.writeValueAsString(result);
+		
+		//String jsonResult = mapper.writeValueAsString(postList);
+		boolean result = AccDao.getInstance().sharePoint(postList);
 		
 		resp.setContentType("application/json");
-		resp.getWriter().print(jsonResult);
+		resp.getWriter().print(result);
 		
 	}
 	

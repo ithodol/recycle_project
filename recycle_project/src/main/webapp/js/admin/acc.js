@@ -89,7 +89,7 @@ const sharePointGet = () => {
 
 // 각 mno에게 포인트 배포하기
 const sharePointPost = (data2) => {
-   const bno = new URL(location.href).searchParams.get("bno");
+   //const bno = new URL(location.href).searchParams.get("bno");
   
    let obj = {}
    let info2 = {}
@@ -109,7 +109,7 @@ const sharePointPost = (data2) => {
 
 
 
-   fetch(`/recycle_project/point/share?bno=${bno}`, option2)
+   fetch(`/recycle_project/point/share`, option2)
       .then(r => r.json())
 	  .then(data3 => {
 		//console.log(data3); false
