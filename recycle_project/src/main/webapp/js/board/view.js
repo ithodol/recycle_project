@@ -308,31 +308,168 @@ const replyFindAll = () => {
 	if( page == null){ page = 1; }
 	const bno = new URL( location.href ).searchParams.get("bno");
 	let html = '';
-	
-	fetch( `/recycle_project/board/reply?bno=${ bno }&page=${ page }` )
-		.then( r => r.json() )
-		.then( response => {
-			response.data.forEach( reply => {
-				html += `<div class="card mt-3">
-							<div class="card-header">
-				        	    <img src="/tj2024b_web1/upload/${ reply.mprofile }" 
-								class="reply_img" />
-                               	<span class="mnickname" > ${ reply.mnickname } </span>
-								<span class="rdate"> ${ reply.rdate } </span>
-                            </div>
-							<div class="card-body">
-								${ reply.rcontent }
-							</div>
-						</div>`;
-			}) // for end
-			document.querySelector('.replybox').innerHTML = html;
-		}) // then end
-		.catch( e => { console.log(e); })
+	getLoginMno().then(loginMno => {
+		fetch( `/recycle_project/board/reply?bno=${ bno }&page=${ page }` )
+			.then( r => r.json() )
+			.then( response => {
+				response.data.forEach( reply => {
+					html += `<div class="card mt-3">
+								<div class="card-header">
+					        	    <img src="/tj2024b_web1/upload/${ reply.mprofile }" 
+									class="reply_img mb-1" />
+	                               	<span class="mnickname" > ${ reply.mnickname } </span>
+									<span class="rdate"> ${ reply.rdate } </span>
+									<div class="replybtnbox">
+										${ loginMno == reply.mno ? `<button class="reply_update_btn" onclick="replyUpdateModal(${ reply.rno, reply.rcontent })" 
+																		style="border: none; background-color: white; font-size: 10px;" >수정</button>
+																	<button class="reply_delete_btn" onclick="replyDelete(${ reply.rno })" 
+																		style="border: none; background-color: white; font-size: 10px;" >삭제</button>` 
+										: "" } 
+									</div>
+	                            </div>
+								<div class="card-body ${ loginMno == reply.mno ? 'textarea'+reply.mno : '' }">
+									${ reply.rcontent }
+								</div>
+							</div>`;
+				}) // for end
+				document.querySelector('.replybox').innerHTML = html;
+			}) // then end
+			.catch( e => { console.log(e); })
+		}).catch(e => console.error("getLoginMno 오류:", e));
 		
 } // f end
 replyFindAll();
 
+// 10. 자신의 댓글 수정 삭제 버튼 출력
+const replyChangeBtn = () => {
+    let replybtnbox = document.querySelector('.replybtnbox');
+    if (!replybtnbox) {
+        console.error("recruitbtn 요소를 찾을 수 없습니다!");
+        return;
+    }
 
+    let html = '';
 
+    getLoginMno().then(loginMno => {
+        console.log("로그인한 회원 번호:", loginMno);
 
+        // 비로그인 상태일 경우 '로그인 후 참여' 버튼 출력
+        if (loginMno === 0) {
+            console.log("비로그인 상태 - 로그인 버튼 출력");
+            recruitbtn.innerHTML = `<button class="btn btn-primary" onclick="location.href='../member/login.jsp'"
+                                        style="background-color: #658a69; width: 300px" type="button">
+                                        로그인 후 참여 가능합니다.
+                                    </button>`;
+            return;
+        }
 
+        if (typeof bno === "undefined") {
+            console.error("bno 값이 정의되지 않았습니다!");
+            return;
+        }
+
+        fetch(`/recycle_project/board/reply?bno=${bno}`)
+            .then(r => r.json())
+            .then(data => {
+                console.log("서버 응답 데이터:", data);
+
+                let isParticipant = false; // 챌린지 참여 여부 확인 변수
+
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i] && data[i].mno === loginMno) {
+                        console.log('챌린지 참여 중');
+                        isParticipant = true;
+                        break;
+                    }
+                }
+
+                if (isParticipant) {
+                    html = `<button onclick="recruitDelete()" class="btn btn-primary"
+                                style="background-color: #658a69; width: 300px" type="button">
+                                챌린지 취소
+                            </button>`;
+                } else {
+                    html = `<button onclick="recruitWrite()" class="btn btn-primary"
+                                style="background-color: #658a69; width: 300px" type="button">
+                                챌린지 참여
+                            </button>`;
+                }
+
+                console.log("최종 HTML:", html);
+                recruitbtn.innerHTML = html;
+            })
+            .catch(e => console.error("fetch 오류:", e));
+    }).catch(e => console.error("getLoginMno 오류:", e));
+};
+
+// 11. 댓글 작성
+const replyWrite = () => {
+	fetch( `/recycle_project/board/reply?bno=${ bno }` )
+		.then( r => r.json() )
+		.then( data => {
+			
+		}) // then end
+		.catch( e => { console.log(e); })
+		
+} // f end
+
+// 12. 댓글 수정
+const replyUpdate = ( rno ) => {
+	// 유효성 검사
+	if( !confirm('댓글을 수정하시겠습니까?')){ return; }
+	
+	const obj = {
+		rno : rno,
+		rcontent : rcontent
+	}
+	
+	const option = {
+		method : 'UPDATE',
+		headers : { 'Content-Type' : 'application/json' },
+		body : JSON.stringify( obj )
+	}
+	
+	fetch( `/recycle_project/board/reply?` , option )
+			.then( r => r.json() )
+			.then( data => {
+				if( data ){ 
+					alert('댓글 수정이 완료되었습니다.');
+					replyFindAll();
+				}
+				else{ alert('댓글 수정 실패') }
+			}) // then end
+			.catch( e => { console.log(e); })
+} // f end
+
+// 13. 댓글 삭제
+const replyDelete = ( rno ) => {
+	// 유효성 검사
+	if( !confirm('댓글을 삭제하시겠습니까?')){ return; }
+	const option = { method : 'DELETE' }
+	
+	fetch( `/recycle_project/board/reply?rno=${ rno }` , option )
+		.then( r => r.json() )
+		.then( data => {
+			if( data ){ 
+				alert('댓글 삭제가 완료되었습니다.');
+				replyFindAll();
+			}
+			else{ alert('댓글 삭제 실패') }
+		}) // then end
+		.catch( e => { console.log(e); })
+} // f end
+
+const replyUpdateModal = ( rno, rcontent ) => {
+	
+	let update = `.textarea${ rno }`;
+	console.log(rcontent)
+	html = `<div class="m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
+				<textarea class="updateinput form-control"></textarea>
+				<button onclick="replyUpdate(${ rno })" class="btn btn-primary align-self-end"
+					style="background-color: #658a69; width: 100px; height: 62px;" type="button">수정</button>
+				<button onclick="replyFindAll()" class="btn btn-primary align-self-end"
+					style="background-color: #658a69; width: 100px; height: 62px;" type="button">취소</button>
+			</div>`
+	document.querySelector(`${ update }`).innerHTML = html;
+
+} // f end

@@ -28,7 +28,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" style="background-color: #658a69;"
 						data-bs-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-primary" style="background-color: #658a69;">
+					<button onclick="replyUpdate(rno)" type="button" class="btn btn-primary" style="background-color: #658a69;">
 						확인</button>
 				</div>
 			</div>

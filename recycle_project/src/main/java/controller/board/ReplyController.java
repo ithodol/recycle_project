@@ -27,7 +27,7 @@ public class ReplyController extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		ReplyDto replyDto = mapper.readValue( req.getReader(), ReplyDto.class );
 		HttpSession session = req.getSession();
-		Object object = session.getAttribute("logInMno");
+		Object object = session.getAttribute("loginMno");
 		
 		boolean result = false;
 		if( object != null ) {
