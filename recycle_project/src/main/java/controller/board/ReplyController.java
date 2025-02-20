@@ -67,6 +67,8 @@ public class ReplyController extends HttpServlet{
 		System.out.println(">> REPLY PUT RUN");
 		ObjectMapper mapper = new ObjectMapper();
 		ReplyDto replyDto = mapper.readValue( req.getReader(), ReplyDto.class );
+		System.out.println(replyDto.getRcontent());
+		System.out.println(replyDto.getRno());
 		boolean result = ReplyDao.getInstance().update(replyDto); 
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);

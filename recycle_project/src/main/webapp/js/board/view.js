@@ -195,7 +195,7 @@ const recruitDelete = ( ) => {
 				recruitBtn();
 			}) // then end
 			.catch( e => { console.log(e); })
-} 
+}
 
 // 6. loginMno 가져오기
 const getLoginMno = () => {
@@ -320,7 +320,7 @@ const replyFindAll = () => {
 	                               	<span class="mnickname" > ${ reply.mnickname } </span>
 									<span class="rdate"> ${ reply.rdate } </span>
 									<div class="replybtnbox">
-										${ loginMno == reply.mno ? `<button class="reply_update_btn" onclick="replyUpdateModal(${ reply.rno, reply.rcontent })" 
+										${ loginMno == reply.mno ? `<button class="reply_update_btn" onclick="replyUpdateModal(${ reply.rno }, '${ reply.rcontent }')" 
 																		style="border: none; background-color: white; font-size: 10px;" >수정</button>
 																	<button class="reply_delete_btn" onclick="replyDelete(${ reply.rno })" 
 																		style="border: none; background-color: white; font-size: 10px;" >삭제</button>` 
@@ -404,10 +404,28 @@ const replyChangeBtn = () => {
 
 // 11. 댓글 작성
 const replyWrite = () => {
-	fetch( `/recycle_project/board/reply?bno=${ bno }` )
+	let rcontent = document.querySelector(`.rcontentinput`).value;
+
+	const obj = { rcontent : rcontent }
+
+	const option = {
+		method : 'POST',
+		headers : { 'Content-Type' : 'application/json' },
+		body : JSON.stringify( obj )
+	}
+	
+	fetch( `/recycle_project/board/reply?bno=${ bno }` , option )
 		.then( r => r.json() )
 		.then( data => {
-			
+			if( data ){ 
+				alert('댓글 작성이 완료되었습니다.');
+				replyFindAll();
+			}
+			else{ 
+				alert('댓글 작성 실패'); 
+				replyFindAll(); 
+			}
+			document.querySelector(`.rcontentinput`).value = '';
 		}) // then end
 		.catch( e => { console.log(e); })
 		
@@ -418,25 +436,32 @@ const replyUpdate = ( rno ) => {
 	// 유효성 검사
 	if( !confirm('댓글을 수정하시겠습니까?')){ return; }
 	
+	let rcontent = document.querySelector('.updateinput').value;
+	console.log(rcontent);
+	console.log(rno);
+	
 	const obj = {
-		rno : rno,
-		rcontent : rcontent
+		rcontent : rcontent,
+		rno : rno
 	}
 	
 	const option = {
-		method : 'UPDATE',
+		method : 'PUT',
 		headers : { 'Content-Type' : 'application/json' },
 		body : JSON.stringify( obj )
 	}
 	
-	fetch( `/recycle_project/board/reply?` , option )
+	fetch( `/recycle_project/board/reply?rno=${ rno }` , option )
 			.then( r => r.json() )
 			.then( data => {
 				if( data ){ 
 					alert('댓글 수정이 완료되었습니다.');
 					replyFindAll();
 				}
-				else{ alert('댓글 수정 실패') }
+				else{ 
+					alert('댓글 수정 실패'); 
+					replyFindAll(); 
+				}
 			}) // then end
 			.catch( e => { console.log(e); })
 } // f end
@@ -459,17 +484,21 @@ const replyDelete = ( rno ) => {
 		.catch( e => { console.log(e); })
 } // f end
 
-const replyUpdateModal = ( rno, rcontent ) => {
-	
+const replyUpdateModal = ( rno , rcontent ) => {
+	console.log( rcontent );
 	let update = `.textarea${ rno }`;
-	console.log(rcontent)
-	html = `<div class="m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
-				<textarea class="updateinput form-control"></textarea>
-				<button onclick="replyUpdate(${ rno })" class="btn btn-primary align-self-end"
-					style="background-color: #658a69; width: 100px; height: 62px;" type="button">수정</button>
-				<button onclick="replyFindAll()" class="btn btn-primary align-self-end"
-					style="background-color: #658a69; width: 100px; height: 62px;" type="button">취소</button>
-			</div>`
+	
+	let html = `
+	    <div class="m-2 d-grid gap-2 d-md-flex justify-content-md-end align-self-start">
+	        <textarea class="updateinput form-control"></textarea>
+	        <button onclick="replyUpdate(${ rno })" class="btn btn-primary align-self-end"
+	            style="background-color: #658a69; width: 100px; height: 62px;" type="button">수정</button>
+	        <button onclick="replyFindAll()" class="btn btn-primary align-self-end"
+	            style="background-color: #658a69; width: 100px; height: 62px;" type="button">취소</button>
+	    </div>
+	`;
 	document.querySelector(`${ update }`).innerHTML = html;
+	document.querySelector(`.updateinput`).value = rcontent;
+	
 
 } // f end
