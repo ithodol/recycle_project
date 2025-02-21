@@ -1,5 +1,6 @@
 package model.dao.board;
 
+import java.io.Console;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -64,7 +65,10 @@ public class ReplyDao extends Dao{
 //	3. 댓글 수정
 	public boolean update( ReplyDto replyDto ) {
 		try {
-			String sql = "update reply(rcontent, rdate) "
+			System.out.println(replyDto.getRcontent());
+			System.out.println(replyDto.getRno());
+			
+			String sql = "update reply "
 					+ "set rcontent = ?, rdate = now() "
 					+ "where rno = ? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
