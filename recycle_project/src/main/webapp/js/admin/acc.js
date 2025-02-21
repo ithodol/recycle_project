@@ -74,7 +74,7 @@ const sharePointGet = () => {
 				//console.log(info);
 				if(info != null){
 
-					sharePointPost(data2); // mno에게 포인트 배포
+					//sharePointPost(data2); // mno에게 포인트 배포
 				}else{
 					alert('정보 가져오기 실패');
 				}
@@ -88,36 +88,38 @@ const sharePointGet = () => {
 
 
 // 각 mno에게 포인트 배포하기
-const sharePointPost = (data2) => {
-   let obj = {}
-   let info2 = {}
+const sharePointPost = () => {
+	alert('포인트 배포 실패');
+	location.href="/recycle_project/jsp/admin/index.jsp?page=1";
+//   let obj = {}
+//   let info2 = {}
 
-	for(let index = 0; index <= data2.length -1; index ++){
-		const infodata = data2[index]
-		info2[infodata.reno] = infodata;
-	}
+//	for(let index = 0; index <= data2.length -1; index ++){
+//		const infodata = data2[index]
+//		info2[infodata.reno] = infodata;
+//	}
 
-   const option2 = {
-      method : 'POST',
-      Headers : {'Content-Type' : 'application/json'},
-      body : JSON.stringify(obj)
-   }
+//   const option2 = {
+//      method : 'POST',
+//      Headers : {'Content-Type' : 'application/json'},
+//      body : JSON.stringify(obj)
+//   }
 
-   fetch(`/recycle_project/point/share`, option2)
-      .then(r => r.json())
-	  .then(data3 => {
-            if(data3 == true){
-				for(let index = 0; index <= info2.length-1; index++){
-					const objdata = info2[index]
-					obj[objdata.reno] = {
-						pocontent: objdata.btitle,
-					    pocount: objdata.bpoint,
-					    mno: objdata.mno
-					}
-				}alert('포인트 배포 완료');
-                	location.href="/recycle_project/jsp/admin/index.jsp?page=1";
-            }else{alert('포인트 배포 실패');}
-         })
+//   fetch(`/recycle_project/point/share`, option2)
+//      .then(r => r.json())
+//	  .then(data3 => {
+//            if(data3 == true){
+//				for(let index = 0; index <= info2.length-1; index++){
+//					const objdata = info2[index]
+//					obj[objdata.reno] = {
+//						pocontent: objdata.btitle,
+//					    pocount: objdata.bpoint,
+//					    mno: objdata.mno
+//					}
+//				}alert('포인트 배포 완료');
+//               	location.href="/recycle_project/jsp/admin/index.jsp?page=1";
+//            }else{alert('포인트 배포 실패');}
+//         })
 }
 
 

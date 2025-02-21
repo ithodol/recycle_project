@@ -76,7 +76,7 @@
 						<div style="display:flex; margin-top:20px;">
 							<input type="text" class="form-control pointbox" id="floatingInput" placeholder="포인트" style="width:160px; margin-right:20px;">
 							<button type="button" class="btn" style="background-color:#658a69; color:#ffffff;"onclick="putPoint();"> 지급하기 </button>
-							<button type="button" class="btn" style="background-color:#658a69; color:#ffffff; margin-left:10px;"onclick="sharePointGet(); "> 배포하기 </button>
+							<button type="button" class="btn" style="background-color:#658a69; color:#ffffff; margin-left:10px;"onclick="sharePointGet(); sharePointPost();"> 배포하기 </button>
 						</div>
 
 					</div>
