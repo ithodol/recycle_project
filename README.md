@@ -1,4 +1,4 @@
-#### Plogging Challenge for Recycling Waste Community
+# Plogging Challenge for Recycling Waste Community
 첫번쨰 정규 프로젝트로 사용한 서버 코드입니다. 
 
 JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입을 구현하였습니다.
