@@ -1,5 +1,4 @@
-### Plogging Challenge for Recycling Waste Community
----
+#### Plogging Challenge for Recycling Waste Community
 첫번쨰 정규 프로젝트로 사용한 서버 코드입니다. 
 
 JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입을 구현하였습니다.
@@ -13,25 +12,25 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
 - 기획서 / REST API 명세서 작성
 - 발표평가
 
-##🙋‍♂️ 개발자 소개
+## 🙋‍♂️ 개발자 소개
 
 - 박희만 : 조장, 공통 JSP/인터페이스 배포, 챌린지 게시판 개발
 - 류예나 : 캔바, 관리자 계정 관리 서비스 개발
 - 전은서 : GIT 담당, 챌린지 참여자 포인트 배포, 사용자 계정 관리 서비스 개발
 
-##💻 개발환경
+## 💻 개발환경
 - **Version** : Java 17
 - **IDE** : Eclipse
 - **BackEnd** : Java
 - **FrontEnd** : JavaScript, HTML(JSP), CSS
 
-##⚙️ 기술 스택
+## ⚙️ 기술 스택
 - **server** : Apache Tomcat
 - **DataBase** : MySQL
 - **기획서 작성** : Google Sheets
 - **일정 관리** : Jira
 
-##📌 주요 기능
+## 📌 주요 기능
 - **챌린지 등록**
   - 챌린지 제목, 내용, 인원수, 시작날짜, 종료날짜 입력 후 kakao API로 구현된 지도에서 장소를 검색 후 마커를 선택하여 위도 경도를 입력한다.
   - Json으로 DB에 입력한다.
@@ -43,6 +42,6 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
   - 포인트가 높은 상위 10명의 유저를 표시한다.
   - TOP3의 유저들은 닉네임 옆에 등수별로 이미지를 보여준다.
  
-##✒️ API
+## ✒️ API
 - API 명세서 : https://docs.google.com/spreadsheets/d/10N5DFd7VoDViOcDsw-X1zcQP-eSt3jQMj933DkEu8SQ/edit?gid=1012366780#gid=1012366780
 - Jira 일정 관리 : https://dung2bro.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline
