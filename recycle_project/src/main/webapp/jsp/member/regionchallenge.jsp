@@ -57,9 +57,9 @@
 	<!-- JQUERY 라이브러리 : 카카오지도에 필요한 라이브러리 -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-	<!-- 카카오 지도의 클러스터 기능을 사용하기 위해 앱키 뒤 &libraries=clusterer 추가  -->
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=acb4b7dda465ce1ebad93655560802d8&libraries=clusterer"></script>
+<!-- 카카오 지도의 클러스터 기능을 사용하기 위해 앱키 뒤 &libraries=clusterer 추가  -->
 	<!-- js -->
 
 	<script src="/recycle_project/js/member/regionchallenge.js"></script>

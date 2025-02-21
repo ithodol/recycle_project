@@ -64,7 +64,7 @@ const onSignUp = () => {
 
 			// 중복이 있을 경우 회원가입을 진행하지 않음
 			if (isDuplicate) {
-				return;  // 이후 코드를 실행하지 않도록 함
+				return;  // 이후 코드를 실행하지 않음
 			}
 
 			const obj = {
