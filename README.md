@@ -23,6 +23,16 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
 
 ## 🙋‍♂️ 개발자 소개
 
+<table>
+  <tbody>
+    <tr>
+     <td align="center"><a href="https://github.com/PHM-dung2"><img src="https://github.com/PHM-dung2" width="100px;" alt="https://github.com/PHM-dung2"/><br /><sub><b>박희만  </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/Ryuyena0305"><img src="https://github.com/Ryuyena0305" width="100px;" alt="https://github.com/Ryuyena0305"/><br /><sub><b> 류예나 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/ithodol"><img src="https://github.com/ithodol" width="100px;" alt="https://github.com/ithodol"/><br/></td>
+     <tr/>
+  </tbody>
+</table>
+
 
 💡 박희만 : 조장, 공통 JSP/인터페이스 배포, 챌린지 게시판 개발
 
@@ -45,8 +55,8 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
 
 
 ## ⚙️ 기술 스택
-- **server** : Apache Tomcat
 - **DataBase** : <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
+- **server** : Apache Tomcat
 - **기획서 작성** : Google Sheets
 - **일정 관리** : Jira
 
