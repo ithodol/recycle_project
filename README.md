@@ -26,8 +26,8 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
 <table>
   <tbody>
     <tr>
-     <td align="center"><a href="https://github.com/PHM-dung2"><img src="" width="100px;" /><br /><sub><b>박희만  </b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/Ryuyena0305"><img src="" width="100px;" /><br /><sub><b> 류예나 </b></sub></a><br /></td>
+     <td align="center"><a href="https://github.com/PHM-dung2"><img src="" width="100px;"  alt=""/><br /><sub><b>박희만  </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/Ryuyena0305"><img src="" width="100px;" alt="" /><br /><sub><b> 류예나 </b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/ithodol"><img src="" width="100px;" alt=""/><br /><sub><b> 전은서 </b></sub></a><br /></td>
      <tr/>
   </tbody>
