@@ -5,6 +5,8 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
 # 🎥 프로젝트 시연영상
 
 [프로젝트 시연영상 링크](https://youtu.be/wbu8Rfeoq30)
+<br/>
+[프로젝트 PPT](https://www.canva.com/design/DAGiwG5xEyU/Hs25472iQbouYia4wTbRLA/view?utm_content=DAGiwG5xEyU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h914369aa91)
 
 
 ## 👨‍🏫 프로젝트 소개
@@ -85,6 +87,4 @@ JSP를 활용하여 "재활용 챌린지"동적 웹페이지의 프로토타입�
 
  
 ## ✒️ API
-- **API 명세서** : https://docs.google.com/spreadsheets/d/10N5DFd7VoDViOcDsw-X1zcQP-eSt3jQMj933DkEu8SQ/edit?gid=1012366780#gid=1012366780
-  
-- **Jira 일정 관리** : https://dung2bro.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline
+- **API 명세서** : [API명세서 링크](https://docs.google.com/spreadsheets/d/10N5DFd7VoDViOcDsw-X1zcQP-eSt3jQMj933DkEu8SQ/edit?gid=1012366780#gid=1012366780)
