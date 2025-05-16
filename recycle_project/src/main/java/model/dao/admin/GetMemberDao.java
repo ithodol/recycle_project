@@ -35,7 +35,10 @@ public class GetMemberDao extends Dao{
 	public ArrayList<MemberDto> findAll(int startRow, int display) {
 		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
 		try {
-			String sql = "select member.mno, mnickname,mid, mname, IFNULL(sum(pointlog.pocount), 0) as mpoint from member left join pointlog on member.mno = pointlog.mno group by member.mno order by member.mno limit ? , ? ";
+			String sql = "select member.mno, mnickname,mid, mname, "
+					+ "IFNULL(sum(pointlog.pocount), 0) as mpoint from member "
+					+ "left join pointlog on member.mno = pointlog.mno "
+					+ "group by member.mno order by member.mno limit ? , ? ";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 //			(2) ====== 페이지네이션 적용시 추가 =====
@@ -103,15 +106,21 @@ public class GetMemberDao extends Dao{
 		return null;
 	}
 
-
+//	               (1) 페이지네이션 적용시 매개변수 ( int mno, int startRow , int display ) 추가 
 	public  ArrayList<PointLogDto> findPointLog(int mno, int startRow, int display) {
 		ArrayList<PointLogDto> list = new ArrayList<PointLogDto>();
 		try {
-			String sql ="select pointlog.mno, pointlog.podate, pointlog.pocontent, pointlog.pocount as point from member inner join pointlog on member.mno = pointlog.mno where member.mno = ?  group by point ,pointlog.podate, pointlog.pocontent limit ? , ?";
+			String sql ="select pointlog.mno, pointlog.podate, pointlog.pocontent, "
+					+ "pointlog.pocount as point from member "
+					+ "inner join pointlog on member.mno = pointlog.mno "
+					+ "where member.mno = ? "
+					+ "group by point ,pointlog.podate, pointlog.pocontent limit ? , ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1,mno);
+//			(2) ====== 페이지네이션 적용시 추가 =====
+			ps.setInt(1, mno);
 			ps.setInt(2, startRow);
 			ps.setInt(3, display);
+//			===================================
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				PointLogDto pointLogDto = new PointLogDto();
